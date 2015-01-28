@@ -19,7 +19,10 @@ $(document).ready(function(){
 		$("html, body").animate({ scrollTop: $("#contact").offset().top - 50 }, "slow");
 	});
 	
-	
+
+function resizeIframe(obj) {
+    obj.style.height = obj.contentWindow.document.body.scrollHeight + 'px';
+}
 
 function getPageWidth() {
 	var pageWidth = $(document).width();
