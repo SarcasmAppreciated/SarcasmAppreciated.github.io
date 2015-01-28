@@ -1,0 +1,390 @@
+body {
+	font-family:  "Quicksand", "Lato", "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+}
+
+h1{
+	color: #00a651/*#ED900E*/;
+	line-height: 25px;
+	text-decoration: underline;
+}
+
+p {
+	font-family: "Quicksand", "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+	font-size: 30px;
+}
+
+a {
+	font-weight: bold;
+	color: #00a651; /*ED900E*/
+}
+
+#sample {
+	width: 100%;
+	min-width: 1920px;
+	height: 1080px;
+	/*background: url("http://fc05.deviantart.net/fs70/f/2014/114/e/3/city_of_the_watchers_by_bli08-d7fuhxz.jpg") center no-repeat;*/
+	background: url("http://static.tumblr.com/lruirar/rs7nivgg8/practice.jpg") center no-repeat;
+	background-size: cover;
+	float: left;
+}
+
+.hook-image{
+	opacity: .2;
+	height: auto;
+	width: auto;
+	float: right;
+	max-width: 90%;
+	right: 5%;
+	position: relative;
+	overflow: hidden;
+}
+
+.nav-button-holder {
+	position: absolute;
+	right: 0px;
+}
+
+.nav-button {
+	width: 150px;
+	height: 30px;
+	margin-top: 100px;
+	margin-right: 20px;
+	background-color: #333;
+	float: right;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	font-family: "Quicksand", "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+	font-weight: 700;
+	text-decoration: none;
+	cursor: pointer;
+	position: relative;
+	z-index: 3;
+}
+
+.nav-button.first {
+	margin-right: 200px;
+	background-color: #00a651/*#ED900E*/;
+}
+
+#hook {
+	margin-top: -42.5px;
+	margin-left: 200px;
+	width: 540px;
+	height: 95px;
+	top: 45%;
+	position: absolute;
+	z-index: 2;
+	 -webkit-text-stroke: 1px #000;
+	text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+
+#hook p {
+	margin-top: 10px;
+	margin-left: 8px;
+	color: #00a651/*#ED900E*/;
+}
+
+#hook p b{
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+#down-button {
+	border-radius: 50%;
+	background-color: #333;
+	width: 50px;
+	height: 50px;
+	color: #00a651/*#ED900E*/;
+	font-size: 30px;
+	border: 3px;
+	border-style: solid;
+	border-color: #fff;
+	position: absolute;
+	bottom: 50px;
+	left: 50%;
+	margin-left: -25px;
+}
+
+@media only screen and (max-width: 480px) {
+	body {
+		overflow-x: hidden;
+		width: 320px;
+		padding: 0;
+		margin: 0;
+	}
+	
+	p  {
+		font-size: 21px;
+	}
+	
+	#sample {
+		min-width: 0px;
+		height: 470px;
+		position: static;
+		float: left;
+	}
+	
+	.nav-button {
+		display: none;
+	}
+	
+	#hook {
+		margin-left: 7.5px;
+		width: 300px;
+	}
+
+	.section-container {
+		margin: 0px !important;
+		width: 320px !important;
+		height: auto;
+		overflow: hidden;
+		min-height: 0px !important;
+	}
+	
+	.right-text{
+		margin-top: 10px !important;
+		margin-bottom: 10px !important;
+		width: 320px !important;
+		text-align: center !important;
+		float: none !important;
+	}
+	
+	.right-text.left {
+		float: none !imporant;
+		margin: 0 !important;
+	}
+	
+	.right-text p, .left p{
+		width: 280px;
+		height: auto;
+		display: inline-block;
+		text-align: center !important;
+		margin: 0 !important;
+		float: none !imporant;
+		margin-left: 0 !important;
+	}
+	
+	#display-picture {
+		display: none;
+	}
+	
+	.right-text.port {
+		width: 310px !important;
+		margin: 5px !important;
+		text-align: center;
+	}
+	
+	#about {
+		background: none !important;
+	}
+	
+	#filter-box {
+		display: none;
+	}
+	
+	#content {
+		margin-top: 50px !important;
+		margin-left: 1px !important;
+	}
+	
+	.post{
+		width: 300px !important;
+		overflow: hidden;
+	}
+	
+	.link-box a {
+		font-size: 24px;
+	}
+	
+	.link-box p {
+		font-size: 16px;
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 1367px){
+		body {
+			-moz-transform: scale(0.75, 0.75); /* Moz-browsers */
+			zoom: 0.75; /* Other non-webkit browsers */
+			zoom: 75%;   
+		}
+		
+		hook {
+			text-shadow: none;
+		}
+	}
+
+/* Container  */
+.section-container {
+	width: 100%;
+	height: auto;
+	min-height: 600px;
+	float: left;
+	overflow: hidden;
+}
+
+/* About */
+#about {
+	margin-top: 20px;
+	background: url("http://fc05.deviantart.net/fs71/f/2014/114/0/9/riven_sword_close_by_bli08-d7furct.jpg") left no-repeat;
+}
+
+.right-text {
+	text-align: right;
+	margin-right: 20px;
+	float: right;
+	width: 800px;
+	height: 100%;
+}
+
+/* Contact */
+#contact {
+	background-color: #333;
+	min-height: 400px;
+}
+
+.right-text.left {
+	text-align: left;
+	margin-top: 30px;
+	margin-left: 20px;
+	float: left;
+	width: 800px;
+	height: 100%;
+	color: #00a651/*#ED900E*/;
+	/*-webkit-text-shadow: none;
+	text-shadow: none;*/
+}
+
+#display-picture {
+	width: 200px;
+	height: 200px;
+	float: right;
+	margin-top: 75px;
+	margin-bottom: 75px;
+	margin-left: 250px;
+	margin-right: 250px;
+	background: url("https://pbs.twimg.com/profile_images/551987551079124993/bRYuvvQR.jpeg") center no-repeat;
+	background-size: contain;
+	border-radius: 5%;
+	border: 3px solid #00a651;
+}
+
+/* Porfolio */
+#portfolio {
+	max-width: 1675px;
+	margin-left: auto;
+	margin-right: auto;
+	float: none !important;
+}
+
+.right-text.port {
+	margin-top: 70px;
+	width: 100%;
+}
+
+#content {
+	margin-top: 200px;
+	margin-left: 10px;
+}
+
+#filter-box {
+	width: 400px;
+	height: 30px;
+	float: right;
+	text-align: right;
+}
+
+#filter-box a {
+	text-decoration: none;
+	font-size: 21px;
+	line-height: 30px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.photo-fix {
+	border: none;
+	display: inline-block;
+}
+
+
+.post-container {
+	width: 400px;
+	float: right;
+	border-style: solid;
+	border-color: #00a651/*#ED900E*/;
+	margin-top: 5px;
+	margin-left: 5px;
+	background-color: #fff;
+	text-align: center;
+}
+
+.post-container p {
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.link-box {
+	height: 150px;
+	width: 400px;
+	float: right;
+	border-style: solid;
+	border-color: #00a651/*#ED900E*/;
+	background-color: #333;
+	margin-top: 5px;
+	margin-left: 5px;
+	color: #00a651/*#ED900E*/;
+	text-align: center;
+	overflow: hidden;
+}
+
+.link-box p {
+	margin-top: 30px;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.link-box p b {
+	font-size: 30px;
+}
+
+.link-box a {
+	text-decoration: none;
+}
+
+.nav-next a, #infscr-loading{
+	opacity: 0;
+}
+
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+	 -moz-transition-duration: 0.8s;
+	  -ms-transition-duration: 0.8s;
+	   -o-transition-duration: 0.8s;
+		  transition-duration: 0.8s;
+}
+
+.isotope {
+  -webkit-transition-property: height, width;
+	 -moz-transition-property: height, width;
+	  -ms-transition-property: height, width;
+	   -o-transition-property: height, width;
+		  transition-property: height, width;
+}
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+	 -moz-transition-property:    -moz-transform, opacity;
+	  -ms-transition-property:     -ms-transform, opacity;
+	   -o-transition-property:      -o-transform, opacity;
+		  transition-property:         transform, opacity;
+}
