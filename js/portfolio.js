@@ -49,8 +49,9 @@ $(document).ready(function(){
 				alert(pictureLinks[0]);
             }
         });
-
 	}
+	
+	alert(pictureLinks[0]);
 	
 	/*
 	$("#show-button").click(function(){
