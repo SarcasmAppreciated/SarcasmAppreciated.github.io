@@ -44,14 +44,14 @@ $(document).ready(function(){
             url : "pictureLinks.txt",
             dataType: "text",
             success : function (data) {
-                alert(data);
 				pictureLinks = data.split('\n');
-				alert(pictureLinks[0]);
+				var i;
+				for (i = 0; i < pictureLinks.length; i++) {
+					$("#portfolio").append($("<img src=" + pictureLinks[i] + "></img>"));					
+				}	
             }
         });
 	}
-	
-	alert(pictureLinks[0]);
 	
 	/*
 	$("#show-button").click(function(){
