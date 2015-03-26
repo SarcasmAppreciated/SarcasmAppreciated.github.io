@@ -1,5 +1,5 @@
 body {
-	font-family:  "Quicksand", "Lato", "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+	font-family:  "Quicksand", "Lato", "Helvetica Neue", Arial, sans-serif;
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
@@ -12,7 +12,7 @@ h1{
 }
 
 p {
-	font-family: "Quicksand", "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
 	font-size: 30px;
 }
 
@@ -21,31 +21,22 @@ a {
 	color: #00a651; /*ED900E*/
 }
 
+h1.titleR {
+	text-align: right;
+}
+
+h1.titleL {
+	text-align: left;
+}
+
+
 #sample {
 	width: 100%;
 	min-width: 1920px;
 	height: 1080px;
 	background: url(../images/practice.jpg) center no-repeat;
 	background-size: cover;
-	float: left;
-}
-
-iframe {
-	width: 100%;
-	height: auto;
-	min-height: 1500px;
-	border: none;
-}
-
-.hook-image{
-	opacity: .2;
-	height: auto;
-	width: auto;
-	float: right;
-	max-width: 90%;
-	right: 5%;
-	position: relative;
-	overflow: hidden;
+	display: block;
 }
 
 .nav-button-holder {
@@ -63,7 +54,7 @@ iframe {
 	border: none;
 	color: #fff;
 	font-size: 16px;
-	font-family: "Quicksand", "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
 	font-weight: 700;
 	text-decoration: none;
 	cursor: pointer;
@@ -84,7 +75,7 @@ iframe {
 	top: 45%;
 	position: absolute;
 	z-index: 2;
-	 -webkit-text-stroke: 1px #000;
+	-webkit-text-stroke: 1px #000;
 	text-shadow:
 		-1px -1px 0 #000,
 		1px -1px 0 #000,
@@ -116,124 +107,18 @@ iframe {
 	position: absolute;
 	bottom: 50px;
 	left: 50%;
+	top: 1000px;
 	margin-left: -25px;
+	cursor: pointer;
 }
-
-@media only screen and (max-width: 480px) {
-	body {
-		overflow-x: hidden;
-		width: 320px;
-		padding: 0;
-		margin: 0;
-	}
-	
-	p  {
-		font-size: 21px;
-	}
-	
-	#sample {
-		min-width: 0px;
-		height: 470px;
-		position: static;
-		float: left;
-	}
-	
-	.nav-button {
-		display: none;
-	}
-	
-	#hook {
-		margin-left: 7.5px;
-		width: 300px;
-	}
-
-	.section-container {
-		margin: 0px !important;
-		width: 320px !important;
-		height: auto;
-		overflow: hidden;
-		min-height: 0px !important;
-	}
-	
-	.right-text{
-		margin-top: 10px !important;
-		margin-bottom: 10px !important;
-		width: 320px !important;
-		text-align: center !important;
-		float: none !important;
-	}
-	
-	.right-text.left {
-		float: none !imporant;
-		margin: 0 !important;
-	}
-	
-	.right-text p, .left p{
-		width: 280px;
-		height: auto;
-		display: inline-block;
-		text-align: center !important;
-		margin: 0 !important;
-		float: none !imporant;
-		margin-left: 0 !important;
-	}
-	
-	#display-picture {
-		display: none;
-	}
-	
-	.right-text.port {
-		width: 310px !important;
-		margin: 5px !important;
-		text-align: center;
-	}
-	
-	#about {
-		background: none !important;
-	}
-	
-	#filter-box {
-		display: none;
-	}
-	
-	#content {
-		margin-top: 50px !important;
-		margin-left: 1px !important;
-	}
-	
-	.post{
-		width: 300px !important;
-		overflow: hidden;
-	}
-	
-	.link-box a {
-		font-size: 24px;
-	}
-	
-	.link-box p {
-		font-size: 16px;
-	}
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 1367px){
-		body {
-			-moz-transform: scale(0.75, 0.75); /* Moz-browsers */
-			zoom: 0.75; /* Other non-webkit browsers */
-			zoom: 75%;   
-		}
-		
-		hook {
-			text-shadow: none;
-		}
-	}
 
 /* Container  */
 .section-container {
 	width: 100%;
 	height: auto;
-	min-height: 600px;
 	float: left;
 	overflow: hidden;
+	text-align: center;
 }
 
 /* About */
@@ -243,7 +128,7 @@ iframe {
 }
 
 .right-text {
-	text-align: right;
+	text-align: justify;
 	margin-right: 20px;
 	float: right;
 	width: 800px;
@@ -253,19 +138,16 @@ iframe {
 /* Contact */
 #contact {
 	background-color: #333;
-	min-height: 400px;
 }
 
 .right-text.left {
-	text-align: left;
+	text-align: justify;
 	margin-top: 30px;
 	margin-left: 20px;
 	float: left;
 	width: 800px;
 	height: 100%;
 	color: #00a651/*#ED900E*/;
-	/*-webkit-text-shadow: none;
-	text-shadow: none;*/
 }
 
 #display-picture {
@@ -284,89 +166,6 @@ iframe {
 
 /* Porfolio */
 #portfolio {
-	max-width: 1675px;
-	margin-left: auto;
-	margin-right: auto;
-	float: none !important;
-}
-
-.right-text.port {
-	margin-top: 70px;
-	width: 100%;
-}
-
-#content {
-	margin-top: 200px;
-	margin-left: 10px;
-}
-
-#filter-box {
-	width: 400px;
-	height: 30px;
-	float: right;
-	text-align: right;
-}
-
-#filter-box a {
-	text-decoration: none;
-	font-size: 21px;
-	line-height: 30px;
-	margin-right: 20px;
-	cursor: pointer;
-}
-
-.photo-fix {
-	border: none;
-	display: inline-block;
-}
-
-
-.post-container {
-	width: 400px;
-	float: right;
-	border-style: solid;
-	border-color: #00a651/*#ED900E*/;
-	margin-top: 5px;
-	margin-left: 5px;
-	background-color: #fff;
-	text-align: center;
-}
-
-.post-container p {
-	font-size: 20px;
-	margin-left: 10px;
-}
-
-.link-box {
-	height: 150px;
-	width: 400px;
-	float: right;
-	border-style: solid;
-	border-color: #00a651/*#ED900E*/;
-	background-color: #333;
-	margin-top: 5px;
-	margin-left: 5px;
-	color: #00a651/*#ED900E*/;
-	text-align: center;
-	overflow: hidden;
-}
-
-.link-box p {
-	margin-top: 30px;
-	font-size: 20px;
-	line-height: 20px;
-}
-
-.link-box p b {
-	font-size: 30px;
-}
-
-.link-box a {
-	text-decoration: none;
-}
-
-.nav-next a, #infscr-loading{
-	opacity: 0;
 }
 
 .isotope,
@@ -393,4 +192,69 @@ iframe {
 	  -ms-transition-property:     -ms-transform, opacity;
 	   -o-transition-property:      -o-transform, opacity;
 		  transition-property:         transform, opacity;
+}
+
+@media (max-width: 1367px) {
+	body {
+		overflow-x: hidden;
+		width: 100%x;
+		padding: 0;
+		margin: 0;
+	}	
+	p  {
+		font-size: 16px;
+	}
+	h1.titleR, h1.titleL {
+		text-align: center;
+	}
+	#sample {
+		min-width: 0px;
+		height: 470px;
+		display: block;
+	}	
+	.nav-button {
+		display: none;
+	}	
+	#hook {
+		width: 100%;
+		margin: 0;
+		top: 15px;
+	}
+	#down-button {
+		top: 400px;
+	}
+	.section-container {
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+	}
+	
+	.right-text.left,.right-text{
+		margin: 0;
+		display: inline-block;
+		width: 90%;
+		float: none;
+	}
+	
+	#about {
+		background: none;
+	}
+	
+	#display-picture {
+		margin: 0;
+		display: inline-block;
+		float: none;
+	}
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 1367px){
+	body {
+		-moz-transform: scale(0.75, 0.75); /* Moz-browsers */
+		zoom: 0.75; /* Other non-webkit browsers */
+		zoom: 75%;   
+	}
+	
+	hook {
+		text-shadow: none;
+	}
 }
