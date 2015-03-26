@@ -33,7 +33,7 @@ h1.titleL {
 #sample {
 	width: 100%;
 	min-width: 1920px;
-	height: 1080px;
+	height: 1110px;
 	background: url(../images/practice.jpg) center no-repeat;
 	background-size: cover;
 	display: block;
@@ -123,7 +123,6 @@ h1.titleL {
 
 /* About */
 #about {
-	margin-top: 20px;
 	background: url(../images/sword.jpg) left no-repeat;
 }
 
@@ -194,7 +193,7 @@ h1.titleL {
 		  transition-property:         transform, opacity;
 }
 
-@media (max-width: 1367px) {
+@media (max-width: 1600px) {
 	body {
 		overflow-x: hidden;
 		width: 100%x;
@@ -227,19 +226,16 @@ h1.titleL {
 		width: 100%;
 		height: auto;
 		overflow: hidden;
-	}
-	
+	}	
 	.right-text.left,.right-text{
 		margin: 0;
 		display: inline-block;
 		width: 90%;
 		float: none;
-	}
-	
+	}	
 	#about {
 		background: none;
-	}
-	
+	}	
 	#display-picture {
 		margin: 0;
 		display: inline-block;
@@ -247,11 +243,11 @@ h1.titleL {
 	}
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 1367px){
+@media screen and (-webkit-min-device-pixel-ratio:0){
 	body {
-		-moz-transform: scale(0.75, 0.75); /* Moz-browsers */
-		zoom: 0.75; /* Other non-webkit browsers */
-		zoom: 75%;   
+		-moz-transform: scale(0.9, 0.9); /* Moz-browsers */
+		zoom: 0.9; /* Other non-webkit browsers */
+		zoom: 90%;   
 	}
 	
 	hook {
