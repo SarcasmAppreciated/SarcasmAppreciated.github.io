@@ -173,11 +173,17 @@ h1.titleL {
 	display: inline-block;
 }
 
-.portoflio_element {
-	height: 800px;
+.portfolio_element {
+	height: auto;
 	width: auto;
+	max-height: 900px;
+	max-width: 900px;
 	overflow: hidden;
 	display: inline-block;
+}
+
+img.portfolio_infographic {
+	width: 450px;
 }
 
 .isotope,

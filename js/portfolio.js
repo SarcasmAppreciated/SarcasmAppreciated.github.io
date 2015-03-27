@@ -24,7 +24,7 @@ $(document).ready(function(){
 	}
 	
 	inputPictures();
-	// Import portfolio
+	// Import infographics
 	var pictureLinks = new Array;	 
 	function inputPictures() {
 		$.ajax({
@@ -34,7 +34,7 @@ $(document).ready(function(){
 				pictureLinks = data.split('\n');
 				var i;
 				for (i = 0; i < pictureLinks.length; i++) {
-					$("#content").append($("<div class='portfolio_element'><img src=" + pictureLinks[i] + "></img></div>"));					
+					$("#content").append($("<div class='portfolio_element'><img src=" + pictureLinks[i] + " class='portfolio_infographic'></img></div>"));					
 				}
 				var $container = $("#content");
 				$container.isotope({
