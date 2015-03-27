@@ -1,9 +1,9 @@
 $(document).ready(function(){
 	var minWidth = 2133;
-	// Resize sword picture to initial load
+	// Resize sword picture and portfolio images to initial load
 	addBG();
 	resizePortElems();
-	// Dynamically resize sword picture
+	// Dynamically resize sword picture and portfolio images
 	$(window).resize(function() {
 		addBG();
 		resizePortElems();
@@ -47,9 +47,12 @@ $(document).ready(function(){
 	
 	// Masonary
 	var $container = $("#content");
-	$container.isotope({
-		itemSelector: '.portfolio_element'
-	});
+	$("#content").imagesLoaded(function() {
+		$container.isotope({
+			itemSelector: '.portfolio_element'
+		});		
+	});	
+
 	
 	function resizePortElems() {
 		var elemWidth = (getPageWidth())/4 - 0.25;
