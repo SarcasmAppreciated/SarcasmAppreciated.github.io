@@ -171,6 +171,7 @@ h1.titleL {
 #loading {
 	width: 128px;
 	height: 130px;
+	margin-top: 20px;
 	display: inline-block;
 	background: url(../images/loading.gif) center no-repeat;
 }
