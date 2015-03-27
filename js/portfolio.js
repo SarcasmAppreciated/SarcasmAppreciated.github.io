@@ -1,13 +1,54 @@
 $(document).ready(function(){
 	var minWidth = 2133;
-	
+	// Resize sword picture to initial load
 	addBG(getPageWidth());
+	// Dynamically resize sword picture
 	$(window).resize(function() {
 		addBG(getPageWidth());
-	});
+	});	
 	
-	inputInfo();
+	// Image Resizing
+	function getPageWidth() {
+		var pageWidth = $(document).width();
+		return pageWidth;
+	}
+
+	function addBG(pageWidth) {
+		if (pageWidth < minWidth) {
+			$("#about").css("background-size", "75%");
+		}
+		else if (pageWidth >= minWidth) {
+			$(".right-text p").css("background", "none");
+		}
+		
+	}
 	
+	inputPictures();
+	// Import portfolio
+	var pictureLinks = new Array;	 
+	function inputPictures() {
+		$.ajax({
+            url : "pictureLinks.txt",
+            dataType: "text",
+            success : function (data) {
+				pictureLinks = data.split('\n');
+				var i;
+				for (i = 0; i < pictureLinks.length; i++) {
+					$("#content").append($("<img src=" + pictureLinks[i] + "></img>"));					
+				}
+				var $container = $("#content");
+				$container.isotope({
+					itemSelector: ".port_image";					
+				});
+            }
+        });
+	}
+	
+	
+	
+	
+	
+	// Scrolling animations
 	$("#portfolio-button, #down-button").click(function(){
 		$("html, body").animate({ scrollTop: $("#portfolio").offset().top - 50 }, "slow");
 	});
@@ -19,39 +60,6 @@ $(document).ready(function(){
 	$("#contact-button").click(function(){
 		$("html, body").animate({ scrollTop: $("#contact").offset().top - 50 }, "slow");
 	});
-	
-	function getPageWidth() {
-		var pageWidth = $(document).width();
-		return pageWidth;
-	}
-
-	function addBG(pageWidth) {
-		if (pageWidth < minWidth) {
-			// $(".right-text p").css("background-color", "#fff");
-			// $(".right-text.left p").css("background", "none");
-			$("#about").css("background-size", "75%");
-		}
-		else if (pageWidth >= minWidth) {
-			$(".right-text p").css("background", "none");
-		}
-		
-	}
-
-	var pictureLinks = new Array;	
-	 
-	function inputInfo() {
-		$.ajax({
-            url : "pictureLinks.txt",
-            dataType: "text",
-            success : function (data) {
-				pictureLinks = data.split('\n');
-				var i;
-				for (i = 0; i < pictureLinks.length; i++) {
-					$("#portfolio").append($("<img src=" + pictureLinks[i] + "></img>"));					
-				}	
-            }
-        });
-	}
 	
 	/*
 	$("#show-button").click(function(){
