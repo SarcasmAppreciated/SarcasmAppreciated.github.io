@@ -165,6 +165,7 @@ h1.titleL {
 
 /* Porfolio */
 #portfolio {
+	background-color: #333;
 }
 
 #content {
@@ -174,16 +175,14 @@ h1.titleL {
 }
 
 .portfolio_element {
-	height: auto;
 	width: auto;
-	max-height: 900px;
-	max-width: 900px;
-	overflow: hidden;
+	height: auto;
 	display: inline-block;
+	cursor: pointer;
 }
 
-img.portfolio_infographic {
-	width: 450px;
+img.resizeWidth {
+	width: 100%;
 }
 
 .isotope,
@@ -267,8 +266,7 @@ img.portfolio_infographic {
 		-moz-transform: scale(0.9, 0.9); /* Moz-browsers */
 		zoom: 0.9; /* Other non-webkit browsers */
 		zoom: 90%;   
-	}
-	
+	}	
 	hook {
 		text-shadow: none;
 	}

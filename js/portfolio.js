@@ -1,10 +1,12 @@
 $(document).ready(function(){
 	var minWidth = 2133;
 	// Resize sword picture to initial load
-	addBG(getPageWidth());
+	addBG();
+	resizePortElems();
 	// Dynamically resize sword picture
 	$(window).resize(function() {
-		addBG(getPageWidth());
+		addBG();
+		resizePortElems();
 	});	
 	
 	// Image Resizing
@@ -13,7 +15,8 @@ $(document).ready(function(){
 		return pageWidth;
 	}
 
-	function addBG(pageWidth) {
+	function addBG() {
+		var pageWidth = getPageWidth();
 		if (pageWidth < minWidth) {
 			$("#about").css("background-size", "75%");
 		}
@@ -23,6 +26,7 @@ $(document).ready(function(){
 		
 	}
 	
+	/*
 	inputPictures();
 	// Import infographics
 	var pictureLinks = new Array;	 
@@ -36,17 +40,30 @@ $(document).ready(function(){
 				for (i = 0; i < pictureLinks.length; i++) {
 					$("#content").append($("<div class='portfolio_element'><img src=" + pictureLinks[i] + " class='portfolio_infographic'></img></div>"));					
 				}
-				var $container = $("#content");
-				$container.isotope({
-					itemSelector: '.portfolio_element'
-				});
             }
         });
 	}
+	*/	
 	
+	// Masonary
+	var $container = $("#content");
+	$container.isotope({
+		itemSelector: '.portfolio_element'
+	});
 	
-	
-	
+	function resizePortElems() {
+		var elemWidth = (getPageWidth())/4 - 0.25;
+		var pageWidth = getPageWidth();
+		
+		if(pageWidth < 1000) {
+			$(".portfolio_element").css("width", elemWidth * 2);
+			$(".portfolio_element.large").css("width", elemWidth);			
+		}
+		else {
+			$(".portfolio_element").css("width", elemWidth);
+			$(".portfolio_element.large").css("width", elemWidth / 2);
+		}		
+	}
 	
 	// Scrolling animations
 	$("#portfolio-button, #down-button").click(function(){
