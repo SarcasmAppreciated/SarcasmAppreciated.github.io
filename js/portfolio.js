@@ -48,11 +48,13 @@ $(document).ready(function(){
 	// Masonary
 	var $container = $("#content");
 	$("#content").imagesLoaded().done(function(instance){
-		$(".portfolio_element").fadeIn("slow", function(){
-			$container.isotope({
-				itemSelector: '.portfolio_element'
-			});				
-		})		
+		$("#loading").fadeOut("fast", function(){
+			$(".portfolio_element").fadeIn("slow", function(){
+				$container.isotope({
+					itemSelector: '.portfolio_element'
+				});				
+			});	
+		});			
 	});	
 	
 	function resizePortElems() {
