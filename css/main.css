@@ -177,8 +177,12 @@ h1.titleL {
 .portfolio_element {
 	width: auto;
 	height: auto;
-	display: inline-block;
+	display: none;
 	cursor: pointer;
+}
+
+.second_batch{
+	display: none;
 }
 
 img.resizeWidth {

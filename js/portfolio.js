@@ -47,12 +47,13 @@ $(document).ready(function(){
 	
 	// Masonary
 	var $container = $("#content");
-	$("#content").imagesLoaded(function() {
-		$container.isotope({
-			itemSelector: '.portfolio_element'
-		});		
+	$("#content").imagesLoaded().done(function(instance){
+		$(".portfolio_element").fadeIn("slow", function(){
+			$container.isotope({
+				itemSelector: '.portfolio_element'
+			});				
+		})		
 	});	
-
 	
 	function resizePortElems() {
 		var elemWidth = (getPageWidth())/4 - 0.25;
@@ -67,7 +68,7 @@ $(document).ready(function(){
 			$(".portfolio_element.large").css("width", elemWidth / 2);
 		}		
 	}
-	
+		
 	// Scrolling animations
 	$("#portfolio-button, #down-button").click(function(){
 		$("html, body").animate({ scrollTop: $("#portfolio").offset().top - 50 }, "slow");
