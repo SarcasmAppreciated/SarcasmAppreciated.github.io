@@ -34,11 +34,11 @@ $(document).ready(function(){
 				pictureLinks = data.split('\n');
 				var i;
 				for (i = 0; i < pictureLinks.length; i++) {
-					$("#content").append($("<img src=" + pictureLinks[i] + "></img>"));					
+					$("#content").append($("<img src=" + pictureLinks[i] + " class='.port_image'></img>"));					
 				}
 				var $container = $("#content");
 				$container.isotope({
-					itemSelector: ".port_image";					
+					itemSelector: '.port_image'
 				});
             }
         });
