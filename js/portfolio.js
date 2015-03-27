@@ -34,7 +34,7 @@ $(document).ready(function(){
 				pictureLinks = data.split('\n');
 				var i;
 				for (i = 0; i < pictureLinks.length; i++) {
-					$("#content").append($("<img src=" + pictureLinks[i] + " class='.port_info'></img>"));					
+					$("#content").append($("<img src=" + pictureLinks[i] + " class='port_info'></img>"));					
 				}
 				var $container = $("#content");
 				$container.isotope({
