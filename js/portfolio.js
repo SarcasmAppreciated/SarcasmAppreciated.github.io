@@ -18,10 +18,10 @@ $(document).ready(function(){
 	function addBG() {
 		var pageWidth = getPageWidth();
 		if (pageWidth < minWidth) {
-			$("#about").css("background-size", "75%");
+			$("#about").css("background_size", "75%");
 		}
 		else if (pageWidth >= minWidth) {
-			$(".right-text p").css("background", "none");
+			$(".right_text p").css("background", "none");
 		}
 		
 	}
@@ -72,27 +72,27 @@ $(document).ready(function(){
 	}
 		
 	// Scrolling animations
-	$("#portfolio-button, #down-button").click(function(){
+	$("#portfolio_button, #down_button").click(function(){
 		$("html, body").animate({ scrollTop: $("#portfolio").offset().top - 50 }, "slow");
 	});
 	
-	$("#about-button").click(function(){
+	$("#about_button").click(function(){
 		$("html, body").animate({ scrollTop: $("#about").offset().top - 50 }, "slow");
 	});
 	
-	$("#contact-button").click(function(){
+	$("#contact_button").click(function(){
 		$("html, body").animate({ scrollTop: $("#contact").offset().top - 50 }, "slow");
 	});
 	
 	/*
-	$("#show-button").click(function(){
+	$("#show_button").click(function(){
 		$('#content').isotope({ filter: '' });
 		  $container.isotope('layout');
 	});
-	$("#logo-button").click(function(){
+	$("#logo_button").click(function(){
 		$('#content').isotope({ filter: '.logo' });
 	});
-	$("#web-button").click(function(){
+	$("#web_button").click(function(){
 		$('#content').isotope({ filter: '.website' });
 	});
 	*/

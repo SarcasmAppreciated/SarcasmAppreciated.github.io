@@ -39,12 +39,12 @@ h1.titleL {
 	display: block;
 }
 
-.nav-button-holder {
+.nav_button_holder {
 	position: absolute;
 	right: 0px;
 }
 
-.nav-button {
+.nav_button {
 	width: 150px;
 	height: 30px;
 	margin-top: 100px;
@@ -62,7 +62,7 @@ h1.titleL {
 	z-index: 3;
 }
 
-.nav-button.first {
+.nav_button.first {
 	margin-right: 200px;
 	background-color: #00a651/*#ED900E*/;
 }
@@ -94,7 +94,7 @@ h1.titleL {
 	letter-spacing: 2px;
 }
 
-#down-button {
+#down_button {
 	border-radius: 50%;
 	background-color: #333;
 	width: 50px;
@@ -113,7 +113,7 @@ h1.titleL {
 }
 
 /* Container  */
-.section-container {
+.section_container {
 	width: 100%;
 	height: auto;
 	float: left;
@@ -126,7 +126,7 @@ h1.titleL {
 	background: url(../images/sword.jpg) left no-repeat;
 }
 
-.right-text {
+.right_text {
 	text-align: justify;
 	margin-right: 20px;
 	float: right;
@@ -139,7 +139,7 @@ h1.titleL {
 	background-color: #333;
 }
 
-.right-text.left {
+.right_text.left {
 	text-align: justify;
 	margin-top: 30px;
 	margin-left: 20px;
@@ -149,7 +149,7 @@ h1.titleL {
 	color: #00a651/*#ED900E*/;
 }
 
-#display-picture {
+#display_picture {
 	width: 200px;
 	height: 200px;
 	float: right;
@@ -161,6 +161,55 @@ h1.titleL {
 	background-size: contain;
 	border-radius: 5%;
 	border: 3px solid #00a651;
+}
+
+/* Projects */
+#projects {
+	min-height: 300px;
+}
+
+.project_container {
+	width: auto;
+	height: 150px;
+	margin: 10px;
+	margin-bottom: 20px;
+	display: inline-block;
+	cursor: pointer;
+} 
+
+.project_container  > a {
+	text-decoration: none;
+	color: #000;
+}
+
+.project_icon {
+	width: 100px;
+	height: 100px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+.project_container > a > p, .project_container > a > h3 {
+	margin: 0;
+	line-height: 20px;
+}
+
+.project_container > a > p {
+	font-weight: normal;
+}
+
+#fiist {
+	background: url(../images/fiist.png) center no-repeat;
+}
+
+#purge {
+	background: url(../images/purge.png) center no-repeat;
+	border-radius: 25%;
+}
+
+#lcs{
+	background: url(../images/lcs.png) center no-repeat;
+	border-radius: 25%;
 }
 
 /* Porfolio */
@@ -241,7 +290,7 @@ img.resizeWidth {
 		height: 470px;
 		display: block;
 	}	
-	.nav-button {
+	.nav_button {
 		display: none;
 	}	
 	#hook {
@@ -249,15 +298,15 @@ img.resizeWidth {
 		margin: 0;
 		top: 15px;
 	}
-	#down-button {
+	#down_button {
 		top: 400px;
 	}
-	.section-container {
+	.section_container {
 		width: 100%;
 		height: auto;
 		overflow: hidden;
 	}	
-	.right-text.left,.right-text{
+	.right_text.left,.right_text{
 		margin: 0;
 		display: inline-block;
 		width: 90%;
@@ -266,8 +315,8 @@ img.resizeWidth {
 	#about {
 		background: none;
 	}	
-	#display-picture {
-		margin: 0;
+	#display_picture {
+		margin: 20px;
 		display: inline-block;
 		float: none;
 	}
