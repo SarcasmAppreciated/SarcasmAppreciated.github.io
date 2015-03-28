@@ -29,6 +29,10 @@ h1.titleL {
 	text-align: left;
 }
 
+h1.titleP {
+	text-align: right;
+	margin-right: 20px;
+}
 
 #sample {
 	width: 100%;
@@ -142,7 +146,7 @@ h1.titleL {
 .right_text.left {
 	text-align: justify;
 	margin-top: 30px;
-	margin-left: 20px;
+	margin-left: 50px;
 	float: left;
 	width: 800px;
 	height: 100%;
@@ -170,9 +174,8 @@ h1.titleL {
 
 .project_container {
 	width: auto;
-	height: 150px;
-	margin: 10px;
-	margin-bottom: 20px;
+	height: auto;
+	margin: 20px;
 	display: inline-block;
 	cursor: pointer;
 } 
@@ -180,6 +183,7 @@ h1.titleL {
 .project_container  > a {
 	text-decoration: none;
 	color: #000;
+	margin: 0;
 }
 
 .project_icon {
@@ -189,13 +193,19 @@ h1.titleL {
 	display: inline-block;
 }
 
-.project_container > a > p, .project_container > a > h3 {
+.project_container  > a > h3 {
 	margin: 0;
-	line-height: 20px;
 }
 
-.project_container > a > p {
+p.project_text {
 	font-weight: normal;
+	font-size: 21px;
+	line-height: 24px;
+	margin: 0;
+}
+
+p.project_text.small {
+	font-size: 16px;
 }
 
 #fiist {
@@ -210,6 +220,14 @@ h1.titleL {
 #lcs{
 	background: url(../images/lcs.png) center no-repeat;
 	border-radius: 25%;
+}
+
+#azimuth {
+	background-color: #252525;
+	border-radius: 25%;
+	color: #FFF;
+	line-height: 90px;
+	font-size: 50px;
 }
 
 /* Porfolio */
@@ -282,9 +300,12 @@ img.resizeWidth {
 	p  {
 		font-size: 16px;
 	}
-	h1.titleR, h1.titleL {
+	h1.titleR, h1.titleL, h1.titleP {
 		text-align: center;
 	}
+	h1.titleP {
+		margin-right: 0;
+	}	
 	#sample {
 		min-width: 0px;
 		height: 470px;
@@ -319,6 +340,16 @@ img.resizeWidth {
 		margin: 20px;
 		display: inline-block;
 		float: none;
+	}
+	.project_container {
+		margin: 10px;
+	}
+	p.project_text {
+		font-size: 16px;
+		line-height: 21px;
+	}
+	p.project_text.small {
+		font-size: 12px;
 	}
 }
 
