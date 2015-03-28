@@ -1,31 +1,28 @@
 $(document).ready(function(){
-	var minWidth = 2133;
+	var minWidth = 2300;
+	var pageWidth = getPageWidth();
 	// Resize sword picture and portfolio images to initial load
-	addBG();
+	// addBG();
 	resizePortElems();
 	// Dynamically resize sword picture and portfolio images
 	$(window).resize(function() {
-		addBG();
+		// addBG();
 		resizePortElems();
 	});	
 	
 	// Image Resizing
 	function getPageWidth() {
-		var pageWidth = $(document).width();
-		return pageWidth;
+		var pageWid = $(document).width();
+		return pageWid;
 	}
 
+	/*
 	function addBG() {
-		var pageWidth = getPageWidth();
 		if (pageWidth < minWidth) {
-			$("#about").css("background_size", "75%");
-		}
-		else if (pageWidth >= minWidth) {
-			$(".right_text p").css("background", "none");
-		}
-		
+			$("#about").css("background_size", "60%");
+		}		
 	}
-	
+	*/
 	/*
 	inputPictures();
 	// Import infographics
@@ -59,7 +56,6 @@ $(document).ready(function(){
 	
 	function resizePortElems() {
 		var elemWidth = (getPageWidth())/4 - 0.25;
-		var pageWidth = getPageWidth();
 		
 		if(pageWidth < 1000) {
 			$(".portfolio_element").css("width", elemWidth * 2);
@@ -82,6 +78,18 @@ $(document).ready(function(){
 	
 	$("#contact_button").click(function(){
 		$("html, body").animate({ scrollTop: $("#contact").offset().top - 50 }, "slow");
+	});
+	
+	$(".portfolio_element").click(function() {
+		var elem =  $(this).children("img").attr("src");
+		var winTop = $("html").scrollTop();
+		$("#lightbox img").attr("src", elem);
+		$("#lightbox, #lightbox img").css("top", winTop).fadeIn("slow");		
+	});
+	
+	$("#lightbox").click(function() {
+		$("#lightbox img").attr("src", "");
+		$("#lightbox, #lightbox img").fadeOut("fast");
 	});
 	
 	/*

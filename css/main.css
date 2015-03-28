@@ -3,6 +3,7 @@ body {
 	padding: 0;
 	margin: 0;
 	overflow-x: hidden;
+	background-color: #333;
 }
 
 h1{
@@ -128,11 +129,13 @@ h1.titleP {
 /* About */
 #about {
 	background: url(../images/sword.jpg) left no-repeat;
+	background-size: 75%;
+	background-color: #FFF;
 }
 
 .right_text {
 	text-align: justify;
-	margin-right: 20px;
+	margin-right: 50px;
 	float: right;
 	width: 800px;
 	height: 100%;
@@ -170,6 +173,7 @@ h1.titleP {
 /* Projects */
 #projects {
 	min-height: 300px;
+	background-color: #FFF;
 }
 
 .project_container {
@@ -230,9 +234,13 @@ p.project_text.small {
 	font-size: 50px;
 }
 
+#spellsy {
+	background: url(../images/spellsy.png) center no-repeat;
+	border-radius: 25%;
+}
+
 /* Porfolio */
 #portfolio {
-	background-color: #333;
 }
 
 #loading {
@@ -262,6 +270,32 @@ p.project_text.small {
 
 img.resizeWidth {
 	width: 100%;
+}
+
+/* Lightbox */
+#lightbox {
+	height: auto;
+	width: 100%;
+	position: absolute;
+	z-index: 5;
+	display: none;
+	background-color: rgba(0,0,0,.75);
+}
+
+#lightbox > p {
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 50px;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #FFF;
+}
+
+#lightbox_image {
+	max-height: 3000px;
+	max-width: 1500px;
+	margin-bottom: 200px;
+	display: none;
 }
 
 .isotope,
@@ -350,6 +384,12 @@ img.resizeWidth {
 	}
 	p.project_text.small {
 		font-size: 12px;
+	}
+	#lightbox_image {
+		max-height: 3000px;
+		max-width: 90%;
+		margin: 5%;
+		margin-bottom: 10%;
 	}
 }
 
