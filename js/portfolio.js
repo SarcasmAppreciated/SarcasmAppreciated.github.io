@@ -14,33 +14,7 @@ $(document).ready(function(){
 	function getPageWidth() {
 		var pageWid = $(document).width();
 		return pageWid;
-	}
-
-	/*
-	function addBG() {
-		if (pageWidth < minWidth) {
-			$("#about").css("background_size", "60%");
-		}		
-	}
-	*/
-	/*
-	inputPictures();
-	// Import infographics
-	var pictureLinks = new Array;	 
-	function inputPictures() {
-		$.ajax({
-            url : "pictureLinks.txt",
-            dataType: "text",
-            success : function (data) {
-				pictureLinks = data.split('\n');
-				var i;
-				for (i = 0; i < pictureLinks.length; i++) {
-					$("#content").append($("<div class='portfolio_element'><img src=" + pictureLinks[i] + " class='portfolio_infographic'></img></div>"));					
-				}
-            }
-        });
-	}
-	*/	
+	}	
 	
 	// Masonary
 	var $container = $("#content");
@@ -92,6 +66,31 @@ $(document).ready(function(){
 		$("#lightbox, #lightbox img").fadeOut("fast");
 	});
 	
+	/*
+	function addBG() {
+		if (pageWidth < minWidth) {
+			$("#about").css("background_size", "60%");
+		}		
+	}
+	*/
+	/*
+	inputPictures();
+	// Import infographics
+	var pictureLinks = new Array;	 
+	function inputPictures() {
+		$.ajax({
+            url : "pictureLinks.txt",
+            dataType: "text",
+            success : function (data) {
+				pictureLinks = data.split('\n');
+				var i;
+				for (i = 0; i < pictureLinks.length; i++) {
+					$("#content").append($("<div class='portfolio_element'><img src=" + pictureLinks[i] + " class='portfolio_infographic'></img></div>"));					
+				}
+            }
+        });
+	}
+	*/
 	/*
 	$("#show_button").click(function(){
 		$('#content').isotope({ filter: '' });

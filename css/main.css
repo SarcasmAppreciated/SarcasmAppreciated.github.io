@@ -195,6 +195,7 @@ h1.titleP {
 	height: 100px;
 	margin-bottom: 10px;
 	display: inline-block;
+	border-radius: 25%;
 }
 
 .project_container  > a > h3 {
@@ -218,25 +219,21 @@ p.project_text.small {
 
 #purge {
 	background: url(../images/purge.png) center no-repeat;
-	border-radius: 25%;
 }
 
 #lcs{
 	background: url(../images/lcs.png) center no-repeat;
-	border-radius: 25%;
 }
 
 #azimuth {
 	background-color: #252525;
-	border-radius: 25%;
 	color: #FFF;
 	line-height: 90px;
-	font-size: 50px;
+	font-size: 60px;
 }
 
 #spellsy {
 	background: url(../images/spellsy.png) center no-repeat;
-	border-radius: 25%;
 }
 
 /* Porfolio */
