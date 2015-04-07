@@ -226,10 +226,7 @@ p.project_text.small {
 }
 
 #azimuth {
-	background-color: #252525;
-	color: #FFF;
-	line-height: 90px;
-	font-size: 60px;
+	background: url(../images/azimuthBW.png) center no-repeat;
 }
 
 #spellsy {
@@ -241,11 +238,12 @@ p.project_text.small {
 }
 
 #loading {
-	width: 128px;
-	height: 128px;
+	width: 64px;
+	height: 64px;
 	margin-top: 30px;
 	display: inline-block;
 	background: url(../images/loading.gif) center no-repeat;
+	background-size: contain;
 }
 
 #content {
