@@ -238,12 +238,12 @@ p.project_text.small {
 }
 
 #loading {
-	width: 120px;
-	height: 128px;
+	width: 60px;
+	height: 64px;
 	margin-top: 30px;
 	display: inline-block;
 	background: url(../images/loading.gif) center no-repeat;
-	
+	background-size: 60px 64px;
 }
 
 #content {
