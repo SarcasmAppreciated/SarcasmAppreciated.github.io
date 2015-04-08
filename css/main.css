@@ -322,7 +322,7 @@ img.resizeWidth {
 @media (max-width: 1600px) {
 	body {
 		overflow-x: hidden;
-		width: 100%x;
+		width: 100%;
 		padding: 0;
 		margin: 0;
 	}	
@@ -389,7 +389,7 @@ img.resizeWidth {
 	}
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0){
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-width: 800px){
 	body {
 		-moz-transform: scale(0.9, 0.9); /* Moz-browsers */
 		zoom: 0.9; /* Other non-webkit browsers */
