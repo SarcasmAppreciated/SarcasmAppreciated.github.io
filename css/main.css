@@ -319,7 +319,7 @@ img.resizeWidth {
 		  transition-property:         transform, opacity;
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1200px) {
 	body {
 		overflow-x: hidden;
 		width: 100%;
