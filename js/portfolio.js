@@ -56,8 +56,14 @@ $(document).ready(function(){
 	
 	$(".portfolio_element").click(function() {
 		var elem =  $(this).children("img").attr("src");
-		var winTop = $("html").scrollTop();
+		var winTop = $(document).scrollTop();
 		$("#lightbox img").attr("src", elem);
+		
+		if(navigator.userAgent.indexOf("Chrome") > -1) {
+			var topPos = $(this).offset();
+			winTop += 200 + topPos.top * 0.05;
+		}
+		
 		$("#lightbox, #lightbox img").css("top", winTop).fadeIn("slow");		
 	});
 	
