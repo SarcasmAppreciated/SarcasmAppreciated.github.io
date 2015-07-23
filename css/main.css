@@ -39,8 +39,8 @@ h1.titleP {
 	width: 100%;
 	min-width: 1920px;
 	height: 1110px;
-	background: url(../images/Practice012.png) center no-repeat;
-	background-size: contain;
+	background: url(../images/practice.jpg) center no-repeat;
+	background-size: cover;
 	display: block;
 }
 
