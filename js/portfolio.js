@@ -42,11 +42,11 @@ $(document).ready(function(){
 	}
 		
 	// Scrolling animations
-	$("#portfolio_button, #down_button").click(function(){
+	$("#portfolio_button").click(function(){
 		$("html, body").animate({ scrollTop: $("#portfolio").offset().top - 50 }, "slow");
 	});
 	
-	$("#about_button").click(function(){
+	$("#about_button, #down_button").click(function(){
 		$("html, body").animate({ scrollTop: $("#about").offset().top - 50 }, "slow");
 	});
 	
