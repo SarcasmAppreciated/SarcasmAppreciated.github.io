@@ -39,6 +39,10 @@ h1{
 	font-family: "couturebold", "Quicksand", "Helvetica Neue", Arial, sans-serif;
 }
 
+h3 {
+	color: #c71f31;
+}
+
 p {
 	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
 	font-size: 30px;
@@ -60,6 +64,7 @@ h1.titleL {
 h1.titleP {
 	text-align: right;
 	margin-right: 50px;
+	color: #c71f31;
 }
 
 #sample {
