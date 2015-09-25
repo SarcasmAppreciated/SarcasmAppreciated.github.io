@@ -118,7 +118,7 @@ h1.titleP {
 #hook p {
 	margin-top: 10px;
 	margin-left: 8px;
-	color: #00a651/*#ED900E*/;
+	color: #FFF/*#00a651#ED900E*/;
 	font-family: "couturebold", "Quicksand";
 }
 
