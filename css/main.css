@@ -204,12 +204,15 @@ h1.title.R {
 
 .social_media_icon#twitter{
 	background: url(../images/twitter.png) center no-repeat;
+	background-size: contain;
 }
 .social_media_icon#linkedin{
 	background: url(../images/linkedin.png) center no-repeat;
+	background-size: contain;
 }
 .social_media_icon#github{
 	background: url(../images/github.png) center no-repeat;
+	background-size: contain;
 }
 
 /* Projects */
