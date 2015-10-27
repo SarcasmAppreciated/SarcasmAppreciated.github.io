@@ -40,6 +40,7 @@ $(document).ready(function(){
 			$(".portfolio_element.large").css("width", elemWidth / 2);
 		}		
 	}
+	
 		
 	// Scrolling animations
 	$("#portfolio_button").click(function(){
@@ -71,42 +72,4 @@ $(document).ready(function(){
 		$("#lightbox img").attr("src", "");
 		$("#lightbox, #lightbox img").fadeOut("fast");
 	});
-	
-	/*
-	function addBG() {
-		if (pageWidth < minWidth) {
-			$("#about").css("background_size", "60%");
-		}		
-	}
-	*/
-	/*
-	inputPictures();
-	// Import infographics
-	var pictureLinks = new Array;	 
-	function inputPictures() {
-		$.ajax({
-            url : "pictureLinks.txt",
-            dataType: "text",
-            success : function (data) {
-				pictureLinks = data.split('\n');
-				var i;
-				for (i = 0; i < pictureLinks.length; i++) {
-					$("#content").append($("<div class='portfolio_element'><img src=" + pictureLinks[i] + " class='portfolio_infographic'></img></div>"));					
-				}
-            }
-        });
-	}
-	*/
-	/*
-	$("#show_button").click(function(){
-		$('#content').isotope({ filter: '' });
-		  $container.isotope('layout');
-	});
-	$("#logo_button").click(function(){
-		$('#content').isotope({ filter: '.logo' });
-	});
-	$("#web_button").click(function(){
-		$('#content').isotope({ filter: '.website' });
-	});
-	*/
 });
