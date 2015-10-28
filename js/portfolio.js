@@ -1,20 +1,45 @@
 $(document).ready(function(){
 	var minWidth = 2300;
 	var pageWidth = getPageWidth();
+    var canvas, stage, exportRoot;
+    
+    guru_init();
+    function guru_init() {
+        canvas = document.getElementById("canvas");
+        exportRoot = new lib.GuruGuru();        
+        
+        stage = new createjs.Stage(canvas);
+        stage.addChild(exportRoot);
+        stage.update();
+
+        createjs.Ticker.setFPS(24);
+        createjs.Ticker.addEventListener("tick", stage);
+    } 
+    
+    
+    function windowResize(){
+            
+        //var test = (window.innerHeight/750)*1;
+        //exportRoot.scaleX = exportRoot.scaleY = test;
+    }
+    
 	// Resize sword picture and portfolio images to initial load
 	// addBG();
-	resizePortElems();
+    resizePortElems();
 	// Dynamically resize sword picture and portfolio images
 	$(window).resize(function() {
 		// addBG();
 		resizePortElems();
+        windowResize();
 	});	
 	
 	// Image Resizing
 	function getPageWidth() {
-		var pageWid = $(document).width();
-		return pageWid;
-	}	
+		return $(document).width();
+	}
+    function getPageHeight() {
+		return $(document).height();
+	}
 	
 	// Masonary
 	var $container = $("#content");

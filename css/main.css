@@ -81,7 +81,6 @@ h1.title.R {
 
 #sample {
 	width: 100%;
-	min-width: 1920px;
 	height: 1200px;
 	/*background: url(../images/practice.jpg) center no-repeat;*/
 	background-color: #c71f31;
@@ -118,27 +117,10 @@ h1.title.R {
 }
 
 #hook {
-	margin-top: -42.5px;
-	margin-left: -270px;
-	width: 540px;
-	height: 95px;
-	top: 45%;
-	left: 50%;
-	position: absolute;
-	z-index: 2;
-	text-align: center;
-}
-
-#hook p {
-	margin-top: 10px;
-	margin-left: 8px;
-	color: #FFF/*#00a651#ED900E*/;
-	font-family: "couturebold", Arial, sans-serif;
-}
-
-#hook p b{
-	font-weight: bold;
-	letter-spacing: 2px;
+    margin-top: 100px;
+	width: 1000px;
+	height: 750px;
+	display: inline-block;
 }
 
 #down_button {
@@ -390,16 +372,16 @@ img.resizeWidth {
 		min-width: 0px;
 		height: 470px;
 		display: block;
-	}	
+	}
+    
+    #hook {
+        display: none;
+    }
+    
 	.nav_button {
 		display: none;
 	}	
-	#hook {
-		width: 100%;
-		margin: 0;
-		top: 15px;
-		left: 0;
-	}
+
 	#down_button {
 		top: 400px;
 	}
