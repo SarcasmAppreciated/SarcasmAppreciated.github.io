@@ -360,9 +360,8 @@ img.resizeWidth {
 	
 	.title_box {
 		width: 100%;
-		left: static;
-        position: static;
-        margin: 0;
+		left: 0;
+        margin-left: 0;
         float: left;
 	}
 	
