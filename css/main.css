@@ -394,7 +394,7 @@ img.resizeWidth {
     }
     
     .nav_button_holder {
-        display: inline-block;
+        display: none;
         left: 20px;
         top: 20px;
     }

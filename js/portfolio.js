@@ -16,13 +16,6 @@ $(document).ready(function(){
         createjs.Ticker.addEventListener("tick", stage);
     } 
     
-    
-    function windowResize(){
-            
-        //var test = (window.innerHeight/750)*1;
-        //exportRoot.scaleX = exportRoot.scaleY = test;
-    }
-    
 	// Resize sword picture and portfolio images to initial load
 	// addBG();
     resizePortElems();
@@ -30,7 +23,6 @@ $(document).ready(function(){
 	$(window).resize(function() {
 		// addBG();
 		resizePortElems();
-        windowResize();
 	});	
 	
 	// Image Resizing
