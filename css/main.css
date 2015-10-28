@@ -360,8 +360,10 @@ img.resizeWidth {
 	
 	.title_box {
 		width: 100%;
-		left: initial;
-		margin-left: 0;
+		left: static;
+        position: static;
+        margin: 0;
+        float: left;
 	}
 	
 	h1.title, h1.title.R {
@@ -369,7 +371,6 @@ img.resizeWidth {
 	}	
 	
 	#sample {
-		min-width: 0px;
 		height: 470px;
 		display: block;
 	}
@@ -391,6 +392,7 @@ img.resizeWidth {
     .nav_button_holder {
         display: inline-block;
         left: 20px;
+        top: 20px;
     }
     
 	#down_button {
