@@ -362,8 +362,13 @@ img.resizeWidth {
 		width: 100%;
 		left: 0;
         margin-left: 0;
+        margin-top: -40px;
         float: left;
 	}
+    
+    h1 {
+       font-size: 48px;
+    }
 	
 	h1.title, h1.title.R {
 		text-align: center;
