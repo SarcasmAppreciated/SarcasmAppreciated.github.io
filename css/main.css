@@ -379,9 +379,20 @@ img.resizeWidth {
     }
     
 	.nav_button {
-		display: none;
+        position: static;
+        float: none;
+        margin: 0;
+        display: block;
 	}	
-
+    .nav_button.first {
+        margin: 0;
+    }
+    
+    .nav_button_holder {
+        display: inline-block;
+        left: 20px;
+    }
+    
 	#down_button {
 		top: 400px;
 	}
