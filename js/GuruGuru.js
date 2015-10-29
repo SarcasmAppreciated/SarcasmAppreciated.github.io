@@ -3,6 +3,7 @@
 var p; // shortcut to reference prototypes
 var Guru;
 var Guru_Eyes;
+var is_First = true;
 
 // stage content:
 (lib.GuruGuru = function(mode,startPosition,loop) {
@@ -27,10 +28,18 @@ var Guru_Eyes;
 p.nominalBounds = new cjs.Rectangle(370.5,63.3,275.1,583);
 
 function guruToggleEyes() {
-    if(Guru_Eyes.visible == false)
-        Guru_Eyes.visible = true;
-    else
+    Guru_Eyes.visible = true;
+    if (is_First) {
+        $("#dialogue_window").empty().append("<p class='dialogue'>OW! Don't click me...</p>");
+        is_First = false;
+    }
+    else {            
+        $("#dialogue_window").empty().append("<p class='dialogue'>I SAID DON'T CLICK ME...</p>"); 
+    }
+    setTimeout(function() {
         Guru_Eyes.visible = false;
+        $("#dialogue_window").empty().append("<p class='dialogue'>Well, take a look below!</p>");}, 4000);
+    
 }
 
 // symbols:

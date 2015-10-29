@@ -14,7 +14,41 @@ $(document).ready(function(){
 
         createjs.Ticker.setFPS(24);
         createjs.Ticker.addEventListener("tick", stage);
-    } 
+        
+        $("#dialogue_window").delay(500).fadeIn("slow", function(){
+            startDialogue();
+            $("#down_button").delay(6000).fadeIn("slow", function(){
+                bounce($(this), 3, '10px', 500);                
+            });            
+        });
+    }    
+    
+    function startDialogue() {
+        $("#dialogue_window").append("<p class='dialogue'>Go around, go around, go around...</p>");
+        setTimeout(function() {$("#dialogue_window").append("<p class='dialogue'>But, you're not here for music are you...</p>");}, 2500);
+        setTimeout(function() {$("#dialogue_window").append("<p class='dialogue'>Pity...</p>");}, 5000);
+        setTimeout(function() {$("#dialogue_window").append("<p class='dialogue third_Line'>Well, take a look below!</p>");}, 6000);
+    }
+    
+    function bounce(element, times, distance, speed) {
+        for(var i = 0; i < times; i++) {
+            element.animate({marginTop: '-='+distance}, speed)
+            .animate({marginTop: '+='+distance}, speed);
+        }       
+    }
+    
+    var sound_Off = true;
+    $("#sound_control").click(function() {
+        $(this).find('img').toggle();
+        if(sound_Off) {
+            document.getElementById("sos").play();
+            sound_Off = false;
+        }
+        else {
+            document.getElementById("sos").pause();
+            sound_Off = true;            
+        }              
+    });
     
 	// Resize sword picture and portfolio images to initial load
 	// addBG();
@@ -29,10 +63,7 @@ $(document).ready(function(){
 	function getPageWidth() {
 		return $(document).width();
 	}
-    function getPageHeight() {
-		return $(document).height();
-	}
-	
+
 	// Masonary
 	var $container = $("#content");
 	$("#content").imagesLoaded().done(function(instance){
@@ -61,15 +92,15 @@ $(document).ready(function(){
 		
 	// Scrolling animations
 	$("#portfolio_button").click(function(){
-		$("html, body").animate({ scrollTop: $("#portfolio").offset().top - 50 }, "slow");
+		$("html, body").animate({ scrollTop: $("#projects").offset().top - 250 }, "slow");
 	});
 	
 	$("#about_button, #down_button").click(function(){
-		$("html, body").animate({ scrollTop: $("#about").offset().top - 50 }, "slow");
+		$("html, body").animate({ scrollTop: $("#about").offset().top - 200 }, "slow");
 	});
 	
 	$("#contact_button").click(function(){
-		$("html, body").animate({ scrollTop: $("#contact").offset().top - 50 }, "slow");
+		$("html, body").animate({ scrollTop: $("#contact").offset().top - 200 }, "slow");
 	});
 	
 	$(".portfolio_element").click(function() {
