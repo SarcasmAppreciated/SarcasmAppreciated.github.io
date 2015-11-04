@@ -11,12 +11,18 @@
 
 }
 
+html {
+    height: 100%;
+}
+
 body {
 	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
 	padding: 0;
 	margin: 0;
-	overflow-x: hidden;
 	background-color: #333;
+    height: 100%;
+    position: relative;
+    text-align: center;
 }
 
 h1{
@@ -36,7 +42,8 @@ p {
 }
 
 a {
-	font-weight: bold;
+	/*font-weight: bold;*/
+    text-decoration: none;
 	color: #c71f31/*#00a651*/; /*ED900E*/
 }
 
@@ -52,7 +59,7 @@ span {
 	position: absolute;
 	left: 50%;
 	margin-left: -400px;
-	margin-top: -44px;
+	margin-top: 152px;
 	height: 44px;
 }
 
@@ -66,9 +73,32 @@ h1.title.R {
 	color: #333;
 }
 
+#main {
+    height: 100%;
+    width: 100%;
+    float: left;
+    display: block;
+    position: relative;
+}
+
+/* Container  */
+.section_container {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+}
+
+.title_container{
+	width: 100%;
+	height: 200px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+	padding: 0;
+}
+
 #sample {
 	width: 100%;
-	height: 1200px;
 	/*background: url(../images/practice.jpg) center no-repeat;*/
 	background-color: #c71f31;
 	background-size: cover;
@@ -76,31 +106,51 @@ h1.title.R {
 	text-align: center;
 }
 
+p.mobile_message {
+    display: none;
+}
+
 .nav_button_holder {
-	position: absolute;
+	position: fixed;
 	right: 0px;
+    z-index: 100;
 }
 
 .nav_button {
 	width: auto;
 	height: 30px;
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-right: 20px;
 	background: none;
 	float: right;
 	border: none;
-	color: #fff;
+    color: #FFF;
 	font-size: 16px;
 	font-family: "couturebold", "Helvetica Neue", Arial, sans-serif;
 	font-weight: 700;
 	text-decoration: none;
 	cursor: pointer;
 	position: relative;
-	z-index: 3;
 }
 
 .nav_button.first {
-	margin-right: 200px;
+	margin-right: 100px;
+}
+
+.viewing-page-2 .nav_button_holder .nav_button#about_button,
+.viewing-page-4 .nav_button_holder .nav_button#portfolio_button {
+    border: 2px solid #FFF;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.viewing-page-3 .nav_button_holder .nav_button#projects_button,
+.viewing-page-5 .nav_button_holder .nav_button#portfolio_button {
+    border: 2px solid #333;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 #hook {
@@ -113,8 +163,8 @@ h1.title.R {
 #sound_control {
     height: 50px;
     width: 50px;
-    position: absolute;
-    left: 30%;
+    position: fixed;
+    left: 100px;
 }
 
 #dialogue_window {
@@ -168,21 +218,10 @@ p.dialogue.third_Line {
     display: none;
 }
 
-/* Container  */
-.section_container {
-	width: 100%;
-	height: auto;
-	float: left;
-	overflow: hidden;
-	text-align: center;
-	padding: 0;
-}
-
 /* About */
 #about {
 	background-color: #FFF;
-	height: 521px; 
-}
+}	
 
 .text_align {
 	text-align: justify;
@@ -196,38 +235,19 @@ p.dialogue.third_Line {
 
 /* Contact */
 #contact {
-	background-color: #FFF;
-	height: 150px;
-	color: #333;
-}
-
-.social_media_icon {
-	height: 50px;
-	width: 50px;
-	margin-top: 30px;
-	margin-bottom: 0;
-	margin-left: 5px;
-	margin-right: 5px;
-	display: inline-block;
-}
-
-.social_media_icon#twitter{
-	background: url(../images/twitter.png) center no-repeat;
-	background-size: contain;
-}
-.social_media_icon#linkedin{
-	background: url(../images/linkedin.png) center no-repeat;
-	background-size: contain;
-}
-.social_media_icon#github{
-	background: url(../images/github.png) center no-repeat;
-	background-size: contain;
+	background-color: #333;
 }
 
 /* Projects */
 #projects {
 	min-height: 400px;
 	background-color: #333;
+}
+
+#project_preview {
+    width: 1000px;
+    height: 200px;
+    display: inline-block;
 }
 
 .project_container {
@@ -237,6 +257,31 @@ p.dialogue.third_Line {
 	display: inline-block;
 	cursor: pointer;
 } 
+
+.azimuth_bg {
+    background: url(../images/azimuth.png) bottom center no-repeat;
+    background-size: 80% 40%;
+}
+
+.fiist_bg {
+    background: url(../images/fiist.png) bottom center no-repeat;
+    background-size: 80% 40%;
+}
+
+.lcs_bg {
+    background: url(../images/lcs.png) bottom center no-repeat;
+    background-size: 80% 40%;
+}
+
+.purge_bg {
+    background: url(../images/purge.png) bottom center no-repeat;
+    background-size: 80% 40%;
+}
+
+.spellsy_bg {
+    background: url(../images/spellsy.png) bottom center no-repeat;
+    background-size: 80% 40%;
+}
 
 .project_container  > a {
 	text-decoration: none;
@@ -267,29 +312,29 @@ p.project_text.small {
 	font-size: 16px;
 }
 
-#fiist {
-	background: url(../images/fiist.png) center no-repeat;
+#fiist_icon {
+	background: url(../images/fiist_icon.png) center no-repeat;
 }
 
-#purge {
-	background: url(../images/purge.jpg) center no-repeat;
+#purge_icon {
+	background: url(../images/purge_icon.jpg) center no-repeat;
 }
 
-#lcs{
-	background: url(../images/lcs.png) center no-repeat;
+#lcs_icon{
+	background: url(../images/lcs_icon.png) center no-repeat;
 }
 
-#azimuth {
-	background: url(../images/azimuthBW.png) center no-repeat;
+#azimuth_icon {
+	background: url(../images/azimuthBW_icon.png) center no-repeat;
 }
 
-#spellsy {
-	background: url(../images/spellsy.jpg) center no-repeat;
+#spellsy_icon {
+	background: url(../images/spellsy_icon.jpg) center no-repeat;
 }
 
 /* Porfolio */
 #portfolio {
-	background-color: #333;
+	background-color: #FFF;
 }
 
 #loading {
@@ -302,20 +347,72 @@ p.project_text.small {
 }
 
 #content {
-	width: 100%;
-	height: 50%;
+	width: auto;
+    max-width: 900px;
+	height: 100%;
 	display: inline-block;
+    margin-top: 25px;
+}
+
+.content_list {
+    width: 100%;
+    padding-right: 15px;
+    height: calc(100% - 200px);
+    color: #FFF;
+    text-align: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: inline-block;
+}
+
+.content_listing {
+    width: 200px;
+    height: 400px;
+    margin-top: 100px;    
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+}
+
+p.content_title {
+    font-size: 18px;
+    font-family: "couturebold", "Quicksand", Helvetica, Arial;
+    text-align: right;
+    margin-top: 7.5px;
+    line-height: 15px;
+    width: 190px;
+    float: left;
+}
+
+p.content_type {
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+    width: 180px;
+    margin-top: 5px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    float: right;
+}
+
+p.content_date {
+    font-size: 14px;
+    color: #999;
+    text-align: right;
+    width: 180px;
+    margin-top: 290px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    float: right;
 }
 
 .portfolio_element {
-	width: auto;
-	height: auto;
-	display: none;
+	width: 200px;
+    height: 400px;
 	cursor: pointer;
-}
-
-.second_batch{
-	display: none;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform:translate3d(0,0,0);
 }
 
 img.resizeWidth {
@@ -384,28 +481,37 @@ img.resizeWidth {
 	p  {
 		font-size: 16px;
 	}
-	
+	.title_container {
+        height: auto;
+    }
 	.title_box {
 		width: 100%;
 		left: 0;
         margin-left: 0;
-        margin-top: -40px;
+        margin-top: 0px;
         float: left;
 	}
     
     h1 {
        font-size: 48px;
+       color: #333;
     }
 	
 	h1.title, h1.title.R {
 		text-align: center;
 	}	
-	
+	h1.title.R {
+        color: #FFF;
+    }
 	#sample {
-		height: 470px;
+		height: 500px !important;
 		display: block;
 	}
-    
+    p.mobile_message {
+        margin-top: 100px;
+        display: inline-block;
+        color: #FFF;
+    }
     #hook {
         display: none;
     }
@@ -418,8 +524,7 @@ img.resizeWidth {
 	}	
     .nav_button.first {
         margin: 0;
-    }
-    
+    }    
     .nav_button_holder {
         display: none;
         left: 20px;
@@ -431,7 +536,7 @@ img.resizeWidth {
 	}
 	.section_container {
 		width: 100%;
-		height: auto;
+		height: auto !important;
 		overflow: hidden;
 	}	
 	.text_align {
@@ -447,7 +552,13 @@ img.resizeWidth {
 		margin: 20px;
 		display: inline-block;
 		float: none;
-	}
+	}    
+    span, #project_preview {
+        display: none;
+    }
+    #projects {
+        background: #333 !important;
+    }    
 	.project_container {
 		margin: 10px;
 	}
@@ -458,6 +569,18 @@ img.resizeWidth {
 	p.project_text.small {
 		font-size: 12px;
 	}
+    #portfolio {
+        height: auto;
+        background: #FFF !important;
+    }    
+    #content {
+        height: auto;
+        max-height: 500px;
+    }    
+    #content_list {
+        height: auto;
+        padding-bottom: 50px;
+    }    
 	#lightbox_image {
 		max-height: 3000px;
 		max-width: 90%;
@@ -465,6 +588,7 @@ img.resizeWidth {
 		margin-bottom: 10%;
 	}
 }
+
 
 @media screen and (-webkit-min-device-pixel-ratio: 0) and (min-width: 800px){
 	body {
@@ -476,3 +600,4 @@ img.resizeWidth {
 		text-shadow: none;
 	}
 }
+

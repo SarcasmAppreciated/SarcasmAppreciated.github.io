@@ -1,8 +1,24 @@
 $(document).ready(function(){
-	var minWidth = 2300;
-	var pageWidth = getPageWidth();
-    var canvas, stage, exportRoot;
     
+    $("#main").onepage_scroll({
+        sectionContainer: ".section_container",
+        easing: "ease",
+        animationTime: 800,
+        pagination: true,
+        updateURL: false,
+        keyboard: false,
+        beforeMove: null,
+        afterMove: null,
+        loop: false,
+        responsiveFallback: 800,
+        direction : 'vertical'        
+    });    
+    
+	// var minWidth = 2300;
+	// var pageWidth = getPageWidth();
+    var canvas, stage, exportRoot;
+     
+    // Animation
     guru_init();
     function guru_init() {
         canvas = document.getElementById("canvas");
@@ -23,6 +39,7 @@ $(document).ready(function(){
         });
     }    
     
+    // Animation Dialogue
     function startDialogue() {
         $("#dialogue_window").append("<p class='dialogue'>Go around, go around, go around...</p>");
         setTimeout(function() {$("#dialogue_window").append("<p class='dialogue'>But, you're not here for music are you...</p>");}, 2500);
@@ -30,6 +47,7 @@ $(document).ready(function(){
         setTimeout(function() {$("#dialogue_window").append("<p class='dialogue third_Line'>Well, take a look below!</p>");}, 6000);
     }
     
+    // Arrow Bounce
     function bounce(element, times, distance, speed) {
         for(var i = 0; i < times; i++) {
             element.animate({marginTop: '-='+distance}, speed)
@@ -37,6 +55,7 @@ $(document).ready(function(){
         }       
     }
     
+    // Music
     var sound_Off = true;
     $("#sound_control").click(function() {
         $(this).find('img').toggle();
@@ -50,9 +69,35 @@ $(document).ready(function(){
         }              
     });
     
+    // Scrolling animations
+	$("#about_button, #down_button").click(function(){
+		$("#main").moveTo(2);
+	});     
+    
+    $("#projects_button").click(function(){
+		$("#main").moveTo(3);
+	});
+	
+	$("#portfolio_button").click(function(){
+		$("#main").moveTo(4);
+	});
+	
+	$("#contact_button").click(function(){
+		$("#main").moveTo(5);
+	});
+    
+    // Projects
+    $(".project_container").mouseover(function(){
+        var id = $(this).attr("id");
+        $("#projects").removeClass("azimuth_bg fiist_bg lcs_bg purge_bg spellsy_bg").addClass(id + "_bg");
+    });
+    
+    
+    
+    /*
 	// Resize sword picture and portfolio images to initial load
 	// addBG();
-    resizePortElems();
+    // resizePortElems();
 	// Dynamically resize sword picture and portfolio images
 	$(window).resize(function() {
 		// addBG();
@@ -63,9 +108,10 @@ $(document).ready(function(){
 	function getPageWidth() {
 		return $(document).width();
 	}
-
+    */
 	// Masonary
-	var $container = $("#content");
+	/*
+    var $container = $("#content");
 	$("#content").imagesLoaded().done(function(instance){
 		$("#loading").fadeOut("fast", function(){
 			$(".portfolio_element").fadeIn("slow", function(){
@@ -88,21 +134,9 @@ $(document).ready(function(){
 			$(".portfolio_element.large").css("width", elemWidth / 2);
 		}		
 	}
-	
-		
-	// Scrolling animations
-	$("#portfolio_button").click(function(){
-		$("html, body").animate({ scrollTop: $("#projects").offset().top - 250 }, "slow");
-	});
-	
-	$("#about_button, #down_button").click(function(){
-		$("html, body").animate({ scrollTop: $("#about").offset().top - 200 }, "slow");
-	});
-	
-	$("#contact_button").click(function(){
-		$("html, body").animate({ scrollTop: $("#contact").offset().top - 200 }, "slow");
-	});
-	
+	*/
+	/*
+    // LightBox
 	$(".portfolio_element").click(function() {
 		var elem =  $(this).children("img").attr("src");
 		var winTop = $(document).scrollTop();
@@ -120,4 +154,5 @@ $(document).ready(function(){
 		$("#lightbox img").attr("src", "");
 		$("#lightbox, #lightbox img").fadeOut("fast");
 	});
+    */
 });
