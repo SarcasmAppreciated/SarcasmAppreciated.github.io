@@ -380,6 +380,7 @@ p.content_title {
     text-align: right;
     margin-top: 7.5px;
     line-height: 15px;
+    color: #FFF;
     width: 190px;
     float: left;
 }
