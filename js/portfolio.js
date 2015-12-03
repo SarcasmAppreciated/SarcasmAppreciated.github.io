@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+    /*
     $("#main").onepage_scroll({
         sectionContainer: ".section_container",
         easing: "ease",
@@ -13,7 +13,7 @@ $(document).ready(function(){
         responsiveFallback: 800,
         direction : 'vertical'        
     });    
-    
+    */
 	// var minWidth = 2300;
 	// var pageWidth = getPageWidth();
     var canvas, stage, exportRoot;
@@ -71,27 +71,29 @@ $(document).ready(function(){
     
     // Scrolling animations
 	$("#about_button, #down_button").click(function(){
-		$("#main").moveTo(2);
+        $("html,body").animate({ scrollTop: $("#about").offset().top}, "slow");
 	});     
     
     $("#projects_button").click(function(){
-		$("#main").moveTo(3);
+		$("html,body").animate({ scrollTop: $("#projects").offset().top}, "slow");
 	});
 	
 	$("#portfolio_button").click(function(){
-		$("#main").moveTo(4);
+		$("html,body").animate({ scrollTop: $("#portfolio").offset().top}, "slow");
 	});
 	
+    /*
 	$("#contact_button").click(function(){
 		$("#main").moveTo(5);
-	});
+	});*/
     
+    /*
     // Projects
     $(".project_container").mouseover(function(){
         var id = $(this).attr("id");
         $("#projects").removeClass("azimuth_bg fiist_bg lcs_bg purge_bg spellsy_bg").addClass(id + "_bg");
     });
-    
+    */
     
     
     /*
