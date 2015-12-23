@@ -317,7 +317,7 @@ p.project_text.small {
         color: #FFF;
     }
     #hook {
-        display: none;
+        width: 95%;
     }
     
 	.nav_button {
