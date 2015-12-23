@@ -215,7 +215,6 @@ p.mobile_message {
 /* Projects */
 #projects {
 	min-height: 400px;
-    text-align: left;
 }
 
 .project_container {
@@ -318,8 +317,13 @@ p.project_text.small {
 		background-color: #FFF;
 		height: 300px;
 	}
+    .circle {
+        margin-top: 10px;
+    }
+    .circle_container {
+        height: auto;
+    }
     #projects {
-        background: #333 !important;
     }    
 	.project_container {
 		margin: 10px;
