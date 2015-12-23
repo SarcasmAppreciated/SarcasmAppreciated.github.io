@@ -285,27 +285,9 @@ p.project_text.small {
 	p  {
 		font-size: 16px;
 	}
-	.title_container {
-        height: auto;
-    }
-	.title_box {
-		width: 100%;
-		left: 0;
-        margin-left: 0;
-        margin-top: 0px;
-        float: left;
-	}
-    
     h1 {
        font-size: 48px;
        color: #333;
-    }
-	
-	h1.title, h1.title.R {
-		text-align: center;
-	}	
-	h1.title.R {
-        color: #FFF;
     }
 	#sample {
 		height: 500px !important;
@@ -319,25 +301,9 @@ p.project_text.small {
     #hook {
         width: 95%;
     }
-    
-	.nav_button {
-        position: static;
-        float: none;
-        margin: 0;
-        display: block;
-	}	
-    .nav_button.first {
-        margin: 0;
-    }    
-    .nav_button_holder {
-        display: none;
-        left: 20px;
-        top: 20px;
+    #main {
+        margin-top: 0px;
     }
-    
-	#down_button {
-		top: 400px;
-	}
 	.section_container {
 		width: 100%;
 		height: auto !important;
