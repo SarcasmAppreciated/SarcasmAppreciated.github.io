@@ -37,7 +37,7 @@
         
 		<script src="js/jquery.min.js"></script>
 		<script src="js/portfolio.js"></script>   
-        <script src="js/GuruGuru.js"></script>
+        <!--<script src="js/GuruGuru.js"></script>-->
         
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/gallery.css">
@@ -52,194 +52,78 @@
 		</script>-->
     </head>
     <body>
-        <div class="nav_button_holder">
+        <!--<div class="nav_button_holder">
                 <a href="https://www.behance.net/SarcasmAppreciated"><button class="nav_button first" id="portfolio_button">Portfolio</button></a>
                 <button class="nav_button" id="projects_button">Projects</button>
                 <button class="nav_button" id="about_button">About</button>
-        </div>
+        </div>-->
         <div id="main">
             <div class="section_container" id="sample">
-                <p class="mobile_message">Please use a higher resolution device (preferably 1920x1080) for the optimal experience.</p>
-                <p class="mobile_message">You can still view the basics below.</p>
+                <!--<p class="mobile_message">Please use a higher resolution device (preferably 1920x1080) for the optimal experience.</p>
+                <p class="mobile_message">You can still view the basics below.</p>-->
                 <div id="hook">
-                    <audio id="sos" src="sos.mp3" loop></audio>
-                    <div id="sound_control">
-                        <img src="images/soundOff.png" style="height: 50px; width: 50px;"/>
-                        <img src="images/soundOn.png" style="height: 50px; width: 50px; display: none">
-                    </div>
-                    <canvas id="canvas" width="1000" height="750"></canvas>
-                    <div id="dialogue_window">
-                        <!--<p class="dialogue">Go around, go around, go around...</p>
-                        <p class="dialogue">But, you're not here for music are you...</p>
-                        <p class="dialogue">Pity...</p><p class="dialogue third_Line">Well, take a look below!</p>-->
-                    </div>
-                    <div id="down_button"></div>
+                    <h1>Projects // Portfolio:</h1>
+                    <h1 class="subtitle">graphics artist // development // uiux</h1>
                 </div>			
             </div>
             <div class="section_container" id="about">
-                <div class="title_container" style="background-color: #c71f31">
-                    <div class="title_box">
-                        <h1 class="title">About</h1>	
+                <div class="text_align">
+                    <h2>A Bit About Benson Li:</h2>
+                    <p>Hi. I'm a graphics artist and a front-end developer. My past work includes everything from branding creation and animation to software engineering.</p>
+                    <div class="circle_container">
+                        <a href="https://twitter.com/SotLTravis"><div class="circle" id="Travis"></div></a><div id="plus">+</div><a href="http://www.gamespot.com/"><div class="circle" id="GS"></div></a>
                     </div>
-                </div>
-                <div class="text_align">                
-                    <p>Hi. My name is Benson Li and I'm a computer science major at the University of British Columbia.<br/><br/>I currently work for CBS Interactive but I've done freelance work on commission and my abilities include design work, branding creation, animation, and development.</p>
-                    <p style="margin-top: 70px; margin-bottom: 10px; text-align: center;">
-                    - <a href="http://www.linkedin.com/pub/benson-li/54/a99/835">Linkedin</a>
-                    - <a href="https://github.com/SarcasmAppreciated">Github</a>
-                    - <a href="https://twitter.com/TakeMeLiterally">Twitter</a>
-                    - <a href="https://www.behance.net/SarcasmAppreciated">Behance</a> -
+                    <p>I work as a graphics artist for Travis Gafford and GameSpot (formerly onGamers). In the past, I have worked for and with LGD Gaming, the University of Waterloo, Daniel ‘Spellsy’ Biery, and Hunter ‘Hebble’ Leigh - creating art and design for their respective needs.</p>
+                    <div class="circle_container">
+                        <a href="https://twitter.com/LGDgaming">
+                            <div class="circle" id="LGD"></div>
+                        </a>
+                        <a href="https://uwaterloo.ca/conrad-business-entrepreneurship-technology/">
+                            <div class="circle" id="UW"></div>
+                        </a>
+                        <a href="https://twitter.com/RiotSpellsy">
+                            <div class="circle" id="Spellsy"></div>
+                        </a>                        
+                        <a href="https://twitter.com/RiotHebble">
+                            <div class="circle" id="Hunter"></div>
+                        </a>
+                    </div>
+                    <h2 style="margin-top: 25px; margin-bottom: 0;">Links:</h2>
+                    <p>
+                    <a href="mailto:contact@benson.li">Email</a>
+                    // <a href="http://www.linkedin.com/pub/benson-li/54/a99/835">Linkedin</a>
+                    // <a href="https://github.com/SarcasmAppreciated">Github</a>
+                    // <a href="https://twitter.com/TakeMeLiterally">Twitter</a>
+                    // <a href="https://www.behance.net/SarcasmAppreciated">Behance</a>
                     </p>
-                    <p style="font-size: 18px; margin-top: 5px; color: #333; text-align: center;">Email: contact@benson.li</p>
+                    
+                    <h2 style="margin-top: 25px;">Samples:</h2>
+                    <p>A bit of development and design.</p>
                 </div>                 
             </div>
-            
-                
             <div class="section_container" id="projects">
-                <div class="title_container" style="background-color: #FFF">
-                    <div class="title_box">
-                        <h1 class="title R">Projects</h1>
-                    </div>
-                </div>
-                <div class="project_container" id="fiist" style="margin-top: 75px;"> 
-                        <a href="http://sarcasmappreciated.github.io/Fiist-Site/">
-                            <div class="project_icon" id="fiist_icon"></div>
-                            <h3>Fiist</h3>
-                            <p class="project_text">Waitlist Management</p><p class="project_text small">Javascript • HTML • CSS</p>
-                        </a>
-                    </div>
-                    <div class="project_container" id="azimuth">
-                        <a href="http://www.azimuthsail.com">
-                            <div class="project_icon" id="azimuth_icon"></div>
-                            <h3>Azimuth</h3>
-                            <p class="project_text">Icebergs and Journey</p><p class="project_text small">Javascript • HTML • CSS • Ruby</p>
-                        </a>
-                    </div>
-                    <div class="project_container" id="lcs">
-                        <a href="http://sarcasmappreciated.github.io/NAPlayoffPicture">
-                            <div class="project_icon" id="lcs_icon"></div>
-                            <h3>LCS Playoff Picture</h3>
-                            <p class="project_text">Naive Playoff Probabilities</p><p class="project_text small">Javascript • HTML • CSS</p>
-                        </a>
-                    </div>
-                    <div class="project_container" id="purge">
-                        <a href="http://www.curse.com/addons/wow/purge">
-                            <div class="project_icon" id="purge_icon"></div>
-                            <h3>Purge</h3>
-                            <p class="project_text">Silence WoW Wizards</p><p class="project_text small">LUA</p>
-                        </a>
-                    </div>
-                    <div class="project_container" id="spellsy" style="margin-bottom: 75px;">
-                        <a href="https://www.youtube.com/watch?v=GH-RQeLUqvE">
-                            <div class="project_icon" id="spellsy_icon"></div>
-                            <h3>Spellsy's Stat Supershow</h3>
-                            <p class="project_text">Animated Stats</p><p class="project_text small">Flash • Actionscript</p>
-                        </a>
-                    </div>
-            </div>
-        <!--<div class="section_container" id="portfolio">
-                <div class="title_container" style="background-color: #333">
-                    <div class="title_box">
-                        <h1 class="title">Gallery</h1>
-                    </div>
-                </div>
-                <div id="scroll_fix"></div>
-                <div class="content_list scrollable">
-                    <a href="http://sta.sh/2k3dmrwngje?edit=1">
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="cube">
-                                    <p class="content_date">2015</p>
-                                    <p class="content_type">Branding</p>                        
-                                    <p class="content_title">Computer Science Student Society</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="guide">
-                                    <p class="content_date">2015</p>
-                                    <p class="content_type">Infographic</p>                        
-                                    <p class="content_title">League of Legends Viewing Guide</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="lgd">
-                                    <p class="content_date">2015</p>
-                                    <p class="content_type">Branding</p>                        
-                                    <p class="content_title">Streaming Overlay for LGD</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="proposal">
-                                    <p class="content_date">2015</p>
-                                    <p class="content_type">Proposal</p>                        
-                                    <p class="content_title">Project Proposal for UBC Esports</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="sf">
-                                    <p class="content_date">2015</p>
-                                    <p class="content_type">Branding</p>                        
-                                    <p class="content_title">Social Media Annoucement</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="socialmedia">
-                                    <p class="content_date">2015</p>
-                                    <p class="content_type">Branding</p>                        
-                                    <p class="content_title">Social Media Branding</p>
-                            </div>
-                        </div>                       
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="curse">
-                                    <p class="content_date">2014</p>
-                                    <p class="content_type">Infographic</p>                        
-                                    <p class="content_title">Curse's Early Game Strength</p>
-                            </div>
-                        </div>
-                         <div class="content_listing">
-                            <div class="portfolio_element" id="lcsw">
-                                <p class="content_date">2014</p>
-                                <p class="content_type">Infographic</p>
-                                <p class="content_title">LCS Winrates</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="khazix">
-                                <p class="content_date">2014</p>                        
-                                <p class="content_type">Infographic</p>
-                                <p class="content_title">Kha'zix in the LCS</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="lustboy">
-                                <p class="content_date">2014</p>
-                                <p class="content_type">Infographic</p>
-                                <p class="content_title">Lustboy's Career</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="worlds4">
-                                <p class="content_date">2014</p>                        
-                                <p class="content_type">Infographic</p>
-                                <p class="content_title">League of Legends Worlds</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="byob">
-                                <p class="content_date">2012</p>                        
-                                <p class="content_type">Branding</p>
-                                <p class="content_title">Be Your Own Boss</p>
-                            </div>
-                        </div>
-                        <div class="content_listing">                        
-                            <div class="portfolio_element" id="mymm">
-                                <p class="content_date">2011</p>
-                                <p class="content_type">Branding</p>                        
-                                <p class="content_title">My Main Man</p>
-                            </div>
-                        </div>
+                <!--<div class="project_container" id="purge" style="margin-left: 100px;">
+                    <a href="">
+                        <div class="project_icon" id="purge_icon"></div>
+                        <h3>HipHopHeads Polls</h3>
+                        <p class="project_text">Subreddit Polling</p><p class="project_text small">Javascript // HTML // CSS // Python</p>
                     </a>
-                </div>                    
-            </div>-->
+                </div>-->
+                <div class="project_container" id="fiist" style="margin-left: 100px;"> 
+                    <a href="http://sarcasmappreciated.github.io/Fiist-Site/">
+                        <div class="project_icon" id="fiist_icon"></div>
+                        <h3>Fiist</h3>
+                        <p class="project_text">Waitlist Management</p><p class="project_text small">Javascript // HTML // CSS</p>
+                    </a>
+                </div>
+                <div class="project_container" id="azimuth">
+                    <a href="http://www.azimuthsail.com">
+                        <div class="project_icon" id="azimuth_icon"></div>
+                        <h3>Azimuth</h3>
+                        <p class="project_text">Icebergs and Journey</p><p class="project_text small">Javascript // HTML // CSS // Ruby</p>
+                    </a>
+                </div>              
+            </div>
         </div>
     </body>
 </html>
