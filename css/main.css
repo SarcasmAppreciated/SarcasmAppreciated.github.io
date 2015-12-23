@@ -89,7 +89,7 @@ span {
 .text_align {
 	text-align: justify;
 	margin-top: 100px;
-	    margin-bottom: 25px;
+	margin-bottom: 25px;
 	max-width: 800px;
 	width: 90%;
 	height: auto;
@@ -189,7 +189,7 @@ p.mobile_message {
 }
 
 #Spellsy {
-    background-image: url(../images/Spellsy.png);
+    background-image: url(../images/spellsy.png);
     background-size: contain;
 }
 
