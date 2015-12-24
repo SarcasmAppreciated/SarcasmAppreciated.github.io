@@ -17,6 +17,34 @@
 		<script src="js/jquery.min.js"></script>  
         
         <link rel="stylesheet" href="css/main.css">
+        <style>
+            .jiggle {
+                -webkit-animation: jiggle 0.5s infinite;
+                -moz-animation-duration: 0.5s;
+                -moz-animation-name: jiggle;
+                -moz-animation-iteration-count: infinite;
+                -webkit-transform: rotate(-3deg);
+                -moz-transform: rotate(-3deg);
+            }
+            @-moz-keyframes jiggle {
+                0% {
+                    -moz-transform: rotate(-1deg);
+                }
+                50% {
+                    -moz-transform: rotate(1deg);
+                }
+            }
+            @-webkit-keyframes jiggle {
+                0% {
+                    -webkit-transform: rotate(-1deg);
+                }
+                50% {
+                    -webkit-transform: rotate(1deg);
+                }
+            }
+
+        
+        </style>
     </head>
     <body>
         <div id="main">
@@ -25,21 +53,21 @@
                     <h3 style="font-size: 21px; font-weight: 300; color: #000">I'm not going out to <a style="text-decoration: underline" href="http://www.quickmeme.com/img/31/316a03cc9f5c0336dde0b27f42ebb0c790dc8424ec8499d351f66fc4786b5503.jpg">Surrey</a> so this is the best I could do on short notice:</h3>
                     <h1 style="margin-left: 0;">MERRY CHRISTMAS STEPH :)</h1>
                     <img style="display: inline-block; width: 100%; max-width: 600px;" src="http://www.free-vectors.com/images/Celebrations-Holidays/202-vector-christmas-tree.png"></img>
-                    </br>
-                    <div id="xmasbutton" style="width: 100px; height: 50px; background-color: #f00; display: inline-block; color: #FFF; border-radius: 5px; cursor: pointer;"><h3 style="color: #FFF; line-height: 15px;">Click me!</h3></div>
+                    <br/>
+                    <div id="xmasbutton" class="jiggle" style="width: 150px; height: 150px; background: url('http://icons.iconarchive.com/icons/gpritiranjan/simple-christmas/512/gift-icon.png') center no-repeat; background-size: contain; display: inline-block; color: #FFF; border-radius: 5px; cursor: pointer;"></div>
                     <div id="gift" style="width: 100%; max-width: 400px; height: 175px; display: none; background-color: #FFF; margin-top: 10px; margin-left: 0; border-radius: 10px; border-style: dotted; border-color: #F00; ">
-                        <h3>COUPON:</br>The bearer is entitled to a dinner with yours truly who will foot the bill.</br>Some conditions apply.</br>Think big.</h3>
+                        <h3>A DATE:<br/>Should you choose to accept, the bearer is entitled to a dinner with yours truly.<br/>THINK BIG.<br/><br/>Some conditions apply.</h3>
                     </div>
                 </div>
             </div>
         </div>
         <script>
             $(document).ready(function(){
-                $("#xmasbutton").click(function(){
+                $("#xmasbutton").click(function(e){
                     $(this).fadeOut("slow", function(){
                         $("#gift").fadeIn("slow").css("display","inline-block");
                     });
-                });
+                });        
             });
         </script>
     </body>
