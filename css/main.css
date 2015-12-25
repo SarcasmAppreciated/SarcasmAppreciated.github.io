@@ -18,6 +18,7 @@ html {
 body {
     width: 100%;
 	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
+    color: #333;
 	padding: 0;
 	margin: 0;
 	/* background-color: #939393; */
@@ -48,14 +49,14 @@ h2 {
 }
 
 h3 {
-	color: #c71f31;
+    color: #000;
+    font-weight: 400;
 }
 
 p {
 	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
 	font-size: 21px;
     margin: 0;
-    color: #333;
 }
 
 a {
@@ -89,7 +90,7 @@ span {
 
 .text_align {
 	text-align: justify;
-	margin-top: 100px;
+	margin-top: 50px;
 	margin-bottom: 25px;
 	max-width: 800px;
 	width: 90%;
@@ -126,11 +127,21 @@ p.mobile_message {
     text-align: left;
 }
 
+#arrow_down_box {
+    margin-top: 50px;
+    display: none;
+    cursor: pointer;
+}
+
+.onclick {
+    cursor: auto;
+    font-weight: bold;
+}
+
 #arrow_down {
     width: 100%;
     height: 33px;
-    display: none;
-    margin-top: 50px;
+    margin-top: 5px;
     background: url("../images/arrow.png")center no-repeat;
 }
 
@@ -212,7 +223,7 @@ p.mobile_message {
 
 .project_container  > a {
 	text-decoration: none;
-	color: #fff;
+	color: #333;
 	margin: 0;
 }
 
