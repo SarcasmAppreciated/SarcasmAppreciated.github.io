@@ -60,16 +60,22 @@ p {
 }
 
 a {
-	/*font-weight: bold;*/
     text-decoration: none;
 	color: #c71f31/*#00a651*/; /*ED900E*/
 }
 
-span {
-	height: 1px;
-	width: 100%;
-	display: inline-block;
-	margin: 0;	
+ul {
+    display: none;
+    list-style-type: none;
+}
+
+ul > a {
+    color: #333;
+}
+
+li {
+    float: left;
+    margin-left: 20px;
 }
 
 #main {
@@ -103,6 +109,10 @@ span {
     height: auto;
 	display: block;
 	text-align: center;
+}
+
+li.active_list {
+    color: #c71f31;
 }
 
 p.mobile_message {
@@ -165,7 +175,6 @@ p.mobile_message {
     display: inline;
     margin-right: 10px;
     border-radius: 50%;
-    background-color: #dfdfdf;
 }
 
 #Travis {
@@ -181,11 +190,13 @@ p.mobile_message {
 #LGD {
     background-image: url("../images/LGD.png");
     background-size: contain;
+    background-color: #252525;
 }
 
 #UW {
     background-image: url("../images/UW.png");
     background-size: contain;
+    background-color: #252525;
 }
 
 #Spellsy {
@@ -228,11 +239,11 @@ p.mobile_message {
 }
 
 .project_icon {
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height: 50px;
 	margin-bottom: 10px;
 	display: inline-block;
-	border-radius: 25%;
+	border-radius: 50%;
 }
 
 .project_container  > a > h3 {
@@ -252,10 +263,12 @@ p.project_text.small {
 
 #fiist_icon {
 	background: url("../images/fiist_icon.png") center no-repeat;
+    background-size: contain;
 }
 
 #azimuth_icon {
 	background: url("../images/azimuthBW_icon.png") center no-repeat;
+    background-size: contain;
 }
 
 
