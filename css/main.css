@@ -24,7 +24,6 @@ body {
 	/* background-color: #939393; */
     height: 100%;
     text-align: center;
-    overflow-y: scroll;
     overflow-x: hidden;
 }
 
