@@ -270,6 +270,41 @@ p.project_text.small {
     background-size: contain;
 }
 
+/* Azimuth */
+.azimuth {
+    display: none;
+}
+
+.azimuth > img {
+    margin-top: 50px;
+    display: inline-block;
+}
+
+.display_image {
+    width: 95%;
+    max-width: 1000px;
+    margin-bottom: 50px;
+    display: inline-block;
+}
+
+.display_image > img {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+img.standalone {
+    box-shadow: 0px 1px 1px 2px #999;
+}
+
+.text_align.az{
+    max-width: 980px;
+    /*border: 5px solid #dbe8f9;*/
+}
+
+#about_az {
+    background-color: #dbe8f9;
+}
+
 
 @media (max-width: 800px) {
 	body {
