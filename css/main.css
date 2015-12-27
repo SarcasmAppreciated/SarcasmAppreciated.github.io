@@ -287,11 +287,6 @@ p.project_text.small {
     display: inline-block;
 }
 
-.display_image > img {
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
 img.standalone {
     box-shadow: 0px 1px 1px 2px #999;
 }
