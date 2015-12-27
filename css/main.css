@@ -74,7 +74,7 @@ ul > a {
 
 li {
     float: left;
-    margin-left: 20px;
+    margin-right: 20px;
 }
 
 #main {
@@ -276,7 +276,7 @@ p.project_text.small {
 }
 
 .azimuth > img {
-    margin-top: 50px;
+    margin-top: 25px;
     display: inline-block;
 }
 
@@ -287,7 +287,11 @@ p.project_text.small {
     display: inline-block;
 }
 
-img.standalone {
+.display_image.small {
+    width: auto;
+}
+
+.display_image.standalone {
     box-shadow: 0px 1px 1px 2px #999;
 }
 
@@ -297,7 +301,37 @@ img.standalone {
 }
 
 #about_az {
-    background-color: #dbe8f9;
+    background-color: #ccdaeb;
+}
+
+.colour_swatch {
+    width: 100%;
+    max-width: 1000px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.colour_swatch > p {
+    margin-left: 20px;
+    color: #FFF;
+}
+
+p.heading {
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+.font_box {
+    width: 300px;
+    height: auto;
+    display: inline-block;
+    margin-top: 25px;
+}
+
+.font_box > p {
+    font-size: 14px;
 }
 
 
@@ -369,6 +403,12 @@ img.standalone {
 	p.project_text.small {
 		font-size: 12px;
 	}
+    li {
+        margin-right: 10px;
+    }
+    .display_image.small {
+        width: 100%;
+    }
 }
 
 
