@@ -334,6 +334,11 @@ p.heading {
     font-size: 14px;
 }
 
+#project {
+    display: none;
+    min-height: 200px;
+}
+
 
 @media (max-width: 800px) {
 	body {
