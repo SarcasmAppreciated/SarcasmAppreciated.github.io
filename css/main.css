@@ -273,6 +273,7 @@ p.project_text.small {
 /* Azimuth */
 .azimuth {
     display: none;
+    margin-top: 150px;
 }
 
 .azimuth > img {
@@ -302,6 +303,23 @@ p.project_text.small {
 
 #about_az {
     background-color: #ccdaeb;
+    height: 500px;
+}
+
+.skew-neg {
+    -webkit-transform: skewY(-5deg);
+    -moz-transform: skewY(-5deg);
+    -ms-transform: skewY(-5deg);
+    -o-transform: skewY(-5deg);
+    transform: skewY(-5deg);
+}
+
+.skew-pos {
+    -webkit-transform: skewY(5deg);
+    -moz-transform: skewY(5deg);
+    -ms-transform: skewY(5deg);
+    -o-transform: skewY(5deg);
+    transform: skewY(5deg);
 }
 
 .colour_swatch {
@@ -319,7 +337,7 @@ p.project_text.small {
 }
 
 p.heading {
-    margin-top: 50px;
+    margin-top: 150px;
     text-transform: uppercase;
 }
 
@@ -413,6 +431,12 @@ p.heading {
     }
     .display_image.small {
         width: 100%;
+    }
+    .azimuth {
+        margin-top: 100px;
+    }
+    p.heading {
+        margin-top: 50px;
     }
 }
 
