@@ -81,9 +81,9 @@ li {
     height: 100%;
     width: 100%;
     display: inline-block;
-    background: url("../images/hook.gif") right no-repeat;
+    /*background: url("../images/hook.gif") right no-repeat;
     background-size: auto 90%;
-    /* box-shadow: 0px 2px 5px 5px #888; */
+     ox-shadow: 0px 2px 5px 5px #888; */
 }
 
 /* Container  */
