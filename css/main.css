@@ -260,6 +260,11 @@ p.project_text.small {
 	font-size: 16px;
 }
 
+#hhhp_icon {
+	background: url("../images/hhhp_icon.png") center no-repeat;
+    background-size: contain;
+}
+
 #fiist_icon {
 	background: url("../images/fiist_icon.png") center no-repeat;
     background-size: contain;
@@ -288,6 +293,27 @@ p.project_text.small {
     display: inline-block;
 }
 
+.display_panel {
+    position: absolute;
+    width: 48%;
+    z-index: 50;
+    cursor: pointer;
+}
+
+.display_panel:hover {
+    opacity: 0.5;
+}
+
+#hhhpcurrent {
+    left: 52%;
+    margin-top: -50px;
+}
+
+#hhhppast {
+    left: 32%;
+    margin-top: -25px;
+}
+
 .display_image.small {
     width: auto;
 }
@@ -304,6 +330,12 @@ p.project_text.small {
 #about_az {
     background-color: #ccdaeb;
     height: 500px;
+}
+
+#about_hhhp {
+    background-color: #111;
+    height: 500px;
+    color: #FFF;
 }
 
 .skew-neg {
