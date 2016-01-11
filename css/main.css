@@ -219,7 +219,6 @@ p.mobile_message {
 
 /* Projects */
 #projects {
-	min-height: 400px;
     display: none;
 }
 
