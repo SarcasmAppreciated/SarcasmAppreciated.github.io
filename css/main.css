@@ -404,6 +404,11 @@ p.heading {
        font-size: 48px;
        color: #333;
     }
+    ul {
+    	margin-left: -15px;
+    	margin-top: 20px;
+    	font-size: 12px;
+    }
 	#intro {
         
 	}
