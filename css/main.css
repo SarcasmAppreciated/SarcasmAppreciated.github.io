@@ -44,7 +44,8 @@ h1.subtitle {
 }
 
 h2 {
-    font-family: "couturebold", Arial, sans-serif;
+    font-family: "Quicksand", Arial, sans-serif;
+	color: #c71f31;
 }
 
 h3 {
@@ -54,7 +55,7 @@ h3 {
 
 p {
 	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
-	font-size: 21px;
+	font-size: 18px;
     margin: 0;
 }
 
@@ -93,6 +94,21 @@ li {
 	padding: 0;
 }
 
+.code_section {
+	width: 100%;
+	max-width: 800px;
+	display: inline-block;
+	text-align: left;
+}
+
+.code_section p, .code_section .circle_container, .code_section .project_container{
+	margin-left: 75px;
+}
+
+.code_section p {
+	text-align: justify;	
+}
+
 .text_align {
 	text-align: justify;
 	margin-top: 50px;
@@ -122,8 +138,7 @@ p.mobile_message {
     width: 1000px;
     height: 295px;
     display: inline-block;
-    margin-top: 400px;
-    background-image: url("../images/TileDF.png");
+    margin-top: 300px;
     cursor: pointer;
 }
 
@@ -157,6 +172,7 @@ p.mobile_message {
 /* About */
 #about {
     display: none;
+	margin-top: 50px;
 }	
 
 .circle_container {
@@ -217,6 +233,17 @@ p.mobile_message {
     line-height: 70px;
 }
 
+.skill {
+	width: auto;
+	background: url("../images/TileDF.png") left no-repeat;
+	font-size: 21px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 5px;
+	margin-right: 5px;
+	display: inline-block;
+}
+
 /* Projects */
 #projects {
     display: none;
@@ -226,7 +253,7 @@ p.mobile_message {
 	width: auto;
 	height: auto;
 	margin: 20px;
-	display: inline-block;
+	display: block;
 	cursor: pointer;
 } 
 
@@ -250,7 +277,7 @@ p.mobile_message {
 
 p.project_text {
 	font-weight: normal;
-	font-size: 21px;
+	font-size: 18px;
 	line-height: 24px;
 	margin: 0;
 }
