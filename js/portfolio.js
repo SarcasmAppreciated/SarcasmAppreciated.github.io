@@ -7,7 +7,7 @@ $(document).ready(function(){
         navIntro();
     });
     
-    if($(".mobile_message").css("display") == "none") {
+    if($("#hook_alignment").css("margin-top") != "0px") {
         $("#arrow_down_box").delay(1000).fadeIn("slow", function(){
             bounce($(this), 2, '10px', 500);                
         });    
@@ -28,7 +28,7 @@ $(document).ready(function(){
                 $("#hook").fadeOut("fast", function(){
                     $("#hook_alignment").animate({"margin-top": "0", "width" : "100%", "height" : "50px"}, 1000, function(){
                         $(this).css({"cursor": "auto", "background-image" : "none", "box-shadow" : "0px 1px 1px 1px #999", "position" : "fixed", "left" : "0px", "z-index": "100", "background" : "#FFF"});
-                        $("#about, #projects, ul").fadeIn("slow");  
+                        $("#about, ul").fadeIn("slow");  
                     });
                     // $("#arrow_down_box").css({"cursor" : "auto", "color" : "#c71f31"});                  
                 });          

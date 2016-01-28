@@ -45,7 +45,7 @@ h1.subtitle {
 
 h2 {
     font-family: "Quicksand", Arial, sans-serif;
-	color: #c71f31;
+    font-weight: 400;
 }
 
 h3 {
@@ -94,15 +94,26 @@ li {
 	padding: 0;
 }
 
+.code_title {
+    width: 100px;
+    height: 50px;
+    display: inline-block;
+    text-align: right;
+    text-transform: uppercase;
+} 
+
 .code_section {
 	width: 100%;
-	max-width: 800px;
+	max-width: 680px;
 	display: inline-block;
 	text-align: left;
+    border-left: #333 solid;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }
 
-.code_section p, .code_section .circle_container, .code_section .project_container{
-	margin-left: 75px;
+.code_section p, .code_section .circle_container, .code_section .project_container, #skills{
+	margin-left: 25px;
 }
 
 .code_section p {
@@ -110,7 +121,6 @@ li {
 }
 
 .text_align {
-	text-align: justify;
 	margin-top: 50px;
 	margin-bottom: 25px;
 	max-width: 800px;
@@ -128,10 +138,6 @@ li {
 
 li.active_list {
     color: #c71f31;
-}
-
-p.mobile_message {
-    display: none;
 }
 
 #hook_alignment {
@@ -177,15 +183,14 @@ p.mobile_message {
 
 .circle_container {
     width: auto;
-    height: 70px;
+    height: 50px;
     display: inline-block;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    margin-bottom: 10px;
 }
 
 .circle {
-    width: 70px;
-    height: 70px;
+    width: 50px;
+    height: 50px;
     float: left;
     display: inline;
     margin-right: 10px;
@@ -244,11 +249,36 @@ p.mobile_message {
 	display: inline-block;
 }
 
-/* Projects */
-#projects {
-    display: none;
+.skill.icon {
+    width: 50px;
+    height: 50px;
 }
 
+#PS {
+    background: url("../images/PS.png") center no-repeat;
+    background-size: contain;
+}
+
+#AE {
+    background: url("../images/AE.png") center no-repeat;
+    background-size: contain;
+}
+
+#AI {
+    background: url("../images/AI.png") center no-repeat;
+    background-size: contain;
+}
+
+#FL {
+    background: url("../images/FL.png") center no-repeat;
+    background-size: contain;
+}
+
+#skills {
+    margin-top: 20px;
+}
+
+/* Projects */
 .project_container {
 	width: auto;
 	height: auto;
@@ -438,11 +468,6 @@ p.heading {
 	#intro {
         
 	}
-    p.mobile_message {
-        margin-top: 20px;
-        display: inline-block;
-        color: #000;
-    }
     #hook_alignment {
         width: 100%;
         margin-top: 0px;
@@ -450,11 +475,17 @@ p.heading {
     }    
     #hook {
         margin-top: 15px;
-        width: 95%;
+        width: 90%;
     }
     #main {
         margin-top: 0px;
         background: none;
+    }
+    .code_section p, .code_section .circle_container, .code_section .project_container, #skills{
+        margin-left: 40px;
+    }
+    .code_title {
+        text-align: center;
     }
 	.section_container {
 		width: 100%;
@@ -468,13 +499,14 @@ p.heading {
 	#about {
 		background: none;
         display: inline-block;
-		height: 300px;
+		margin-top: 0;
 	}
     .circle {
         margin-top: 10px;
     }
     .circle_container {
         height: auto;
+        margin-bottom: 0px;
     }
     #projects {
         display: inline-block;
