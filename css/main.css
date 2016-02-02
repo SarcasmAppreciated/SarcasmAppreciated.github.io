@@ -501,15 +501,12 @@ p.heading {
     }
     .code_title {
         text-align: center;
+        margin-top: 100px;
     }
 	.section_container {
 		width: 100%;
 		height: auto !important;
 		overflow: hidden;
-	}	
-	.text_align {
-		margin-top: 0px;
-		margin-bottom: 0px;		
 	}		
 	#about {
 		background: none;
