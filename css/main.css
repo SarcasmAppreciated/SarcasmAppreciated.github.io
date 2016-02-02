@@ -145,7 +145,6 @@ li.active_list {
     height: 295px;
     display: inline-block;
     margin-top: 300px;
-    cursor: pointer;
 }
 
 #hook {
@@ -158,9 +157,8 @@ li.active_list {
 }
 
 #arrow_down_box {
-    margin-top: 50px;
-    display: none;
-    cursor: pointer;
+    margin-top: 100px;
+    text-align: center;    
 }
 
 .onclick {
