@@ -2,11 +2,25 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>    
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.23/p5.js"></script>
-	<script src="js/p5.sound.js"></script>
-    <script src="js/sketch.js"></script>
+	<title>FFT</title>
+    <script     src="https://code.jquery.com/jquery-2.2.2.min.js"
+                    integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="
+                    crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
 </head>
 <body>
+    <div style="display: block;">
+        <audio id ="myAudio" src="audio/v-09-11-3-8.wav" controls autoplay></audio>
+    </div>
+    <div style="display: inline-block">
+        <h1>Frequency:</h1>
+        <textarea id="frequency" rows="50" cols="50"></textarea>
+    </div>
+    <div style="display: inline-block">
+        <h1>Time:</h1>
+        <textarea id="time" rows="50" cols="50"></textarea>
+    </div>
+    
+    <!--<input id="fileInput" type="file" onchange="load(event)"></input>-->
 </body>
 </html>
