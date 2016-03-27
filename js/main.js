@@ -13,17 +13,19 @@ $(document).ready(function(){
     function renderFrame() {
         analyser.getFloatFrequencyData(frequencyData);
         $("#frequency").val(frequencyData);
+        console.log(frequencyData);
         
         analyser.getFloatTimeDomainData(timeData);
         $("#time").val(timeData);
     }
     
+    var samples = $("#samples").val();
     var isPlaying = true;        
     audio.onplay = function() {        
         setInterval(function(){
             if (isPlaying)
                 renderFrame();                
-        }, 1);               
+        }, samples);               
     };
     
     audio.addEventListener('ended', changeState, false);
