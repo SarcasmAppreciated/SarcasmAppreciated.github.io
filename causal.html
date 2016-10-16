@@ -153,7 +153,7 @@
                 
                 function bind() {
                     $("#open").click(function(){                    
-                        $(this).vibrate();
+                        navigator.vibrate(50);
                         $("button").remove();
                         $("#button_holder").append("<button id='open_it'>Open it!</button><button id='back_away' style='font-size: 20px'>Back Away</button>");
                         bind();
