@@ -158,7 +158,7 @@
                 
                 function bind() {
                     $("#open").click(function(){                    
-                        startVibrate(2000);
+                        startVibrate(1000);
                         $("button").remove();
                         $("#button_holder").append("<button id='open_it'>Open it!</button><button id='back_away' style='font-size: 20px'>Back Away</button>");
                         bind();
@@ -178,8 +178,7 @@
                     
                     $("#open_it").click(function(){
                         $("#chest").attr("src", "images/visa/Chest_Ajar.png");
-                        startVibrate(2);
-                        $(this).vibrate([1000,2000,1000,1000]);
+                        startVibrate([1000,2000,1000,1000]);
                         $("button").remove();
                         $("#button_holder").append("<button id='lift_lid'>Lift lid</button>");
                         bind();                        
@@ -199,7 +198,7 @@
                     
                     $("#lift_lid").click(function(){
                         $("#chest").attr("src", "images/visa/Chest_Open.png");
-                        $(this).vibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
+                        startVibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
                         $("button").remove();
                         $("#button_holder").append("<button id='cower'>Cower</button>"); 
                         bind();
