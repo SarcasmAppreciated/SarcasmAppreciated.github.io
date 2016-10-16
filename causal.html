@@ -13,7 +13,7 @@
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="js/jquery.vibrate.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
         
         <style>
@@ -48,19 +48,19 @@
                 max-width: 600px;
                 width: 100%;
                 height: 300px;
-                background: url("images/visa/Scroll.png") center no-repeat;
+                background: url("images/visa/Scroll.png") top center no-repeat;
                 background-size: contain;
                 display: block;
-                z-index: 5;
-                position: absolute;
                 margin-top: 0px;
+                position: absolute;
+                z-index: 2;
             }
             
             #text_wrapper {
                 width: 480px;
                 height: 150px;
                 display: inline-block;
-                margin-top: 75px;
+                margin-top: 50px;
             }
             
             button {
@@ -70,17 +70,32 @@
                 background: url("images/visa/Buttons.png") center no-repeat;
                 background-size: contain;
                 display: none;
-                margin-left: 50px;
                 font-family: "Indie Flower", Arial;
                 font-size: 24px;
                 font-weight: bold;
                 cursor: pointer;
+                margin-left: 5px;
+                margin-right: 5px;
             }
-        
+            
+            @media (max-width: 800px) { 
+                p {
+                    font-size: 16px;
+                }
+                
+                #text_wrapper {
+                    width: 80%;
+                    height: auto;
+                    display: inline-block;
+                    margin-top: 0px;
+                }
+            }
+            
         </style>
     </head>
     <body>
         <div id="cradle">
+        <p id="test"></p>
             <img id="chest" src="images/visa/Chest_Close.png"></img>
             <div id="scroll">
                 <div id="text_wrapper">
@@ -92,12 +107,11 @@
             </div>
         </div>
         <script>
-            $(document).ready(function(){
-            
+            $(document).ready(function(){            
                 start();
                 function start(){
                     $("#chest").fadeIn(1500).css("display","inline-block");                
-                    $("#scroll").fadeIn(1500, function(){                    
+                    $("#scroll").fadeIn(1500, function(){
                         $("#text").typeIt({
                             speed: 50,
                             autoStart: false,
@@ -111,12 +125,12 @@
                         .tiBreak()
                         .tiType("It's ancient and tarnished... ")
                         .tiPause(500)
-                        .tiType("The light reflects weirdly around it.");                    
-                    }); 
+                        .tiType("The light reflects weirdly around it.");            
+                    });
                     
                     $("#approach").click(function(){                        
                         $("#chest").animate({width: "100%", height: "100%"}, 2000);
-                        $("#scroll").animate({marginTop: "-75px"});
+                        $("#scroll").animate({marginTop: "-25px"});
                         $(this).remove();
                         $("#button_holder").append("<button id='open'>Open?</button><button id='naw'>Naw</button>");                    
                         $("#text").typeIt({
