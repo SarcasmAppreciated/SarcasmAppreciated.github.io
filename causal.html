@@ -12,7 +12,7 @@
         <title>Causality</title>
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="js/jquery.vibrate.min.js"></script>
+        <!--<script src="js/jquery.vibrate.js"></script>-->
         <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
         
@@ -107,7 +107,13 @@
             </div>
         </div>
         <script>
-            $(document).ready(function(){            
+            $(document).ready(function(){
+
+                // Starts vibration at passed in level
+                function startVibrate(duration) {
+                    navigator.vibrate(duration);
+                }
+
                 start();
                 function start(){
                     $("#chest").fadeIn(1500).css("display","inline-block");                
@@ -153,7 +159,7 @@
                 
                 function bind() {
                     $("#open").click(function(){                    
-                        navigator.vibrate(50);
+                        startVibrate(1000);
                         $("button").remove();
                         $("#button_holder").append("<button id='open_it'>Open it!</button><button id='back_away' style='font-size: 20px'>Back Away</button>");
                         bind();
