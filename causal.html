@@ -21,6 +21,7 @@
                 text-align: center;
                 padding: 0;
                 margin: 0;
+                
             }
             
             p {
@@ -30,17 +31,16 @@
             }
             
             #cradle {
-                max-width: 600px;
-                max-height: 600px;
-                width: 100%;
-                height: 100%;
                 display: inline-block;
+                overflow: hidden;
             }
             
             #chest {
-                width: 50%;
-                height: 50%;
+                width: 600px;
+                height: 300px;
                 display: none;
+                background: url("images/visa/Chest_Close.gif") center no-repeat;
+                background-size: contain;
             }
             
             #scroll {
@@ -49,10 +49,7 @@
                 height: 300px;
                 background: url("images/visa/Scroll.png") top center no-repeat;
                 background-size: contain;
-                display: block;
-                margin-top: 0px;
-                position: absolute;
-                z-index: 2;
+                display: inline-block;
             }
             
             #text_wrapper {
@@ -94,8 +91,8 @@
     </head>
     <body>
         <div id="cradle">
-        <p id="test"></p>
-            <img id="chest" src="images/visa/Chest_Close.png"></img>
+            <div id="chest"></div>
+            <div id="next_chest"></div>                                     
             <div id="scroll">
                 <div id="text_wrapper">
                     <p id="text"></p> 
@@ -134,7 +131,7 @@
                     });
                     
                     $("#approach").click(function(){                        
-                        $("#chest").animate({width: "100%", height: "100%"}, 2000);
+                        $("#chest").animate({width: "1000px", height: "500px"}, 2000);
                         $("#scroll").animate({marginTop: "-25px"});
                         $(this).remove();
                         $("#button_holder").append("<button id='open'>Open?</button><button id='naw'>Naw</button>");                    
@@ -177,7 +174,7 @@
                     });
                     
                     $("#open_it").click(function(){
-                        $("#chest").attr("src", "images/visa/Chest_Ajar.png");
+                        $("#chest").css("background-image","url('images/visa/Chest_Ajar.gif')");                       
                         startVibrate(500);
                         $("button").remove();
                         $("#button_holder").append("<button id='lift_lid'>Lift lid</button>");
@@ -197,7 +194,7 @@
                     });
                     
                     $("#lift_lid").click(function(){
-                        $("#chest").attr("src", "images/visa/Chest_Open.png");
+                        $("#chest").css("background-image","url('images/visa/Chest_Open.gif')");
                         startVibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
                         $("button").remove();
                         $("#button_holder").append("<button id='cower'>Cower</button>"); 
@@ -207,16 +204,25 @@
                             autoStart: false,
                             cursor: false,
                             callback: function() {
-                                $("#chest").attr("src", "images/visa/Chest_Shadow.png");
+                                $("#chest").css("background-image","url('images/visa/Chest_NoLight.png')");
                                 $("#text").typeIt({
                                     speed: 50,
                                     autoStart: false,
                                     cursor: false,
-                                    callback: function() {                                        
-                                        $("button").fadeIn("slow").css("display","inline-block");
+                                    callback: function() {
+                                        $("#chest").css("background-image","url('images/visa/Chest_Shadow.gif')");
+                                        $("#text").typeIt({
+                                            speed: 50,
+                                            autoStart: false,
+                                            cursor: false,
+                                            callback: function() {                                        
+                                                $("button").fadeIn("slow").css("display","inline-block");
+                                            } 
+                                        })
+                                        .tiType("<strong>OH GOD WHY PANDORA!?... </strong>");                                   
                                     } 
                                 })
-                                .tiType("<strong>OH GOD WHY PANDORA!?... </strong>");                            
+                                .tiType("...");                            
                             } 
                         })
                         .tiType("Nothing...? ")
@@ -282,8 +288,8 @@
                 function reset(){
                     $("#scroll").fadeOut("slow", function(){
                         $("#chest").fadeOut("slow", function(){
-                            $("#chest").attr("src", "images/visa/Chest_Close.png");
-                            $("#chest").css({"width": "50%", "height": "50%"});
+                            $("#chest").css("background-image","url('images/visa/Chest_Close.gif')");
+                            $("#chest").css({"width": "600px", "height": "300px"});
                             $("#scroll").css("margin-top","0")
                             $("#text").text("");
                             $("#button_holder").append("<button id='approach'>Approach</button>");
