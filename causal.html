@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="apple-mobile-web-app-capable" content="yes">
         
-        <title>Causality</title>
+        <title>Curiosity</title>
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/jquery.typeit/4.2.3/typeit.min.js"></script>
@@ -21,7 +21,7 @@
                 text-align: center;
                 padding: 0;
                 margin: 0;
-                
+                overflow: hidden;
             }
             
             p {
@@ -31,16 +31,15 @@
             }
             
             #cradle {
+                width: 100%;
+                height: 100%;
                 display: inline-block;
-                overflow: hidden;
             }
             
             #chest {
-                width: 600px;
-                height: 300px;
+                width: 25%;
+                height: 25%;
                 display: none;
-                background: url("images/visa/Chest_Close.gif") center no-repeat;
-                background-size: contain;
             }
             
             #scroll {
@@ -79,6 +78,11 @@
                     font-size: 16px;
                 }
                 
+                #chest {
+                    width: 50%;
+                    height: 50%;                
+                }
+                
                 #text_wrapper {
                     width: 80%;
                     height: auto;
@@ -91,7 +95,7 @@
     </head>
     <body>
         <div id="cradle">
-            <div id="chest"></div>
+            <img id="chest" src="images/visa/Chest_Close.gif"/>
             <div id="next_chest"></div>                                     
             <div id="scroll">
                 <div id="text_wrapper">
@@ -130,9 +134,12 @@
                         .tiType("The light reflects weirdly around it.");            
                     });
                     
-                    $("#approach").click(function(){                        
-                        $("#chest").animate({width: "1000px", height: "500px"}, 2000);
-                        $("#scroll").animate({marginTop: "-25px"});
+                    $("#approach").click(function(){
+                        if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+                            $("#chest").animate({width: "100%", height: "100%"}, 2000);                        
+                        } else {
+                            $("#chest").animate({width: "50%", height: "50%"}, 2000);
+                        } 
                         $(this).remove();
                         $("#button_holder").append("<button id='open'>Open?</button><button id='naw'>Naw</button>");                    
                         $("#text").typeIt({
@@ -174,7 +181,7 @@
                     });
                     
                     $("#open_it").click(function(){
-                        $("#chest").css("background-image","url('images/visa/Chest_Ajar.gif')");                       
+                        $("#chest").attr("src","images/visa/Chest_Ajar.gif");                       
                         startVibrate(500);
                         $("button").remove();
                         $("#button_holder").append("<button id='lift_lid'>Lift lid</button>");
@@ -194,7 +201,7 @@
                     });
                     
                     $("#lift_lid").click(function(){
-                        $("#chest").css("background-image","url('images/visa/Chest_Open.gif')");
+                        $("#chest").attr("src","images/visa/Chest_Open.gif");
                         startVibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
                         $("button").remove();
                         $("#button_holder").append("<button id='cower'>Cower</button>"); 
@@ -204,13 +211,13 @@
                             autoStart: false,
                             cursor: false,
                             callback: function() {
-                                $("#chest").css("background-image","url('images/visa/Chest_NoLight.png')");
+                                $("#chest").attr("src","images/visa/Chest_NoLight.png");
                                 $("#text").typeIt({
                                     speed: 50,
                                     autoStart: false,
                                     cursor: false,
                                     callback: function() {
-                                        $("#chest").css("background-image","url('images/visa/Chest_Shadow.gif')");
+                                        $("#chest").attr("src","images/visa/Chest_Shadow.gif");
                                         $("#text").typeIt({
                                             speed: 50,
                                             autoStart: false,
@@ -288,8 +295,12 @@
                 function reset(){
                     $("#scroll").fadeOut("slow", function(){
                         $("#chest").fadeOut("slow", function(){
-                            $("#chest").css("background-image","url('images/visa/Chest_Close.gif')");
-                            $("#chest").css({"width": "600px", "height": "300px"});
+                            $("#chest").attr("src","images/visa/Chest_Close.gif");                            
+                            if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+                                $("#chest").css({"width": "50%", "height": "50%"});                       
+                            } else {
+                                $("#chest").css({"width": "25%", "height": "25%"});
+                            }
                             $("#scroll").css("margin-top","0")
                             $("#text").text("");
                             $("#button_holder").append("<button id='approach'>Approach</button>");
