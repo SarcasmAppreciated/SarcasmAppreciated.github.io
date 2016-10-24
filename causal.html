@@ -201,8 +201,7 @@
                     });
                     
                     $("#lift_lid").click(function(){
-                        $("#chest").attr("src","images/visa/Chest_Open.gif");
-                        startVibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
+                        $("#chest").attr("src","images/visa/Chest_Open.gif");                        
                         $("button").remove();
                         $("#button_holder").append("<button id='cower'>Cower</button>"); 
                         bind();
@@ -218,6 +217,7 @@
                                     cursor: false,
                                     callback: function() {
                                         $("#chest").attr("src","images/visa/Chest_Shadow.gif");
+                                        startVibrate([500,110,500,110,450,110,200,110,170,40,450,110,200,110,170,40,500]);
                                         $("#text").typeIt({
                                             speed: 50,
                                             autoStart: false,
