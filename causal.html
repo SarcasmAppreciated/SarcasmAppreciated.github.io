@@ -111,7 +111,9 @@
 
                 // Starts vibration at passed in level
                 function startVibrate(duration) {
-                    navigator.vibrate(duration);
+                    if(window.innerWidth <= 800 && window.innerHeight <= 600) {
+                        navigator.vibrate(duration);
+                    }
                 }
 
                 start();
