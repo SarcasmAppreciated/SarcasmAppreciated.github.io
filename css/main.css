@@ -167,6 +167,7 @@ li {
     margin-left: 15%;
     background: url("../images/arrow.png")center no-repeat;
     cursor: pointer;
+    display: none;
 }
 
 #mobile_title {

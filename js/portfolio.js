@@ -1,6 +1,6 @@
 $(document).ready(function(){
     
-    navIntro();
+    /*navIntro();
 
     // Nav Intro
     function navIntro(){
@@ -13,12 +13,31 @@ $(document).ready(function(){
         // });    
     }
     
+    */
+    
+    $("#about, ul, .azimuth, #project, #splash").fadeIn("slow", function (){            
+        if($("#hook_alignment").width() > 800){
+            $("#arrow_down").fadeIn("slow", function(){
+                bounce($(this), 3, '5px', 500);                
+            });
+        }
+    });
+    
     $("#arrow_down").click(function(){
         var target = $("#about");
         $('html, body').animate({
             scrollTop: target.offset().top
         }, 1000);        
     });
+  
+    
+    // Arrow Bounce
+    function bounce(element, times, distance, speed) {
+        for(var i = 0; i < times; i++) {
+            element.animate({marginTop: '-='+distance}, speed)
+            .animate({marginTop: '+='+distance}, speed);
+        }       
+    }
 
     /*
     $("#intro, #arrow_down_box").click(function(){
@@ -30,9 +49,7 @@ $(document).ready(function(){
     });
     
     if($("#hook_alignment").css("margin-top") != "0px") {
-        $("#arrow_down_box").delay(1000).fadeIn("slow", function(){
-            bounce($(this), 2, '10px', 500);                
-        });    
+ 
     }
     
     // Arrow Bounce
