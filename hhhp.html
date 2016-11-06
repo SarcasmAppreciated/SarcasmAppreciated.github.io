@@ -43,15 +43,14 @@
         <div id="main">
             <div class="section_container" id="intro">
                 <div id="hook_alignment">
-                    <div id="hook">
+                    <!--<div id="hook">
                         <h1>HipHopHeads Polls:</h1>
                         <h1 class="subtitle">django // webAudioAPI // jQuery</h1>
-                    </div>
+                    </div>-->
                     <ul>
-                        <a href="https://github.com/SarcasmAppreciated"><li>iv. GITHUB</li></a>
-                        <a href="https://www.behance.net/SarcasmAppreciated"><li>iii. GALLERY</li></a>
-                        <a href="uiux.html"><li>ii. UI/UX</li></a>                        
-                        <a href="index.html"><li>i. ABOUT</li></a>
+                        <a href="https://github.com/SarcasmAppreciated"><li style="color: #333">GITHUB</li></a>
+                        <a href="https://www.behance.net/SarcasmAppreciated"><li style="color: #333">GALLERY</li></a>                       
+                        <a href="index.html"><li style="color: #333">HOME</li></a>
                     </ul>
                 </div>
             </div>
@@ -153,7 +152,7 @@
         <script>
             $(document).ready(function(){
             
-                if($("#hook_alignment").css("margin-top") != "0px") {
+                if($("#hook_alignment").width() > 800) {
                     $("#hook_image").append("<img src='images/gallery/hhhp_past.png' class='display_panel' id='hhhppast'></img><img src='images/gallery/hhhp_current.png' class='display_panel' id='hhhpcurrent'></img><img src='images/gallery/hhhp_nopanel.png' class='display_image' style='max-width: none;'></img>");
                 }
                 else {
