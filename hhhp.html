@@ -34,24 +34,14 @@
         <link href='https://fonts.googleapis.com/css?family=Oswald:300' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
         
-		<script src="js/jquery.min.js"></script>
-        <script src="http://vjs.zencdn.net/5.0/video.min.js"></script>
-        
-        <script src="js/Youtube.js"></script>  
-        <script src="js/hhhp.js"></script> 
-        <script src="js/audio.min.js"></script>    
+		<script src="js/jquery.min.js"></script>   
         
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/hhhp.css"> 
     </head>
     <body>
         <div id="main">
             <div class="section_container" id="intro">
                 <div id="hook_alignment">
-                    <!--<div id="hook">
-                        <h1>HipHopHeads Polls:</h1>
-                        <h1 class="subtitle">django // webAudioAPI // jQuery</h1>
-                    </div>-->
                     <ul>
                         <a href="https://github.com/SarcasmAppreciated"><li style="color: #333">GITHUB</li></a>
                         <a href="https://www.behance.net/SarcasmAppreciated"><li style="color: #333">GALLERY</li></a>                       
@@ -59,52 +49,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="section_container" style="position: relative; z-index: 1; height: 100%; background: #111" id="hook_image">
-                <div id="menu">
-                    <div id="hhhp_logo"></div>
-                    <div id="header">
-                        <a href="https://www.reddit.com/r/hiphopheads" style="color: #FFF"><div class="nav_button">REDDIT</div></a>
-                        <p style="display: inline;">I</p>
-                        <div class="nav_button" disabled>LOGIN</div>
-                    </div>
-                    <div id="footer">
-                        <p>We track <a href="www.reddit.com/r/HipHopHeads" style="color: #FFF; text-decoration: underline;">/r/HipHopHeads</a>' votes on all things hiphop.</p>     
-                        <p>A stats site created by /u/Rutigs.</p>
-                        <a id="github" href="https://github.com/rutigs/hhhpolls"></a>
-                    </div>
-                </div>
-             
-                <div id="polls"></div>             
-                
-                <div id="player_wrapper">
-                    <h1 id="track_number"></h1>
-                    <div id="equalizer_div">
-                        <div id="equalizer"></div>
-                    </div>            
-                    <h2 id="artist_song_title"></h2>
-                    <h3 id="album_title"></h3>
-                    
-                    <p id="track_extra_description"></p>
-                    <span></span>
-                    <span></span>
-                    <audio preload></audio>
-                    <div id="audio_div">
-                        <div id="audio_controls">
-                            <div class="track_button icon-skipbackward" id="prev"></div>
-                            <div class="track_button icon-play" id="center_button"></div>
-                            <div class="track_button icon-skipforward" id="next"></div>
-                        </div>
-                    </div>
-                    
-                    <audio
-                            id="testYT"
-                            class="video-js"
-                            controls
-                            width="640" height="264"
-                            data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=DiEwJTOderQ"}]}'
-                          >
-                    </audio>
-                </div> 
+            <div class="section_container" style="position: relative; margin-top: 150px" id="hook_image">             
             </div>
             <div class="section_container  skew-neg" id="about_hhhp">
                 <div class="text_align az skew-pos" style="margin-top: 125px;">
@@ -129,7 +74,7 @@
             </div>        
             <div class="section_container ">               
                 <p class="heading">Branding</p>
-                <img class="display_image standalone" src="images/gallery/hhhp.png"></img>
+                <img class="display_image standalone" src="images/gallery/hhhp_b.png"></img>
                 
                 <p class="heading">Colours</p>
                 <div class="text_align">
@@ -172,7 +117,7 @@
                 <br/>
                 <img class="display_image standalone" src="images/gallery/screen_hhhp02.jpg"></img>
             </div>
-            <div class="section_container" id="project">
+            <div class="section_container">
                 <div class="text_align">
                     <div class="code_title">SAMPLES</div>
                     <div class="code_section" id="projects">
@@ -191,10 +136,10 @@
             $(document).ready(function(){
             
                 if($("#hook_alignment").width() > 800) {
-                    // $("#hook_image").append("<img src='images/gallery/hhhp_past.png' class='display_panel' id='hhhppast'></img><img src='images/gallery/hhhp_current.png' class='display_panel' id='hhhpcurrent'></img><img src='images/gallery/hhhp_nopanel.png' class='display_image' style='max-width: none;'></img>");
+                    $("#hook_image").append("<img src='images/gallery/hhhp_past.png' class='display_panel' id='hhhppast'></img><img src='images/gallery/hhhp_current.png' class='display_panel' id='hhhpcurrent'></img><img src='images/gallery/hhhp_nopanel.png' class='display_image' style='max-width: none;'></img>");
                 }
                 else {
-                    // $("#hook_image").append("<img src='images/gallery/imac_hhhp.png' class='display_image'></img>");
+                    $("#hook_image").append("<img src='images/gallery/imac_hhhp.png' class='display_image'></img>");
                 }
             });
         </script>
