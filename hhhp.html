@@ -108,7 +108,7 @@
                     <p>OSWALD</p>
                 </div>
                 <div class="font_box" style="margin-bottom: 100px;">
-                    <p style="font-family: 'open-sans'; font-size: 72px;">Abcd</p>
+                    <p style="font-family: 'Open Sans'; font-size: 72px;">Abcd</p>
                     <p>OPEN-SANS</p>
                 </div>
                 
@@ -137,6 +137,10 @@
             
                 if($("#hook_alignment").width() > 800) {
                     $("#hook_image").append("<img src='images/gallery/hhhp_past.png' class='display_panel' id='hhhppast'></img><img src='images/gallery/hhhp_current.png' class='display_panel' id='hhhpcurrent'></img><img src='images/gallery/hhhp_nopanel.png' class='display_image' style='max-width: none;'></img>");
+                
+                    $(".display_panel").click(function(){
+                        $(this).fadeOut("slow");
+                    });
                 }
                 else {
                     $("#hook_image").append("<img src='images/gallery/imac_hhhp.png' class='display_image'></img>");

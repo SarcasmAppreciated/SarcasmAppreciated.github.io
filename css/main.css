@@ -28,7 +28,7 @@ body {
 }
 
 h1{
-	color: #FFF;
+	color: #111;
 	font-size: 40px;
 	font-family: "couturebold", Arial, sans-serif;
     display: inline-block;
@@ -73,7 +73,7 @@ ul {
 }
 
 ul > a {
-    color: #FFF;
+    color: #111;
 }
 
 li {
@@ -83,17 +83,19 @@ li {
 }
 
 #main {
-    height: 100%;
+    height: auto;
     width: 100%;
     display: inline-block;
+    /*background: url("../images/Portfolio_Image.png") center no-repeat;
+    background-size: 300%;*/
 }
 
 #splash {
-    height: 100%;
+    height: 1000px;
     width: 100%;
     display: none;
-    background: url("../images/Portfolio_BG.jpg") center no-repeat;
-    background-size: cover;
+    /*background: url("../images/Portfolio_Image.png") center no-repeat;*/
+    /*background-size: cover;*/
     text-align: left;
 }
 
