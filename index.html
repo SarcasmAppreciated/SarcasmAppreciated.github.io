@@ -29,7 +29,7 @@
 		<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 				
-        <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Quicksand:400' rel='stylesheet' type='text/css'>
         
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 		<script src="js/portfolio.js"></script>   
@@ -47,20 +47,60 @@
     </head>
     <body>
         <div id="main">
+            <ul>
+                <a href="https://github.com/SarcasmAppreciated"><li>Github</li></a>
+                <a href="http://www.linkedin.com/pub/benson-li/54/a99/835"><li>LinkedIn</li></a>
+                <a href="https://www.behance.net/SarcasmAppreciated"><li>Behance</li></a>
+                <a href="mailto:contact@benson.li"><li>Email</li></a>                
+            </ul>
+            <h1>Benson Li - Under Construction</h1>
             <div class="section_container" id="intro">
-                <div id="hook_alignment">
-                    <ul>
-                        <a href="https://github.com/SarcasmAppreciated"><li>GITHUB</li></a>
-                        <a href="https://www.behance.net/SarcasmAppreciated"><li>GALLERY</li></a>
-                    </ul>
+                <div class="stage" style="margin-top: 10%; box-shadow: 5px 5px 0px #888888;">
+                    <div class="stage_text">
+                        <h2>I like making cool things -<br/> beautiful and immersive experiences.</h2>
+                    </div>
+                    <div class="stage_overflow">
+                        <img id="self" src="images/Portfolio_Image.jpg"></img>
+                    </div>                    
+                </div>
+                <div class="navigation_redundancy_wrapper">
+                    <div class="navigation_redundancy">
+                        <p>01. HHHP</p>
+                        <div class="navigation_redundancy_arrow"></div>
+                    </div>                    
                 </div>
             </div>
-            <div class="section_container" id="splash">
-                <!--<h1 style="margin-left: 15%;">BENSON LI</h1>
-                <div id="arrow_down"></div>-->               
-            </div>
-                
-            <div class="section_container" id="about">
+
+            <div class="section_container" id="hhhp">
+                <div id="hhhp_bg_cover"></div>
+                <div id="hhhp_bg"></div>
+                <div class="navigation_redundancy_wrapper">
+                    <div class="navigation_redundancy">                        
+                        <div class="navigation_redundancy_arrow"></div>
+                        <p>00. Home</p>
+                    </div>                    
+                </div>
+                <div class="stage">
+                    <div class="stage_text">
+                        <h2>Sample Work: HipHopHead Polls<br/>Circa 2016</h2>
+                    </div>                    
+                    <div class="stage_overflow">
+                        <img src="images/gallery/HHHP.png" style="margin-top: 5%;"></img>
+                        <div class="stage_exit">
+                            <p>Project Design</p>
+                            <div class="stage_exit_arrow"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="navigation_redundancy_wrapper">
+                    <div class="navigation_redundancy">
+                        <p>02. Fiist</p>
+                        <div class="navigation_redundancy_arrow"></div>
+                    </div>                    
+                </div>
+            </div>  
+            
+            <!--<div class="section_container" id="about">
                 <div class="text_align">
                     <p style="margin-top: 75px;" id="mobile_title">ABOUT BENSON LI</p>
                     <div id="avatar"></div>
@@ -85,16 +125,7 @@
                             <div class="skill" style="background-size: 50%">MATLAB</div>
                             <div class="skill" style="background-size: 50%">R (Stats)</div>
                         </div>
-					</div>
-                    
-                    <!--<div class="code_title">UI/UX</div>
-                    <div class="code_section">
-                        <p> I have a page just for <a href="uiux.html">UI/UX</a>.
-                            <br/>
-                            (I'll have a gallery too soon)
-                        </p>
-                    </div>-->
-                    
+					</div>                                        
                     <div class="code_title">Samples</div>
 					<div class="code_section" id="projects">
                         <div class="project_container" id="hhhp" style="margin-top: 0px;"> 
@@ -104,13 +135,6 @@
                                 <p class="project_text">Subreddit Polling</p><p class="project_text small">Javascript // HTML // CSS // Python</p>
                             </a>
                         </div>
-                        <!--<div class="project_container" id="azimuth">
-                            <a href="./azimuth.html">
-                                <div class="project_icon" id="azimuth_icon" style="float: left; margin-right: 20px; margin-top: 10px;"></div>
-                                <h3>AZIMUTH</h3>
-                                <p class="project_text">Icebergs and Journey</p><p class="project_text small">Javascript // HTML // CSS // Ruby</p>
-                            </a>
-                        </div>-->
                         <div class="project_container" id="fiist" style="margin-bottom: 0px;"> 
                             <a href="http://sarcasmappreciated.github.io/Fiist-Site/">
                                 <div class="project_icon" id="fiist_icon" style="float: left; margin-right: 20px; margin-top: 10px;"></div>
@@ -142,19 +166,9 @@
                             </a>
                         </div>
                         <p>I am happy to announce that I will be working for Amazon after I graduate. In the past, I have worked as a graphics artist for Travis Gafford and with Amplemeal.com, GameSpot (formerly onGamers), LGD Gaming, the University of Waterloo, and Daniel ‘Spellsy’ Biery - creating art and design for their respective needs.</p>	
-					</div>
-                    <div class="code_title">Links</div>
-					<div class="code_section" id="contacts">
-                        <p>CONTACT: <a href="mailto:contact@benson.li">Email</a>
-                        // <a href="https://twitter.com/TakeMeLiterally">Twitter</a>
-                        <br/>
-                        DETAILS: <a href="http://www.linkedin.com/pub/benson-li/54/a99/835">Linkedin</a>
-                        // <a href="https://github.com/SarcasmAppreciated">Github</a>
-                        // <a href="https://www.behance.net/SarcasmAppreciated">Behance</a>
-                        </p>
-					</div>
+					</div>					
                 </div>                 
-            </div>
+            </div>-->
         </div>
     </body>
 </html>
