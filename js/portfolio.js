@@ -45,9 +45,9 @@ $(document).ready(function(){
     
     /* Parallax */
     
-    $(".parallax_layer").parallax(
+    /*$(".parallax_layer").parallax(
         { mouseport: $("#parallax") },
         { xparallax: "48px", yparallax: "48px"}
-    );
+    );*/
     
 });

@@ -223,7 +223,8 @@ li {
 /* Intro */
 .parallax_layer {
     display: inline-block;
-    position: absolute;
+    margin-top: -210px;
+    margin-left: 300px;
 }
 
 /* HHHP */
