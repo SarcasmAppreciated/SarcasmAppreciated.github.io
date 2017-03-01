@@ -615,20 +615,14 @@ p.heading {
     }    
 }
 
-/*
-body.fp-viewing-2  ul > a, body.fp-viewing-2 .navigation_redundancy{
-    color: #000;
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-width: 801px) {
+    .stage {
+        height: 550px;
+    }
 }
 
-body.fp-viewing-2 .navigation_redundancy_arrow{
-    background-color: #000;
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 800px) {
+    .stage {
+        height: 450px;
+    }
 }
-
-body.fp-viewing-2  .stage{
-    border-color: #000;
-}
-
-body.fp-viewing-2  h1{
-    display: none;
-}
-*/
