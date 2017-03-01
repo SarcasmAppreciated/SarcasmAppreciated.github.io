@@ -20,7 +20,7 @@ html {
 body {
     width: 100%;
 	font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
-    color: #666;
+    color: #111;
 	padding: 0;
 	margin: 0;
     height: 100%;
@@ -35,7 +35,8 @@ h1 {
     margin-top: 2%;
     float: left;
     position: fixed;
-    z-index: 51;
+    z-index: 52;
+    text-decoration: line-through;
 }
 
 h2 {
@@ -68,7 +69,7 @@ ul {
 }
 
 ul > a {
-    color: #666;
+    color: #111;
 }
 
 li {
@@ -86,29 +87,65 @@ li {
 	width: 100%;
 	height: 100%;
 	padding: 0;
-    display: block; 
+    display: block;
 }
 
 .stage {
     max-width: 1280px;
-    width: 100%;
+    width: 90%;
     height: 60%;
-    display: inline-block;
     position: relative;
+    display: inline-block;
     border: 1px solid #666;
-    margin-top: 3%;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.stage_text {
-    max-width: 720px;
-    width: 100%;    
+.stage#first {
+    margin-top: 190px;
+    box-shadow: 5px 5px 0px #888888;
+}
+
+#stage_intro {
+    width: 50%;    
     position: absolute;
-    margin-left: -75px;
-    margin-top: 50px;
+    margin-left: -1px;
+    top: 55%;
     text-align: center;
-    line-height: 200px;
+    line-height: 150px;
+    border-top: 1px solid #666;
+    border-right: 1px solid #666;
+    border-bottom: 1px solid #666;
     background-color: #FFF;
     z-index: 50;
+}
+
+#stage_intro h2 {
+    font-size: 30px;
+}
+
+.stage_title {
+    width: calc(100% + 2px);
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    margin-left: -1px;
+    margin-bottom: 50px;
+    text-align: center;
+    line-height: normal;
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+    background-color: #FFF;
+    z-index: 50;
+    cursor: default;
+}
+
+.stage_title  p, .stage_title h2{
+    line-height: 18px;
+}
+
+.stage_title h2 {
+    margin-top: 50px;
 }
 
 .stage_exit {
@@ -120,7 +157,8 @@ li {
     text-align: center;
     line-height: 100px;
     background-color: #000;
-    z-index: 40;
+    border: 1px solid #FFF;
+    z-index: 51;
     cursor: pointer;
 }
 
@@ -138,7 +176,7 @@ li {
     text-transform: uppercase;
     font-style: italic;
     display: inline;
-    color: #666;
+    color: #AAA;
 }
 
 .stage_overflow {
@@ -156,7 +194,12 @@ li {
     display: inline-block;
     cursor: pointer;
     margin-top: 50px;
+    margin-bottom: 50px;
     text-transform: uppercase;
+}
+
+.navigation_redundancy p {
+    color: #BBB;
 }
 
 .navigation_redundancy_arrow {
@@ -165,7 +208,7 @@ li {
     display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
-    background-color: #666;
+    background-color: #DDD;
 }
 
 .code_title {
@@ -181,9 +224,8 @@ li {
 	max-width: 680px;
 	display: inline-block;
 	text-align: left;
-    border-left: #333 solid;
+    border-left: #111 solid;
     margin-top: 25px;
-    margin-bottom: 50px;
 }
 
 .code_section p, .code_section .circle_container, .code_section .project_container, #skills{
@@ -203,45 +245,30 @@ li {
 	display: inline-block;
 }
 
-.onclick {
-    cursor: auto;
-    font-weight: bold;
-}
-
-#mobile_title {
-    display: none;
-}
-
-#avatar {
-    width: 90%;
-    height: 300px;
-    display: none;
-    margin: 20px;
-    background: url("../images/Avatar300.png") center no-repeat;
-}
-
 /* Intro */
-.parallax_layer {
+
+#portrait {
+    width: 100%;
+    height: 100%;
     display: inline-block;
-    margin-top: -210px;
-    margin-left: 300px;
+    background: url("../images/Portfolio_Image.jpg") right no-repeat;
+    background-size: auto 200%;
+    background-color: #020203;
 }
 
 /* HHHP */
 
-#hhhp {
-    background: url("../images/gallery/screen_hhhp01_blur.jpg") center no-repeat;
+#hhhp .stage {
+    background: url("../images/gallery/screen_hhhp01.jpg") center no-repeat;
     background-size: cover;
 }
 
-#fiist {
-    background: url("../images/gallery/fiist_blur.jpg") center no-repeat;
+#fiist .stage {
+    background: url("../images/gallery/fiist.jpg") center no-repeat;
     background-size: cover;
 }
 
 /* About */
-#about {
-}	
 
 .circle_container {
     width: auto;
@@ -291,15 +318,6 @@ li {
     background-size: contain;
 }
 
-#plus {
-    width: 10px;
-    height: 70px;
-    float: left;
-    display: inline-block;
-    margin-right: 10px;
-    line-height: 70px;
-}
-
 .skill {
 	width: auto;
 	background: url("../images/TileDF.png") left no-repeat;
@@ -342,6 +360,7 @@ li {
 }
 
 /* Projects */
+
 .project_container {
 	width: auto;
 	height: auto;
@@ -446,12 +465,6 @@ p.project_text.small {
     color: #FFF;
 }
 
-#about_uiux {
-    background-color: #FFF;
-    height: 400px;
-    margin-top: 800px;
-}
-
 .skew-neg {
     -webkit-transform: skewY(-5deg);
     -moz-transform: skewY(-5deg);
@@ -503,69 +516,71 @@ p.heading {
     min-height: 200px;
 }
 
-
 @media (max-width: 800px) {
 	body {
 		overflow-x: hidden;
 		width: 100%;
+        height: 100%;
 		padding: 0;
 		margin: 0;
 	}	
 	p  {
-		font-size: 16px;
+		font-size: 14px;
 	}
     h1 {
-       font-size: 48px;
-       color: #333;
-       display: none;
+        margin-left: 20px;
     }
     ul {
-    	margin-left: -15px;
-    	margin-top: 20px;
     	font-size: 12px;
+        padding: 0;
+        margin-left: 20px;
     }
-    ul >a{
-        color: #333;
+    .section_container {
+        height: auto !important;
     }
-    #mobile_title {
-        display: inline-block;
+    #portrait {
+        background-position: center;
     }
-	#avatar {
-        height: 150px;
-        background: url("../images/Avatar150.png")center no-repeat;
-        display: inline-block;
+    .stage, .stage#first {
+        margin-top: -20px;
+    }
+    .stage#first {
+        height: 500px;
+        box-shadow: none;
+    }    
+    #stage_intro {
+        width: calc(100% + 2px);
+        border-right: none;
+    }        
+    .stage_exit {
+        right: 50%;        
+        bottom: -10px;
+        margin-right: -187.5px;
+        height: 75px;
+        line-height: 75px;
+    }    
+    .navigation_redundancy_arrow{
+        height: 45px;
+    }
+    .up {
+        display: none;
+    }    
+    .code_section {
+        width: 95%;
+        margin-top: 0;
         margin-bottom: 0;
-	}
-    #hook_alignment {
-        width: 100%;
-        cursor: auto;
-        background-color: #FFF;
-        box-shadow: 0px 1px 1px 1px #999;
-    }  
-    #hook {
-        margin-top: 15px;
-        width: 90%;
-    }
-    #main {
-        margin-top: 0px;
-        background: none;
-    }
+        
+    }    
     .code_section p, .code_section .circle_container, .code_section .project_container, #skills{
-        margin-left: 40px;
+        margin-left: 10px;
+    }
+    .skill {
+        font-size: 14px;
     }
     .code_title {
         text-align: center;
-        margin-top: 75px;
+        margin-top: 25px;
     }
-	.section_container {
-		width: 100%;
-		height: auto !important;
-		overflow: hidden;
-	}		
-	#about {
-		background: none;
-		margin-top: 0;
-	}
     .circle {
         margin-top: 10px;
     }
@@ -573,8 +588,8 @@ p.heading {
         height: auto;
         margin-bottom: 0px;
     }
-    #projects {
-    }    
+    
+    /* Get Rid of Later */
 	.project_container {
 		margin: 10px;
 	}
@@ -597,20 +612,22 @@ p.heading {
     p.heading {
         margin-top: 50px;
     }    
-    #about_uiux {
-        margin-top: 200px;
-    }
 }
 
-
-@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-width: 800px){
-	body {
-		-moz-transform: scale(0.9, 0.9); /* Moz-browsers */
-		zoom: 0.9; /* Other non-webkit browsers */
-		zoom: 90%;   
-	}	
-	hook {
-		text-shadow: none;
-	}
+/*
+body.fp-viewing-2  ul > a, body.fp-viewing-2 .navigation_redundancy{
+    color: #000;
 }
 
+body.fp-viewing-2 .navigation_redundancy_arrow{
+    background-color: #000;
+}
+
+body.fp-viewing-2  .stage{
+    border-color: #000;
+}
+
+body.fp-viewing-2  h1{
+    display: none;
+}
+*/
