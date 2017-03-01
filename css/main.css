@@ -37,6 +37,7 @@ h1 {
     position: fixed;
     z-index: 52;
     text-decoration: line-through;
+    cursor: default;
 }
 
 h2 {
@@ -62,7 +63,7 @@ a {
 
 ul {
     position: fixed;
-    bottom: 5%;
+    margin-top: calc(2% + 30px);
     list-style-type: none;
     text-align: left;
     z-index: 51;
@@ -73,6 +74,8 @@ ul > a {
 }
 
 li {
+    float: left;
+    margin-right: 5px;
     text-transform: uppercase;
 }
 
@@ -214,7 +217,7 @@ li {
 
 .code_title {
     width: 100px;
-    height: 50px;
+    height: 25px;
     display: inline-block;
     text-align: right;
     text-transform: uppercase;
@@ -226,7 +229,7 @@ li {
 	display: inline-block;
 	text-align: left;
     border-left: #111 solid;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 .code_section p, .code_section .circle_container, .code_section .project_container, #skills{
@@ -354,10 +357,6 @@ li {
 #FL {
     background: url("../images/FL.png") center no-repeat;
     background-size: contain;
-}
-
-#skills {
-    margin-top: 20px;
 }
 
 /* Projects */
@@ -533,9 +532,16 @@ p.heading {
     }
     ul {
     	font-size: 12px;
-        padding: 0;
         margin-left: 20px;
-    }
+        padding: 0;
+    }    
+    body.fp-viewing-3 h1{
+        display: none;
+    }    
+    body.fp-viewing-3 ul {
+        background-color: #FFF;
+        margin-top: 20px;
+    }    
     .section_container {
         height: auto !important;
     }
@@ -543,7 +549,7 @@ p.heading {
         background-position: center;
     }
     .stage, .stage#first {
-        margin-top: -20px;
+        margin-top: 0px;
     }
     .stage#first {
         height: 500px;
@@ -577,6 +583,10 @@ p.heading {
     }
     .skill {
         font-size: 14px;
+    }
+    .skill.icon {
+        height: 25px;
+        width: 25px;
     }
     .code_title {
         text-align: center;
@@ -617,12 +627,14 @@ p.heading {
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-width: 801px) {
     .stage {
-        height: 550px;
+        height: 550px !important;
     }
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 800px) {
     .stage {
-        height: 450px;
+        min-height: initial !important;
+        height: 450px !important;
+        margin-top: 70px !important;
     }
 }
