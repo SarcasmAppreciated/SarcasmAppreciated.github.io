@@ -534,12 +534,12 @@ p.heading {
     	font-size: 12px;
         margin-left: 20px;
         padding: 0;
+        background-color: #FFF;
     }    
     body.fp-viewing-3 h1{
         display: none;
     }    
-    body.fp-viewing-3 ul {
-        background-color: #FFF;
+    body.fp-viewing-3 ul {        
         margin-top: 20px;
     }    
     .section_container {
@@ -566,12 +566,9 @@ p.heading {
         height: 75px;
         line-height: 75px;
     }    
-    .navigation_redundancy_arrow{
-        height: 45px;
-    }
-    .up {
+    .navigation_redundancy{
         display: none;
-    }    
+    }
     .code_section {
         width: 95%;
         margin-top: 0;

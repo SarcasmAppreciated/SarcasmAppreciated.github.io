@@ -11,7 +11,8 @@ $(document).ready(function(){
     
     function initializeVerticalScroll() {
         $("#main").fullpage({
-            scrollOverflow: true
+            scrollOverflow: true,
+            responsiveHeight: 940
         });
     }
     
