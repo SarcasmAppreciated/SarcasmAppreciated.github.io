@@ -11,7 +11,8 @@ $(document).ready(function(){
     
     function initializeVerticalScroll() {
         $("#main").fullpage({
-            scrollOverflow: true,
+            bigSectionsDestination: "top",
+            css3: true,
             responsiveHeight: 940
         });
     }
