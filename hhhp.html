@@ -36,41 +36,69 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
         
         <link rel="stylesheet" href="css/main.css">
+        <style>
+            @media (max-width: 800px) {
+                .stage {
+                    margin-left: 0;
+                    margin-right: 0;
+                }
+                .stage_exit {
+                    position: fixed;
+                    bottom: 0;
+                    left: 0;
+                    right: auto;
+                    margin-right: auto;
+                } 
+            }
+            
+        </style>
     </head>
     <body>
         <div id="main">
-            <div class="section_container" id="intro">
-                <div id="hook_alignment">
-                    <ul>
-                        <a href="https://github.com/SarcasmAppreciated"><li style="color: #333">GITHUB</li></a>
-                        <a href="https://www.behance.net/SarcasmAppreciated"><li style="color: #333">GALLERY</li></a>                       
-                        <a href="index.html"><li style="color: #333">HOME</li></a>
-                    </ul>
-                </div>
-            </div>
-            <div class="section_container" style="position: relative; margin-top: 150px" id="hook_image">             
-            </div>
-            <div class="section_container  skew-neg" id="about_hhhp">
-                <div class="text_align az skew-pos" style="margin-top: 125px;">
-                    <div class="code_title">Summary</div>
-                    <div class="code_section" style="border-left: #BBB solid; max-width: 820px">
-                        <p>ii. HIPHOPHEADS POLLS - WORK IN PROGRESS</p>
-                        <br/>
-                        <p style="font-size: 18px; font-style: italic">From the HipHopHeads Polls README:</p>
-                        <p style="font-size: 18px;">"HipHopHeads Polls is an application for the community over at /r/HipHopHeads on Reddit.
-                            <br/>Goals for the project:
-                            <br/>1.Provide a service where only the community (those who are subbed to the subreddit) can vote by using the Reddit API.
-                            <br/>2.Mobile-friendly and look good
-                            <br/>3.Learn Django/Python and other web development technologies
+            <div class="section_container">
+                <div class="stage hhhp_show">
+                    <div class="text_align" style="margin-top: 100px;">
+                        <div class="code_title">Summary</div>
+                        <div class="code_section" style="max-width: 820px">
+                            <p>Name: HIPHOPHEADS Polls</p>
+                            <p>Date: March 2016</p>
+                            <p>Status: Unfinished and Postponed Indefinitely</p>
+                            <p>In Collaboration with <a href="https://github.com/rutigs/">Nick Rutigliano</a></p>
                             <br/>
-                            <br/>The project was done in Python with Django and hosted on Heroku."                        
+                            <p style="font-style: italic">From the HipHopHeads Polls README:</p>
+                            <p>"HipHopHeads Polls is an application for the community over at /r/HipHopHeads on Reddit.
+                                <br/>Goals for the project:
+                                <br/>1.Provide a service where only the community (those who are subbed to the subreddit) can vote by using the Reddit API.
+                                <br/>2.Mobile-friendly and look good
+                                <br/>3.Learn Django/Python and other web development technologies
+                                <br/>
+                                <br/>The project was done in Python with Django and hosted on Heroku."                        
+                                <br/>
+                                <a href="https://github.com/rutigs/hhhpolls">GITHUB</a>
+                            </p>
                             <br/>
-                            <br/>
-                            <a href="https://github.com/rutigs/hhhpolls">GITHUB</a>
-                        </p>
+                            <p style="font-style: italic">Note: Unfortunately, this project is on hold indefinitely due to the lack of support.
+                                <br/>However, I've included this as a sample of my design work rather than an example of of my development work.
+                            </p>
+                        </div>
                     </div>
-                </div>
-            </div>        
+
+                    
+                    <div class="stage_exit">
+                        <p>X</p>
+                        <div class="stage_exit_arrow"></div>
+                        <p>Exit Project</p>                      
+                    </div>
+                </div> 
+            </div>
+            
+            
+            
+            
+            <!--   
+
+                    <p class="heading">Branding</p>
+                    <img class="display_image standalone" src="images/gallery/hhhp_b.png"></img>            
             <div class="section_container ">               
                 <p class="heading">Branding</p>
                 <img class="display_image standalone" src="images/gallery/hhhp_b.png"></img>
@@ -116,7 +144,9 @@
                 <br/>
                 <img class="display_image standalone" src="images/gallery/screen_hhhp02.jpg"></img>
             </div>
-            <div class="section_container">
+            
+            -->
+            <!--<div class="section_container">
                 <div class="text_align">
                     <div class="code_title">SAMPLES</div>
                     <div class="code_section" id="projects">
@@ -129,12 +159,26 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
+        
+        
+        
+        
         <script>
-            $(document).ready(function(){
-            
-                if($("#hook_alignment").width() > 800) {
+            $(document).ready(function(){                
+                $(".hhhp_show").fadeIn().css("display", "inline-block").animate({
+                    height: "90%",
+                    width: "95%",
+                    marginTop: "2.5%"
+                }, 1000, function(){
+                });
+
+                $(".stage_exit").click(function() {
+                    window.location.href = "index.html#2";
+                });
+                            
+                /*if($(document).width() > 800) {
                     $("#hook_image").append("<img src='images/gallery/hhhp_past.png' class='display_panel' id='hhhppast'></img><img src='images/gallery/hhhp_current.png' class='display_panel' id='hhhpcurrent'></img><img src='images/gallery/hhhp_nopanel.png' class='display_image' style='max-width: none;'></img>");
                 
                     $(".display_panel").click(function(){
@@ -143,7 +187,7 @@
                 }
                 else {
                     $("#hook_image").append("<img src='images/gallery/imac_hhhp.png' class='display_image'></img>");
-                }
+                }*/
             });
         </script>
     </body>

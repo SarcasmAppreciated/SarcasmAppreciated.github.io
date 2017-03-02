@@ -25,6 +25,7 @@ body {
 	margin: 0;
     height: 100%;
     text-align: center;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -82,10 +83,6 @@ ul#navigation  li {
     margin-right: 0;
 }
 
-li.active {
-    font-size: 20px;
-}
-
 ul > a {
     color: #111;
 }
@@ -120,11 +117,6 @@ li {
     border: 1px solid #666;
     margin-left: 20px;
     margin-right: 20px;
-}
-
-.stage#first {
-    margin-top: 190px;
-    box-shadow: 5px 5px 0px #888888;
 }
 
 #stage_intro {
@@ -266,18 +258,13 @@ li {
 	display: inline-block;
 }
 
-/* Intro */
-
-#portrait {
-    width: 100%;
-    height: 100%;
-    display: inline-block;
+#intro .stage {
+    margin-top: 190px;
+    box-shadow: 5px 5px 0px #888888;
     background: url("../images/Portfolio_Image.jpg") right no-repeat;
     background-size: auto 200%;
     background-color: #020203;
 }
-
-/* HHHP */
 
 #hhhp .stage {
     background: url("../images/gallery/screen_hhhp01.jpg") center no-repeat;
@@ -288,6 +275,15 @@ li {
     background: url("../images/gallery/fiist.jpg") center no-repeat;
     background-size: cover;
 }
+
+.hhhp_show {
+    display: none;
+    background: none;
+    width: 1280px;
+    max-width: initial;
+    margin-top: 10%;
+}
+
 
 /* About */
 
@@ -415,21 +411,6 @@ p.project_text.small {
 	font-size: 16px;
 }
 
-#hhhp_icon {
-	background: url("../images/hhhp_icon.png") center no-repeat;
-    background-size: contain;
-}
-
-#fiist_icon {
-	background: url("../images/fiist_icon.png") center no-repeat;
-    background-size: contain;
-}
-
-#azimuth_icon {
-	background: url("../images/azimuthBW_icon.png") center no-repeat;
-    background-size: contain;
-}
-
 .display_image {
     width: 95%;
     max-width: 1000px;
@@ -466,22 +447,6 @@ p.project_text.small {
     box-shadow: 0px 1px 1px 2px #999;
 }
 
-.text_align.az{
-    max-width: 980px;
-    /*border: 5px solid #dbe8f9;*/
-}
-
-#about_az {
-    background-color: #ccdaeb;
-    height: 500px;
-}
-
-#about_hhhp {
-    background-color: #111;
-    height: 500px;
-    color: #FFF;
-}
-
 .skew-neg {
     -webkit-transform: skewY(-5deg);
     -moz-transform: skewY(-5deg);
@@ -514,6 +479,7 @@ p.project_text.small {
 
 p.heading {
     margin-top: 150px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
@@ -564,21 +530,23 @@ p.heading {
         float: left;
         margin-left: 5px;
     }
-    li.active {
-        font-size: 14px;
+    .active {
+        font-size: 14px !important;
     }
     .section_container {
         height: auto !important;
     }
-    #portrait {
-        background-position: center;
-    }
-    .stage, .stage#first {
+    .stage, #intro .stage {
         margin-top: 0px;
     }
-    .stage#first {
+    #intro .stage {
         height: 500px;
+        background-position: top center;
+        background-size: 75% auto;
         box-shadow: none;
+    }
+    .hhhp_show {
+        border: none;
     }    
     #stage_intro {
         width: calc(100% + 2px);
@@ -621,6 +589,10 @@ p.heading {
         height: auto;
         margin-bottom: 0px;
     }
+    .fullpage-wrapper {
+        overflow-x: hidden;
+    }
+    
     
     /* Get Rid of Later */
 	.project_container {
@@ -639,14 +611,12 @@ p.heading {
     .display_image.small {
         width: 100%;
     }
-    .azimuth {
-        margin-top: 100px;
-    }
     p.heading {
         margin-top: 50px;
     }    
 }
 
+/*
 @media screen and (-webkit-min-device-pixel-ratio:0) and (min-width: 801px) {
     .stage {
         height: 550px !important;
@@ -660,15 +630,17 @@ p.heading {
         margin-top: 70px !important;
     }
 }
+*/
 
 /* Strikethrough by Eden S.-G. */
 
-.strikethrough {
+.active {
+    font-size: 20px;
     display: inline-block;
     position: relative;
 }
 
-.strikethrough:after {
+.active:after {
     content: '';
     position: absolute;
     display: block;
@@ -683,7 +655,7 @@ p.heading {
 
 /* Little hover effect */
 
-.strikethrough:hover:after {
+.active:hover:after {
     transform: scaleX(0);
     transform-origin: center right;
 }

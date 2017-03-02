@@ -13,11 +13,8 @@ $(document).ready(function(){
         $("#main").fullpage({
             bigSectionsDestination: "top",
             css3: true,
-            afterLoad: function(anchor, index) {
-                var $currentNav = $("ul#navigation").find("[data='" + index +"']").children("li");
-                $currentNav.addClass("active strikethrough");
-                $("ul#navigation").find("li").not($currentNav).removeClass("active strikethrough");
-            },
+            anchors: ['1', '2', '3', '4'],
+            menu: "#navigation",
             responsiveHeight: 940
         });
     }
@@ -33,6 +30,8 @@ $(document).ready(function(){
                 $("ul#social_media").css("margin-top", "calc(2% + 35px)");
                 $("ul#navigation").css("margin-top", "calc(2% + 55px)");
             }
+        } else {
+            $("ul#navigation").css("top", "calc(50% - 50px)");            
         }
     });
     
@@ -42,5 +41,13 @@ $(document).ready(function(){
         { mouseport: $("#parallax") },
         { xparallax: "48px", yparallax: "48px"}
     );*/
+    
+    /* HHHP */
+    $("#start_hhhp").click(function() {
+        $(".hhhp_hide, #navigation, #social_media, h1").fadeOut( function() {
+            window.location.href = "hhhp.html";
+        });        
+    });
+    
     
 });
