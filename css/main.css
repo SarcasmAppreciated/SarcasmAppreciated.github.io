@@ -63,7 +63,7 @@ a {
 
 ul#social_media {
     position: fixed;
-    margin-top: calc(2% + 50px);
+    margin-top: calc(2% + 35px);
     list-style-type: none;
     text-align: right;
     z-index: 51;
@@ -558,7 +558,7 @@ p.heading {
     }
     ul#navigation  {
         top: 0;
-        margin-top: calc(2% + 70px);
+        margin-top: calc(2% + 55px);
     }
     ul#navigation  li {
         float: left;
