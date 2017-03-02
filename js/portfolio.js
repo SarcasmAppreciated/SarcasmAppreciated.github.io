@@ -30,8 +30,8 @@ $(document).ready(function(){
                 $("ul#navigation").css("margin-top", "25px");
             } else {
                 $("h1").css("display", "block");
-                $("ul#social_media").css("margin-top", "calc(2% + 35px)");
-                $("ul#navigation").css("margin-top", "calc(2% + 55px)");
+                $("ul#social_media").css("margin-top", "calc(2% + 50px)");
+                $("ul#navigation").css("margin-top", "calc(2% + 70px)");
             }
         }
     });
