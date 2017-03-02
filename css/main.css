@@ -61,12 +61,29 @@ a {
     color: #666;
 }
 
-ul {
+ul#social_media {
     position: fixed;
-    margin-top: calc(2% + 30px);
+    margin-top: calc(2% + 35px);
+    list-style-type: none;
+    text-align: right;
+    z-index: 51;
+}
+
+ul#navigation {
+    position: fixed;
+    top: calc(50% - 50px);
     list-style-type: none;
     text-align: left;
-    z-index: 51;
+    z-index: 53;
+}
+
+ul#navigation  li {
+    float: none;
+    margin-right: 0;
+}
+
+li.active {
+    font-size: 20px;
 }
 
 ul > a {
@@ -535,13 +552,21 @@ p.heading {
         margin-left: 20px;
         padding: 0;
         background-color: #FFF;
-    }    
-    body.fp-viewing-3 h1{
-        display: none;
-    }    
-    body.fp-viewing-3 ul {        
-        margin-top: 20px;
-    }    
+    }
+    ul#social_media  li {
+        margin-right: 5px;
+    }
+    ul#navigation  {
+        top: 0;
+        margin-top: calc(2% + 55px);
+    }
+    ul#navigation  li {
+        float: left;
+        margin-left: 5px;
+    }
+    li.active {
+        font-size: 14px;
+    }
     .section_container {
         height: auto !important;
     }
@@ -633,5 +658,43 @@ p.heading {
         min-height: initial !important;
         height: 450px !important;
         margin-top: 70px !important;
+    }
+}
+
+/* Strikethrough by Eden S.-G. */
+
+.strikethrough {
+    display: inline-block;
+    position: relative;
+}
+
+.strikethrough:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin-top: -0.7em;
+    background: #111;
+    transform-origin: center left;
+    animation: strikethrough 1s 0.5s cubic-bezier(.55, 0, .1, 1) 1;
+    transition: transform 0.5s cubic-bezier(.55, 0, .1, 1);
+}
+
+/* Little hover effect */
+
+.strikethrough:hover:after {
+    transform: scaleX(0);
+    transform-origin: center right;
+}
+
+/* Keyframes for initial animation */
+
+@keyframes strikethrough {
+    from {
+            transform: scaleX(0);
+    }
+    to {
+            transform: scaleX(1);
     }
 }
