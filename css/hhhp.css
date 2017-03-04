@@ -1,0 +1,65 @@
+.code_title {
+    text-align: center;
+}    
+        
+#panel_container {
+    height: 90%;
+    width: 90%;
+    display: inline-block;
+    margin-top: 25px;
+    background: url("../images/gallery/hhhp_nopanel.png") center no-repeat;
+    background-size: contain;
+}          
+  
+.display_panel {
+    position: relative;
+    width: 48%;
+    height: 85%;
+    display: block;
+    cursor: pointer;
+}
+
+.display_panel:hover {
+    opacity: 0.5;
+}
+
+#hhhp_past {
+    top: 5%;
+    left: 32%;
+    background: url("../images/gallery/hhhp_past.png") center no-repeat;
+    background-size: contain;
+}            
+
+#hhhp_current {
+    top: -82%;
+    left: 53%;
+    background: url("../images/gallery/hhhp_current.png") center no-repeat;
+    background-size: contain;
+}
+
+#responsive_hook {
+    display: none;
+}
+
+
+@media (max-width: 800px), (max-height: 940px) {
+    .stage {
+        margin-left: 0;
+        margin-right: 0;
+        border: none;
+    }
+    .stage_exit {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: auto;
+        margin-right: auto;
+    }
+    #panel_container {
+        display: none;
+    }
+    #responsive_hook {
+        display: inline-block;
+        margin-bottom: 60px;
+    }
+}
