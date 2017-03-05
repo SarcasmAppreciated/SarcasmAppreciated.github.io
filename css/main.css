@@ -37,7 +37,6 @@ h1 {
     float: left;
     position: fixed;
     z-index: 52;
-    text-decoration: line-through;
     cursor: default;
 }
 
