@@ -13,7 +13,7 @@ $(document).ready(function(){
         $("#main").fullpage({
             bigSectionsDestination: "top",
             css3: true,
-            anchors: ['1', '2', '3', '4'],
+            anchors: ['1', '2', '3', '4', '5', '6', '7'],
             menu: "#navigation",
             responsiveHeight: 940
         });
