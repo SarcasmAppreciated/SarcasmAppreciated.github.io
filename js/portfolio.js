@@ -15,8 +15,16 @@ $(document).ready(function(){
             css3: true,
             anchors: ['1', '2', '3', '4', '5', '6', '7'],
             menu: "#navigation",
-            responsiveHeight: 940
+            responsiveHeight: checkMobile()
         });
+    }
+    
+    function checkMobile() {
+        var returnVal = 0;
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+            returnVal = 1000;
+        }
+        return returnVal;
     }
        
     $( window ).scroll(function() {
