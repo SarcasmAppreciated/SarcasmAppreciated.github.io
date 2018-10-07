@@ -231,6 +231,11 @@ li {
     background-size: cover;
 }
 
+#hll_bg {
+    background: url("../images/gallery/screen_hll_portal.jpg") center no-repeat;
+    background-size: cover;
+}
+
 /* About */
 
 .circle_container {
