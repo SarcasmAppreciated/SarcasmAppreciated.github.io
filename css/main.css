@@ -291,6 +291,16 @@ li {
     background-size: contain;
 }
 
+#ATEYO {
+    background-image: url("../images/ateyo_icon.jpg");
+    background-size: contain;
+}
+
+#Pokimane {
+    background-image: url("../images/pokimane_icon.jpg");
+    background-size: contain;
+}
+
 .skill {
 	width: auto;
 	background: url("../images/TileDF.png") left no-repeat;
