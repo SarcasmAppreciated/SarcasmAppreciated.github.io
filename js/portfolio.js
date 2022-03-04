@@ -42,6 +42,9 @@ $(document).ready(function(){
             $("ul#navigation").css("top", "calc(50% - 50px)");            
         }
     });
+
+	const copyright = "Benson Li 2015 - " + new Date().getFullYear() + " ©";
+	$(".navigation_redundancy").children("p").text(copyright);
     
     /* Parallax */
     
