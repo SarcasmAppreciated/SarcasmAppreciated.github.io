@@ -1,24 +1,5 @@
 $(document).ready(function(){
-    initializeVerticalScroll();
-
-    $(".up").click(function(){
-        $.fn.fullpage.moveSectionUp();  
-    });
-    
-    $(".down").click(function(){
-        $.fn.fullpage.moveSectionDown();  
-    });
-    
-    function initializeVerticalScroll() {
-        $("#main").fullpage({
-            bigSectionsDestination: "top",
-            css3: true,
-            anchors: ['0', '1', '2', '3', '4', '5', '6', '7'],
-            menu: "#navigation",
-            responsiveHeight: checkMobile()
-        });
-    }
-    
+   
     function checkMobile() {
         var returnVal = 0;
         if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -26,37 +7,35 @@ $(document).ready(function(){
         }
         return returnVal;
     }
-       
-    $( window ).scroll(function() {
-        if($(".fp-responsive").length > 0) {
-            if($( window ).scrollTop() != 0) {
-                $("h1").css("display", "none");
-                $("ul#social_media").css("margin-top", "5px");
-                $("ul#navigation").css("margin-top", "25px");
-            } else {
-                $("h1").css("display", "block");
-                $("ul#social_media").css("margin-top", "calc(2% + 35px)");
-                $("ul#navigation").css("margin-top", "calc(2% + 55px)");
-            }
-        } else {
-            $("ul#navigation").css("top", "calc(50% - 50px)");            
-        }
-    });
 
 	const copyright = "Benson Li 2015 - " + new Date().getFullYear() + " ©";
-	$(".navigation_redundancy").children("p").text(copyright);
-    
-    /* Parallax */
-    
-    /*$(".parallax_layer").parallax(
-        { mouseport: $("#parallax") },
-        { xparallax: "48px", yparallax: "48px"}
-    );*/
-    
+	$("#copyright").text(copyright);
+
     /* HHHP */
     $("#start_hhhp").click(function() {
-        $(".hhhp_hide, #navigation, #social_media, h1").fadeOut( function() {
+        $(".hhhp_hide, #social_media, h1").fadeOut( function() {
             window.location.href = "hhhp.html";
         });        
     });
+    
+    const gridElements = [
+        {background: "intro", title: "", text: "", size: "four", clickThrough: ""},
+        {background: "", title: "Hi, I like making cool things - beautiful and immersive experiences.", text: "", size: "four", clickThrough: "true"},
+    ];
+    populateGrid();
+    function renderElement(element) {
+        $(".stage").append(`<div id="${element.background}-bg" class="stage_item ${element.size}" onClick="expandElement()">
+            <div style="margin:10px">
+                <h2>${element.title}</h2>
+                <p class="stage_subtext">${element.text}</p>
+            </div>
+        </div>`);
+    }
+    function populateGrid() {
+        gridElements.forEach((element) => renderElement(element));
+    }
+
+    function expandElement() {
+        
+    }
 });
