@@ -1,3 +1,55 @@
+body {
+    height: 100%;
+    background-color: #FFF;
+    text-align: center;
+}
+
+.section_container {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: block;
+}
+
+.stage {
+    width: 90%;
+    min-height: 580px;
+    height: 60%;
+    position: relative;
+    display: inline-block;
+    border: 1px solid #666;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.stage_exit {
+    width: 380px;
+    height: 75px;
+    display: inline-block;
+    margin-top: 60px;
+    border: 1px solid #666;
+    text-align: center;
+    line-height: 75px;
+    cursor: pointer;
+    background-color: #FFF;
+}
+
+.stage_exit_arrow {
+    width: 60px;
+    height: 2px;
+    display: inline-block;
+    background-color: #AAA;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.stage_exit p {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-style: italic;
+    display: inline;
+}
+
 .code_section  {
     width: 100%;
 	max-width: 680px;
@@ -29,7 +81,6 @@
 	display: inline-block;
 }
 
-        
 #panel_container {
     height: 90%;
     width: 90%;
