@@ -134,8 +134,10 @@ li {
     border-radius: 8px;
     margin-top: 20px;
     cursor: pointer;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-weight: 700;
+    font-family: 'couturebold';
 }
 
 #amazon, .large {
