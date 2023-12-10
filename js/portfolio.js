@@ -10,6 +10,8 @@ $(document).ready(function(){
 	const copyright = "Benson Li 2015 - " + new Date().getFullYear() + " ©";
 	$("#copyright").text(copyright);
 
+    let oldExperience = false;
+
     const skillElements = [
         {size: "80", text: "// Java"},
         {size: "40", text: "// C#"},
@@ -28,7 +30,7 @@ $(document).ready(function(){
         {background: "poki", title: "Pokimane Podcast", text: "- Completed March 2018 -<br>Dynamic start and intermission screens", clickThrough: "https://archive.org/details/twitch-vod-v282019111", clickText: "Podcast"},
         {background: "ample", title: "Ample Food Icons", text: "- Completed January 2017 -<br>Icons and Infographic", clickThrough: "https://www.behance.net/gallery/49921415/AmpleMealcom", clickText: "Behance Page"},
         {background: "hhhp", title: "HipHopHeads Polls", text: "- Circa March 2016 -<br>Polled Music Player", clickThrough: "", clickText: "Case Study"},
-        {background: "gamespot", title: "Gamespot", text: "- March 2014 - February 2016 -<br>Graphics design for onGamers and G | League", clickThrough: "https://www.behance.net/SarcasmAppreciated", clickText: "Behance Page"},
+        {background: "gamespot", title: "Gamespot", text: "- March 2014 - February 2016 -<br>Graphic design for onGamers and G | League", clickThrough: "https://www.behance.net/SarcasmAppreciated", clickText: "Behance Page"},
         {background: "fiist", title: "Fiist: Waitlist Management", text: "- Circa. 2012 -<br>Project page for Fiist (startup); designed by Brian Leung", clickThrough: "http://sarcasmappreciated.github.io/Fiist-Site/", clickText: "Github Page"}
     ];
     const people = [
@@ -66,6 +68,8 @@ $(document).ready(function(){
         `);
     }
     function populateElements() {
+        $("#skills").empty();
+        $("#clients").empty();
         people.forEach((element) => renderPeople(element));
         skillElements.forEach((element) => renderSkills(element));
         gridElements.forEach((element) => renderGrid(element));
@@ -75,4 +79,23 @@ $(document).ready(function(){
             });
         });
     }
+
+    $("#old-experience").click(function() {
+        if (!oldExperience) {
+            $(this).text("New View");
+            $("header").css({position: "inherit"});
+            $("footer").css({position: "inherit"});
+            $("#sky").hide();
+            $("#main").show();
+            populateElements();
+        } else {
+            $(this).text("Legacy View");
+            $("header").css({position: "fixed"});
+            $("footer").css({position: "fixed"});
+            $("#sky").show();
+            $("#main").hide();
+            $("#first").empty();
+        }
+        oldExperience = !oldExperience;
+    });
 });

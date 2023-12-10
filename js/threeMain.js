@@ -1,73 +1,59 @@
-import * as THREE from "three";
+import {
+    Box3,
+    Mesh,
+    MeshBasicMaterial,
+    PCFSoftShadowMap,
+    PerspectiveCamera,
+    Raycaster,
+    Scene,
+    SphereGeometry,
+    Vector2,
+    Vector3,
+    WebGLRenderer
+} from 'three';
+import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js';
 
-import { LineSegmentsGeometry } from 'three/addons/lines/LineSegmentsGeometry.js';
-import { LineSegments2 } from 'three/addons/lines/LineSegments2.js';
-import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js';
+const gridElements = [
+    {title: "Travis Gafford Industries", subtitle: "- Circa. 2018 to Present -", text: "Graphic design, brand and web development for League of Legends' predominant media company; check out Hotline League!", clickThrough: "https://www.behance.net/gallery/56894655/Overlays-and-Branding", clickText: "Behance Page"},
+    {title: "Amazon: Software Engineer", subtitle: "- June 2017 to June 2023 -", text: "Amazon Display Ad Products: architected and developed products generating millions of revenue.", clickThrough: "https://amazonfiretv.blog/immerse-yourself-in-middle-earth-with-the-lord-of-the-rings-the-rings-of-power-bb76cc29a9ff", clickText: "Case Study"},
+    {title: "Pokimane Podcast", subtitle: "- Completed March 2018 -", text: "Dynamic start and intermission screens", clickThrough: "https://archive.org/details/twitch-vod-v282019111", clickText: "Podcast"},
+    {title: "Ample Food Icons", subtitle: "- Completed January 2017 -", text: "Web icons and infographic", clickThrough: "https://www.behance.net/gallery/49921415/AmpleMealcom", clickText: "Behance Page"},
+    {title: "HipHopHeads Polls", subtitle: "- Circa March 2016 -", text: "Polled music player", clickThrough: "", clickText: "Case Study"},
+    {title: "Gamespot", subtitle: "- March 2014 - February 2016 -", text: "Graphic design for onGamers and G | League", clickThrough: "https://www.behance.net/SarcasmAppreciated", clickText: "Behance Page"}
+];
 
-import { OutsideEdgesGeometry } from './conditional_lines/OutsideEdgesGeometry.js';
-import { ConditionalEdgesGeometry } from './conditional_lines/ConditionalEdgesGeometry.js';
-import { ConditionalEdgesShader } from './conditional_lines/ConditionalEdgesShader.js';
-import { ConditionalLineSegmentsGeometry } from './conditional_lines/Lines2/ConditionalLineSegmentsGeometry.js';
-import { ConditionalLineMaterial } from './conditional_lines/Lines2/ConditionalLineMaterial.js';
-import { ColoredShadowMaterial } from './conditional_lines/ColoredShadowMaterial.js';
-
-let perspectiveCamera, controls, scene, renderer, edgesModel, depthModel, originalModel, backgroundModel, conditionalModel, shadowModel;
-const models = {};
-const LIGHT_BACKGROUND = 0x000000;
-const LIGHT_MODEL = 0xffffff;
-const LIGHT_LINES = 0xffffff;
-const LIGHT_SHADOW = 0xc4c9cb;
-
-const DARK_BACKGROUND = 0x111111;
-const DARK_MODEL = 0x111111;
-const DARK_LINES = 0xb0bec5;
-const DARK_SHADOW = 0x2c2e2f;
-
-var params = {
-    colors: 'LIGHT',
-
-    lit: false,
-    opacity: 0.5,
-    threshold: 40,
-    display: 'THRESHOLD_EDGES',
-    displayConditionalEdges: true,
-    thickness: 1,
-    useThickLines: true,
-    model: 'THINK'
-};
+let perspectiveCamera, controls, scene, renderer, labelRenderer;
+let mouse, raycaster, pokeballs, labelDiv, label, currentHover, blurbDiv, blurb;
 
 init();
 animate();
 
 function init() {
-    perspectiveCamera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.03, 10000);
+    perspectiveCamera = new PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.03, 10000);
     perspectiveCamera.position.z = 500;
 
     // world
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x999999);
+    scene = new Scene();
 
-    /*const material = new THREE.LineBasicMaterial({ color: 0x000000, linewidth: 10 });
-    const points = [];
-    // points.push(new THREE.Vector3(-10, 0, 0));
-    points.push(new THREE.Vector3(-4, 9, -25));
-    points.push(new THREE.Vector3(15, 15, 15));
-    const geometry = new THREE.BufferGeometry().setFromPoints(points);
-    const line = new THREE.Line(geometry, material);
-    scene.add(line);*/
+    const geometry = new SphereGeometry(0.5, 32, 16);
 
-    const geometry = new THREE.SphereGeometry(0.5, 32, 16); 
-    const material = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.0 }); 
+    raycaster = new Raycaster();
+    mouse = new Vector2();
     
-    let pokeballs = [];
-    let lSIC = [0.85, 1, -11];
-    let rSIC = [2, 0.6, -10.5];
+    pokeballs = [];
+    let lSIC = [0.85, 11, -11];
+    let rSIC = [2, 10.6, -10.5];
+    const leftLabels = [gridElements[0].title, gridElements[1].title, gridElements[4].title];
+    const rightLabels = [gridElements[2].title, gridElements[3].title, gridElements[5].title];
     for (let i = 0; i < 3; i++) {
-        const sphereLeft = new THREE.Mesh(geometry, material);
-        const sphereRight = new THREE.Mesh(geometry, material);
+        const material = new MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.0 });
+        const materialRight = new MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.0 });
+        const sphereLeft = new Mesh(geometry, material);
+        const sphereRight = new Mesh(geometry, materialRight);
+        sphereLeft.name = leftLabels[i];
+        sphereRight.name = rightLabels[i];
         sphereLeft.position.set(lSIC[0], lSIC[1], lSIC[2]);
         sphereRight.position.set(rSIC[0], rSIC[1], rSIC[2]);
         scene.add(sphereLeft);
@@ -82,15 +68,79 @@ function init() {
         rSIC[2] += 0.8;
     }
 
-    renderer = new THREE.WebGLRenderer();
+    // Setup labels
+    labelRenderer = new CSS2DRenderer();
+    labelRenderer.setSize(window.innerWidth, window.innerHeight);
+    labelRenderer.domElement.style.position = 'absolute';
+    labelRenderer.domElement.style.top = '0px';
+    labelRenderer.domElement.style.pointerEvents = 'none';
+    document.getElementById('sky').appendChild(labelRenderer.domElement);
+
+    labelDiv = document.createElement('div');
+    labelDiv.className = 'label';
+    labelDiv.style.marginTop = '-1em';
+    label = new CSS2DObject(labelDiv);
+    label.visible = false;
+    scene.add(label);
+
+    blurbDiv = document.createElement('div');
+    blurbDiv.className = 'blurb';
+    blurbDiv.style.marginTop = '-1em';
+    const blurbCloseCharDiv = document.createElement('p');
+    blurbCloseCharDiv.className = 'blurb-close-text';
+    blurbCloseCharDiv.textContent = "X";
+    const blurbCloseDiv = document.createElement('div');
+    blurbCloseDiv.id = 'blurb-close';
+    blurbCloseDiv.style.pointerEvents = 'auto';
+    blurbCloseDiv.addEventListener('click', function(e) {
+        e.preventDefault();
+        blurb.visible = false;
+    });
+    blurbCloseDiv.append(blurbCloseCharDiv);
+    const blurbTitleDiv = document.createElement('h2');
+    blurbTitleDiv.className = 'blurb-title';
+    const blurbSubTitleDiv = document.createElement('p');
+    blurbSubTitleDiv.className = 'blurb-paragraph';
+    const blurbSummaryDiv = document.createElement('p');
+    blurbSummaryDiv.className = 'blurb-paragraph';
+    const blurbButtonDiv = document.createElement('button');
+    blurbButtonDiv.id = 'blurb-button';
+    blurbButtonDiv.style.pointerEvents = 'auto';
+    blurbButtonDiv.addEventListener('pointerdown', function(e) {
+        e.preventDefault();
+        window.open(e.target.attributes.clickthrough.value);
+    });
+    blurbDiv.append(blurbCloseDiv);
+    blurbDiv.append(blurbTitleDiv);
+    blurbDiv.append(blurbSubTitleDiv);
+    blurbDiv.append(blurbSummaryDiv);
+    blurbDiv.append(blurbButtonDiv);
+    blurb = new CSS2DObject(blurbDiv);
+    blurb.position.set(20, 0, 0);
+    blurb.visible = false;
+    scene.add(blurb);
+    blurbTitleDiv.addEventListener('click', function(e) {
+        e.preventDefault();
+        blurb.visible = false;
+    });
+
+    const instructionDiv = document.createElement('div');
+    instructionDiv.className = 'label';
+    instructionDiv.style.marginTop = '-1em';
+    instructionDiv.textContent = 'Click on one of the pokeballs on the healing machine!';
+    const instruction = new CSS2DObject(instructionDiv);
+    instruction.position.set(-12, 5, 0);
+    scene.add(instruction);
+
+    renderer = new WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
-    document.getElementById("sky").appendChild(renderer.domElement);
+    renderer.shadowMap.type = PCFSoftShadowMap;
+    document.getElementById('sky').appendChild(renderer.domElement);
     
     window.addEventListener('resize', onWindowResize);
     window.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('click', onClick);
 
     const loader = new GLTFLoader();
     loader.load('pkmn_centre.glb', function (gltf) {
@@ -98,249 +148,13 @@ function init() {
         model.scale.set(30, 30, 30);
         model.rotation.x += 0.6;
         model.rotation.y += -0.5;
-        model.position.set(-2.5, -10, 0);
+        model.position.set(-2.5, 0, 0);
         scene.add(gltf.scene);
-        
-        /*const model = mergeObject(gltf.scene);
-        model.scale.set(40, 40, 40);
-        model.children[0].geometry.computeBoundingBox();
-        model.children[0].castShadow = true;
-
-        models.THINK = model;
-        updateModel();*/
     }, undefined, function (error) {
         console.error(error);
     });
 
     createControls(perspectiveCamera);
-}
-
-function updateModel() {
-    originalModel = models[params.model];
-    initEdgesModel();
-    initBackgroundModel();
-    initConditionalModel();
-}
-
-function mergeObject(object) {
-    object.updateMatrixWorld(true);
-    const geometry = [];
-    object.traverse(c => {
-        if (c.isMesh) {
-            const g = c.geometry;
-            g.applyMatrix4(c.matrixWorld);
-            for (const key in g.attributes) {
-                if (key !== 'position' && key !== 'normal') {
-                    g.deleteAttribute(key);
-                }
-            }
-            geometry.push(g.toNonIndexed());
-        }
-    });
-
-    const mergedGeometries = BufferGeometryUtils.mergeGeometries(geometry, false);
-    const mergedGeometry = BufferGeometryUtils.mergeVertices(mergedGeometries).center();
-
-    const group = new THREE.Group();
-    const mesh = new THREE.Mesh(mergedGeometry);
-    group.add(mesh);
-    return group;
-}
-
-function initBackgroundModel() {
-    if (backgroundModel) {
-        backgroundModel.parent.remove(backgroundModel);
-        shadowModel.parent.remove(shadowModel);
-        depthModel.parent.remove(depthModel);
-        backgroundModel.traverse(c => {
-            if (c.isMesh) {
-                c.material.dispose();
-            }
-        });
-        shadowModel.traverse(c => {
-            if (c.isMesh) {
-                c.material.dispose();
-            }
-        });
-        depthModel.traverse(c => {
-            if (c.isMesh) {
-                c.material.dispose();
-            }
-        });
-    }
-
-    if (!originalModel) {
-        return;
-    }
-
-    backgroundModel = originalModel.clone();
-    backgroundModel.traverse(c => {
-        if (c.isMesh) {
-            c.material = new THREE.MeshBasicMaterial({ color: LIGHT_MODEL });
-            c.material.polygonOffset = true;
-            c.material.polygonOffsetFactor = 1;
-            c.material.polygonOffsetUnits = 1;
-            c.renderOrder = 2;
-        }
-    });
-    scene.add(backgroundModel);
-
-    shadowModel = originalModel.clone();
-    shadowModel.traverse(c => {
-
-        if (c.isMesh) {
-            c.material = new ColoredShadowMaterial({ color: LIGHT_MODEL, shininess: 1.0 });
-            c.material.polygonOffset = true;
-            c.material.polygonOffsetFactor = 1;
-            c.material.polygonOffsetUnits = 1;
-            c.receiveShadow = true;
-            c.renderOrder = 2;
-        }
-    });
-    scene.add(shadowModel);
-
-    depthModel = originalModel.clone();
-    depthModel.traverse(c => {
-        if (c.isMesh) {
-            c.material = new THREE.MeshBasicMaterial({ color: LIGHT_MODEL });
-            c.material.polygonOffset = true;
-            c.material.polygonOffsetFactor = 1;
-            c.material.polygonOffsetUnits = 1;
-            c.material.colorWrite = false;
-            c.renderOrder = 1;
-        }
-    });
-    scene.add(depthModel);
-}
-
-function initEdgesModel() {
-    // remove any previous model
-    if (edgesModel) {
-        edgesModel.parent.remove(edgesModel);
-        edgesModel.traverse(c => {
-            if (c.isMesh) {
-                if (Array.isArray(c.material)) {
-                    c.material.forEach(m => m.dispose());
-                } else {
-                    c.material.dispose();
-                }
-            }
-        });
-    }
-
-    // early out if there's no model loaded
-    if (!originalModel) {
-        return;
-    }
-
-    // store the model and add it to the scene to display
-    // behind the lines
-    edgesModel = originalModel.clone();
-    scene.add(edgesModel);
-
-    // early out if we're not displaying any type of edge
-    if (params.display === 'NONE') {
-        edgesModel.visible = false;
-        return;
-    }
-
-    const meshes = [];
-    edgesModel.traverse(c => {
-        if (c.isMesh) {
-            meshes.push(c);
-        }
-    });
-    for (const key in meshes) {
-        const mesh = meshes[key];
-        const parent = mesh.parent;
-        let lineGeom;
-        if (params.display === 'THRESHOLD_EDGES') {
-            lineGeom = new THREE.EdgesGeometry(mesh.geometry, params.threshold);
-        } else {
-            const mergeGeom = mesh.geometry.clone();
-            mergeGeom.deleteAttribute('uv');
-            mergeGeom.deleteAttribute('uv2');
-            lineGeom = new OutsideEdgesGeometry(BufferGeometryUtils.mergeVertices(mergeGeom, 1e-3));
-        }
-
-        const line = new THREE.LineSegments(lineGeom, new THREE.LineBasicMaterial({ color: LIGHT_LINES }));
-        line.position.copy(mesh.position);
-        line.scale.copy(mesh.scale);
-        line.rotation.copy(mesh.rotation);
-
-        const thickLineGeom = new LineSegmentsGeometry().fromEdgesGeometry(lineGeom);
-        const thickLines = new THREE.LineSegments(thickLineGeom, new THREE.LineBasicMaterial({ color: LIGHT_LINES, linewidth: 3 }));
-        thickLines.position.copy(mesh.position);
-        thickLines.scale.copy(mesh.scale);
-        thickLines.rotation.copy(mesh.rotation);
-
-        parent.remove(mesh);
-        parent.add(line);
-        parent.add(thickLines);
-    }
-
-}
-
-function initConditionalModel() {
-    // remove the original model
-    if (conditionalModel) {
-        conditionalModel.parent.remove(conditionalModel);
-        conditionalModel.traverse(c => {
-            if (c.isMesh) {
-                c.material.dispose();
-            }
-        });
-    }
-
-    // if we have no loaded model then exit
-    if (! originalModel) {
-        return;
-    }
-
-    conditionalModel = originalModel.clone();
-    scene.add(conditionalModel);
-    conditionalModel.visible = false;
-
-    // get all meshes
-    const meshes = [];
-    conditionalModel.traverse(c => {
-        if (c.isMesh) {
-            meshes.push(c);
-        }
-    });
-
-    for (const key in meshes) {
-        const mesh = meshes[key];
-        const parent = mesh.parent;
-        // Remove everything but the position attribute
-        const mergedGeom = mesh.geometry.clone();
-        for (const key in mergedGeom.attributes) {
-            if (key !== 'position') {
-                mergedGeom.deleteAttribute(key);
-            }
-        }
-
-        // Create the conditional edges geometry and associated material
-        const lineGeom = new ConditionalEdgesGeometry(BufferGeometryUtils.mergeVertices(mergedGeom));
-        const material = new THREE.ShaderMaterial(ConditionalEdgesShader);
-        material.uniforms.diffuse.value.set(LIGHT_LINES);
-
-        // Create the line segments objects and replace the mesh
-        const line = new THREE.LineSegments(lineGeom, material);
-        line.position.copy(mesh.position);
-        line.scale.copy(mesh.scale);
-        line.rotation.copy(mesh.rotation);
-
-        const thickLineGeom = new ConditionalLineSegmentsGeometry().fromConditionalEdgesGeometry(lineGeom);
-        const thickLines = new LineSegments2(thickLineGeom, new ConditionalLineMaterial({ color: LIGHT_LINES, linewidth: 2 }));
-        thickLines.position.copy(mesh.position);
-        thickLines.scale.copy(mesh.scale);
-        thickLines.rotation.copy(mesh.rotation);
-
-        parent.remove(mesh);
-        parent.add(line);
-        parent.add(thickLines);
-    }
 }
 
 function createControls(camera) {
@@ -351,92 +165,79 @@ function createControls(camera) {
 }
 
 function onWindowResize() {
-    perspectiveCamera.aspect = window.innerWidth / window.innerHeight;
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    perspectiveCamera.aspect = width / height;
     perspectiveCamera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(width, height);
     controls.handleResize();
 }
 
-function onMouseMove(clientX, clientY) {
+function onClick(e) {
+    e.preventDefault();
     const { innerWidth, innerHeight } = window;
+    mouse.x = (e.clientX / innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / innerHeight) * 2 + 1;
+    raycaster.setFromCamera(mouse, perspectiveCamera);
+    const [clicked] = raycaster.intersectObjects(pokeballs);
 
-    mouse.x = (clientX / innerWidth) * 2 - 1;
-    mouse.y = -(clientY / innerHeight) * 2 + 1;
+    if (clicked) {
+        renderer.domElement.className = 'hovered';
+        blurb.visible = true;
+
+        const element = gridElements.filter(obj => { return obj.title === clicked.object.name})[0];
+        blurbDiv.children[1].textContent = element.title;
+        blurbDiv.children[2].textContent = element.subtitle;
+        blurbDiv.children[3].textContent = element.text;
+        blurbDiv.children[4].textContent = element.clickText;
+        blurbDiv.children[4].setAttribute("clickThrough", element.clickThrough);
+    }
+}
+
+function onMouseMove(e) {
+    e.preventDefault();
+    const { innerWidth, innerHeight } = window;
+    mouse.x = (e.clientX / innerWidth) * 2 - 1;
+    mouse.y = -(e.clientY / innerHeight) * 2 + 1;
+    raycaster.setFromCamera(mouse, perspectiveCamera);
+    const [hovered] = raycaster.intersectObjects(pokeballs);
+
+    if (hovered) {
+        if (!currentHover) {
+            currentHover = hovered;
+        } else if (currentHover && hovered !== currentHover) {
+            currentHover.object.material.opacity = 0.0;
+            currentHover = hovered;
+        }
+        renderer.domElement.className = 'hovered';
+        label.visible = true;
+        labelDiv.textContent = hovered.object.name;
+
+        // Get offset from object's dimensions
+        const offset = new Vector3();
+        new Box3().setFromObject(hovered.object).getSize(offset);
+
+        // Move label over hovered element
+        label.position.set(
+            hovered.object.position.x,
+            hovered.object.position.y + 2,
+            hovered.object.position.z
+        );
+
+        hovered.object.material.opacity = 1.0;
+    } else {
+        renderer.domElement.className = '';
+        label.visible = false;
+        labelDiv.textContent = '';
+        if (currentHover) {
+            currentHover.object.material.opacity = 0.0;
+            currentHover = null;
+        }
+    }
 }
 
 function animate() {
     requestAnimationFrame(animate);
-    let linesColor = LIGHT_LINES;
-    let modelColor = LIGHT_MODEL;
-    let backgroundColor = LIGHT_BACKGROUND;
-    let shadowColor = LIGHT_SHADOW;
-
-    if (params.colors === 'DARK') {
-        linesColor = DARK_LINES;
-        modelColor = DARK_MODEL;
-        backgroundColor = DARK_BACKGROUND;
-        shadowColor = DARK_SHADOW;
-
-    } else if (params.colors === 'CUSTOM') {
-        linesColor = params.lineColor;
-        modelColor = params.modelColor;
-        backgroundColor = params.backgroundColor;
-        shadowColor = params.shadowColor;
-    }
-
-    if (conditionalModel) {
-        conditionalModel.visible = params.displayConditionalEdges;
-        conditionalModel.traverse( c => {
-            if (c.material && c.material.resolution) {
-                renderer.getSize(c.material.resolution);
-                c.material.resolution.multiplyScalar(window.devicePixelRatio);
-                c.material.linewidth = params.thickness;
-            }
-            if (c.material) {
-                c.visible = c instanceof LineSegments2 ? params.useThickLines : ! params.useThickLines;
-                c.material.uniforms.diffuse.value.set(linesColor);
-            }
-        } );
-    }
-
-    if (edgesModel) {
-        edgesModel.traverse(c => {
-            if (c.material && c.material.resolution) {
-                renderer.getSize(c.material.resolution);
-                c.material.resolution.multiplyScalar(window.devicePixelRatio);
-                c.material.linewidth = params.thickness;
-            }
-            if (c.material) {
-                c.visible = c instanceof LineSegments2 ? params.useThickLines : ! params.useThickLines;
-                c.material.color.set(linesColor);
-            }
-        } );
-    }
-
-    if (backgroundModel) {
-        backgroundModel.visible = ! params.lit;
-        backgroundModel.traverse(c => {
-            if (c.isMesh) {
-                c.material.transparent = params.opacity !== 1.0;
-                c.material.opacity = params.opacity;
-                c.material.color.set(modelColor);
-            }
-        } );
-    }
-
-    if (shadowModel) {
-        shadowModel.visible = params.lit;
-        shadowModel.traverse(c => {
-            if (c.isMesh) {
-                c.material.transparent = params.opacity !== 1.0;
-                c.material.opacity = params.opacity;
-                c.material.color.set(modelColor);
-                c.material.shadowColor.set(shadowColor);
-            }
-        } );
-    }
-
-    scene.background.set(backgroundColor);
     controls.update();
     render();
 }
@@ -444,4 +245,5 @@ function animate() {
 function render() {
     const camera = perspectiveCamera;
     renderer.render(scene, camera);
+    labelRenderer.render(scene, camera);
 }

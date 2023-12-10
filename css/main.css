@@ -11,6 +11,17 @@
 
 }
 
+@font-face {
+    font-family: 'pkmn';
+    src: url('../fonts/pokemon_pixel_font.eot');
+    src: url('../fonts/pokemon_pixel_font.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/pokemon_pixel_font.woff') format('woff'),
+         url('../fonts/pokemon_pixel_font.ttf') format('truetype'),
+         url('../fonts/pokemon_pixel_font.svg#couturebold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     height: 100%;
     padding: 0;
@@ -29,6 +40,7 @@ body {
 }
 
 header {
+    width: 100%;
     position: fixed;
     z-index: 2;
 }
@@ -79,10 +91,31 @@ li {
     text-transform: uppercase;
 }
 
+button#old-experience {
+    top: -50px;
+    right: 50px;
+    width: 100px;
+    float: right;
+    position: relative;
+    padding: 10px;
+    color: #FFF;
+    border: 1px solid #FFF;
+    border-radius: 25px;
+    background: none;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    cursor: pointer;
+}
+
+button#old-experience.old {
+    color: #000;
+    border: 1px solid #000;
+}
+
 #main {
     height: 100%;
     width: 100%;
-    display: inline-block;
+    display: none;
+    color: #000;
 }
 
 #sky {
@@ -91,14 +124,82 @@ li {
     display: block;
 }
 
+.hovered {
+    cursor: pointer;
+}
+
+.label, .blurb {
+    color: #fff;
+    font-family: "pkmn", sans-serif;
+    font-size: 24px;
+    padding: 15px;
+    max-width: 150px;
+    background: url("../images/border.png") center no-repeat;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-size: 100% 100%;
+    border-radius: 5px;
+}
+
+.blurb {
+    max-width: 500px;
+    text-align: center;
+}
+
+#blurb-close {
+    height: 36px;
+    width: 36px;
+    top: -10px;
+    right: -10px;
+    display: block;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    line-height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
+    margin: auto;
+}
+
+.blurb-close-text {
+    margin-left: 3px;
+    text-align: center;
+    font-size: 36px;
+}
+
+.blurb-title {
+    margin-top: 0;
+    font-family: "pkmn", sans-serif;
+    font-size: 36px;
+}
+
+.blurb-paragraph {
+    font-size: 24px;
+}
+
+#blurb-button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #fff;
+    font-family: "pkmn", sans-serif;
+    font-size: 21px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    background: none;
+    cursor: pointer;
+    padding: 5px 10px 5px 10px;
+}
+
 footer {
-    left: 20px;
-    margin-bottom: 20px;
+    bottom: 0;
+    height: 100px;
+    padding-top: 20px;
     position: fixed;
     z-index: 3;
 }
 
 footer > p {
+    margin-top: 10px;
+    margin-left: 20px;
     font-size: 14px;
 }
 
