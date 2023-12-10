@@ -170,6 +170,7 @@ function onWindowResize() {
     perspectiveCamera.aspect = width / height;
     perspectiveCamera.updateProjectionMatrix();
     renderer.setSize(width, height);
+    labelRenderer.setSize(width, height);
     controls.handleResize();
 }
 
