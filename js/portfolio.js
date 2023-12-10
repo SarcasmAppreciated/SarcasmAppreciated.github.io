@@ -39,7 +39,7 @@ $(document).ready(function(){
         {clickThrough: "https://uwaterloo.ca/conrad-business-entrepreneurship-technology/", name: "uw"}
     ];
 
-    populateElements();
+    // populateElements();
 
     function renderSkills(element) {
         $("#skills").append(`
