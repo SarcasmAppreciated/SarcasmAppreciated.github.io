@@ -13,7 +13,7 @@
                     ${l.clickThrough?'<a href="'+l.clickThrough+'">':"<div>"}<button class="stage-button">${l.clickText}</button></a>${l.clickThrough?"</a>":"</div>"}
                 </div>
             </div>
-        `)}function c(){$("#skills").empty(),$("#clients").empty(),i.forEach(l=>a(l)),t.forEach(l=>s(l)),n.forEach(l=>o(l)),$("#hhhp").find("button").click(function(){$("#main, #social_media, h1").fadeOut(function(){window.location.href="hhhp.html"})})}$("#old-experience").click(function(){e?($(this).text("Legacy View"),$("header").css({position:"fixed"}),$("footer").css({position:"fixed"}),$("#sky").show(),$("#main").hide(),$("#first").empty()):($(this).text("New View"),$("header").css({position:"inherit"}),$("footer").css({position:"inherit"}),$("#sky").hide(),$("#main").show(),c()),e=!e})});/**
+        `)}function c(){$("#skills").empty(),$("#clients").empty(),i.forEach(l=>a(l)),t.forEach(l=>s(l)),n.forEach(l=>o(l)),$("#hhhp").find("button").click(function(){$("#main, #social_media, h1").fadeOut(function(){window.location.href="hhhp.html"})})}$("#old-experience").click(function(){e?($(this).text("Legacy View"),$("header").css({position:"fixed"}),$("footer").css({position:"fixed"}),$("#sky").show(),$("#main").hide()):($(this).text("New View"),$("header").css({position:"inherit"}),$("footer").css({position:"inherit"}),$("#sky").hide(),$("#main").show(),$("#first").children().length==2&&c()),e=!e})});/**
  * @license
  * Copyright 2010-2023 Three.js Authors
  * SPDX-License-Identifier: MIT
