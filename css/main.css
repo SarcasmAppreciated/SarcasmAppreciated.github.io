@@ -440,7 +440,7 @@ footer > p {
         height: auto;
     }
     .blurb.static {
-        left: 0;
+        display: none;
     }
     .stage_exit {
         width: 80%;
