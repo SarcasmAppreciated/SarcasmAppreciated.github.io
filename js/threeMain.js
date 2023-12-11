@@ -125,9 +125,16 @@ function init() {
     });
 
     const instructionDiv = document.createElement('div');
-    instructionDiv.className = 'label';
+    instructionDiv.className = 'blurb';
     instructionDiv.style.marginTop = '-1em';
-    instructionDiv.textContent = 'Click on one of the pokeballs on the healing machine!';
+    const firstInstructionDiv = document.createElement('p');
+    firstInstructionDiv.className = 'blurb-paragraph';
+    firstInstructionDiv.textContent = 'Click on one of the pokeballs on the healing machine!';
+    const secondInstructionDiv = document.createElement('p');
+    secondInstructionDiv.className = 'blurb-paragraph';
+    secondInstructionDiv.textContent = "Feel free to pan and zoom in/out around :)"
+    instructionDiv.append(firstInstructionDiv);
+    instructionDiv.append(secondInstructionDiv);
     const instruction = new CSS2DObject(instructionDiv);
     instruction.position.set(-12, 5, 0);
     scene.add(instruction);

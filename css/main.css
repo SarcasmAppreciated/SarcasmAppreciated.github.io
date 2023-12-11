@@ -189,6 +189,18 @@ button#old-experience.old {
     padding: 5px 10px 5px 10px;
 }
 
+.blurb.static {
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    text-align: left;
+}
+.blurb.static > p {
+    margin-bottom: 10px;
+}
+
 footer {
     bottom: 0;
     height: 100px;
@@ -408,13 +420,27 @@ footer > p {
 		font-size: 14px;
 	}
     header {
-        width: initial;
+        width: 100%;
+        text-align: center;
+    }
+    header > h1 {
+        margin-left: initial;
+    }
+    header > ul {
+        display: inline-block;
+        padding: 0;
     }
     button#old-experience {
-        margin-top: 10px;
-        margin-left: 50px;
+        width: 200px;
+        display: inline-block;
         position: initial;
         float: initial;
+    }
+    #main {
+        height: auto;
+    }
+    .blurb.static {
+        left: 0;
     }
     .stage_exit {
         width: 80%;
