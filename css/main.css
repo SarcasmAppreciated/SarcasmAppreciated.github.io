@@ -414,9 +414,10 @@ footer > p {
 		margin: 0;
 	}
     h2 {
+        margin-top: 10px;
         font-size: 36px;
     }
-	p  {
+	p {
 		font-size: 14px;
 	}
     header {
@@ -469,12 +470,10 @@ footer > p {
         height: 660px;
     }
     .circle {
-        margin-top: 10px;
+        margin-top: 0px;
     }
-    .circle_container {
-        width: 80%;
-        height: auto;
-        margin-bottom: 40px;
-        margin-left: auto;
+    .circle-container {
+        margin-top: 10px;
+        justify-content: center;
     }
 }
