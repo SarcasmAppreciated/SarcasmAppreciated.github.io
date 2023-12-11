@@ -31,6 +31,7 @@ init();
 animate();
 
 function init() {
+    const sky = document.getElementById('sky');
     perspectiveCamera = new PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.03, 10000);
     perspectiveCamera.position.z = 500;
 
@@ -74,7 +75,7 @@ function init() {
     labelRenderer.domElement.style.position = 'absolute';
     labelRenderer.domElement.style.top = '0px';
     labelRenderer.domElement.style.pointerEvents = 'none';
-    document.getElementById('sky').appendChild(labelRenderer.domElement);
+    sky.appendChild(labelRenderer.domElement);
 
     labelDiv = document.createElement('div');
     labelDiv.className = 'label';
@@ -143,11 +144,11 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = PCFSoftShadowMap;
-    document.getElementById('sky').appendChild(renderer.domElement);
-    
-    window.addEventListener('resize', onWindowResize);
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('click', onClick);
+    sky.appendChild(renderer.domElement);
+
+    sky.addEventListener('resize', onWindowResize);
+    sky.addEventListener('mousemove', onMouseMove);
+    sky.addEventListener('click', onClick);
 
     const loader = new GLTFLoader();
     loader.load('pkmn_centre.glb', function (gltf) {
