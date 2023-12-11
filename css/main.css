@@ -407,6 +407,15 @@ footer > p {
 	p  {
 		font-size: 14px;
 	}
+    header {
+        width: initial;
+    }
+    button#old-experience {
+        margin-top: 10px;
+        margin-left: 50px;
+        position: initial;
+        float: initial;
+    }
     .stage_exit {
         width: 80%;
         height: 50px;

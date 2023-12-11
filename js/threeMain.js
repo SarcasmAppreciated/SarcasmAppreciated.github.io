@@ -171,7 +171,6 @@ function onWindowResize() {
     perspectiveCamera.updateProjectionMatrix();
     renderer.setSize(width, height);
     labelRenderer.setSize(width, height);
-    controls.handleResize();
 }
 
 function onClick(e) {
