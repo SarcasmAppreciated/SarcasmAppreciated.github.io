@@ -86,14 +86,14 @@ $(document).ready(function(){
             $("footer").css({position: "inherit"});
             $("#sky").hide();
             $("#main").show();
-            populateElements();
+            if ($("#first").children().length == 2)
+                populateElements();
         } else {
             $(this).text("Legacy View");
             $("header").css({position: "fixed"});
             $("footer").css({position: "fixed"});
             $("#sky").show();
             $("#main").hide();
-            $("#first").empty();
         }
         oldExperience = !oldExperience;
     });
