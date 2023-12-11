@@ -439,6 +439,9 @@ footer > p {
     #main {
         height: auto;
     }
+    .blurb {
+        max-width: 200px;
+    }
     .blurb.static {
         display: none;
     }

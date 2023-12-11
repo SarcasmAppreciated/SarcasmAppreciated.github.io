@@ -14,6 +14,7 @@ import {
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { checkMobile } from './portfolio';
 
 const gridElements = [
     {title: "Travis Gafford Industries", subtitle: "- Circa. 2018 to Present -", text: "Graphic design, brand and web development for League of Legends' predominant media company; check out Hotline League!", clickThrough: "https://www.behance.net/gallery/56894655/Overlays-and-Branding", clickText: "Behance Page"},
@@ -137,7 +138,11 @@ function init() {
     instructionDiv.append(firstInstructionDiv);
     instructionDiv.append(secondInstructionDiv);
     const instruction = new CSS2DObject(instructionDiv);
-    instruction.position.set(-12, 5, 0);
+    if (!checkMobile) {
+        instruction.position.set(-12, -8, 0);
+    } else {
+        instruction.position.set(-12, 5, 0);
+    }
     scene.add(instruction);
 
     renderer = new WebGLRenderer();
