@@ -439,8 +439,12 @@ footer > p {
     #main {
         height: auto;
     }
+    #main-blurb.blurb {
+        max-width: 350px;
+    }
     .blurb {
-        max-width: 200px;
+        max-width: 220px;
+        background-color: rgba(0, 0, 0, 0.8);
     }
     .blurb.static {
         display: none;

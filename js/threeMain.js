@@ -86,6 +86,7 @@ function init() {
     scene.add(label);
 
     blurbDiv = document.createElement('div');
+    blurbDiv.id = "main-blurb";
     blurbDiv.className = 'blurb';
     blurbDiv.style.marginTop = '-1em';
     const blurbCloseCharDiv = document.createElement('p');
@@ -118,7 +119,11 @@ function init() {
     blurbDiv.append(blurbSummaryDiv);
     blurbDiv.append(blurbButtonDiv);
     blurb = new CSS2DObject(blurbDiv);
-    blurb.position.set(20, 0, 0);
+    if (checkMobile()) {
+        blurb.position.set(0, -15, 0);
+    } else {
+        blurb.position.set(20, 0, 0);
+    }
     blurb.visible = false;
     scene.add(blurb);
     blurbTitleDiv.addEventListener('click', function(e) {
@@ -138,8 +143,8 @@ function init() {
     instructionDiv.append(firstInstructionDiv);
     instructionDiv.append(secondInstructionDiv);
     const instruction = new CSS2DObject(instructionDiv);
-    if (!checkMobile) {
-        instruction.position.set(-12, -8, 0);
+    if (checkMobile()) {
+        instruction.position.set(-9, 18, 0);
     } else {
         instruction.position.set(-12, 5, 0);
     }
@@ -222,22 +227,24 @@ function onMouseMove(e) {
             currentHover.object.material.opacity = 0.0;
             currentHover = hovered;
         }
-        renderer.domElement.className = 'hovered';
-        label.visible = true;
-        labelDiv.textContent = hovered.object.name;
+        if (!checkMobile()) {
+            renderer.domElement.className = 'hovered';
+            label.visible = true;
+            labelDiv.textContent = hovered.object.name;
 
-        // Get offset from object's dimensions
-        const offset = new Vector3();
-        new Box3().setFromObject(hovered.object).getSize(offset);
+            // Get offset from object's dimensions
+            const offset = new Vector3();
+            new Box3().setFromObject(hovered.object).getSize(offset);
 
-        // Move label over hovered element
-        label.position.set(
-            hovered.object.position.x,
-            hovered.object.position.y + 2,
-            hovered.object.position.z
-        );
+            // Move label over hovered element
+            label.position.set(
+                hovered.object.position.x,
+                hovered.object.position.y + 2,
+                hovered.object.position.z
+            );
 
-        hovered.object.material.opacity = 1.0;
+            hovered.object.material.opacity = 1.0;
+        }
     } else {
         renderer.domElement.className = '';
         label.visible = false;
