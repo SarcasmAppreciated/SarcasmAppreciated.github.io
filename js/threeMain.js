@@ -144,7 +144,7 @@ function init() {
     instructionDiv.append(secondInstructionDiv);
     const instruction = new CSS2DObject(instructionDiv);
     if (checkMobile()) {
-        instruction.position.set(-9, 18, 0);
+        instruction.position.set(-9, 8, 0);
     } else {
         instruction.position.set(-12, 5, 0);
     }
