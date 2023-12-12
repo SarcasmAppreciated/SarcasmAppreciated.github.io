@@ -90,8 +90,7 @@ $(document).ready(function(){
                 populateElements();
         } else {
             $(this).text("Legacy View");
-            if (!checkMobile())
-                $("header").css({position: "fixed"});
+            $("header").css({position: "fixed"});
             $("footer").css({position: "fixed"});
             $("#sky").show();
             $("#main").hide();

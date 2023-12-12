@@ -134,6 +134,7 @@ function init() {
     const instructionDiv = document.createElement('div');
     instructionDiv.className = 'blurb';
     instructionDiv.style.marginTop = '-1em';
+    instructionDiv.style.pointerEvents = 'auto';
     const firstInstructionDiv = document.createElement('p');
     firstInstructionDiv.className = 'blurb-paragraph';
     firstInstructionDiv.textContent = 'Click on one of the pokeballs on the healing machine!';
@@ -149,6 +150,12 @@ function init() {
         instruction.position.set(-12, 5, 0);
     }
     scene.add(instruction);
+    instructionDiv.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (checkMobile()) {
+            instruction.visible = false;
+        }
+    });
 
     renderer = new WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);

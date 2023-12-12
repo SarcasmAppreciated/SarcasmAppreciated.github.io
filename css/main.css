@@ -423,7 +423,6 @@ footer > p {
     header {
         width: 100%;
         text-align: center;
-        position: initial;
     }
     header > h1 {
         margin-left: initial;
