@@ -463,6 +463,9 @@ footer > p {
     .stage_exit_arrow {
         display: none;
     }
+    .stage-item {
+        height: initial;
+    }
     .stage-item, #amazon, .large {
         width: 100%;
     }
