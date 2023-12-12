@@ -466,7 +466,7 @@ footer > p {
     .stage-item {
         height: initial;
     }
-    .stage-item, .large {
+    .stage-item, #amazon, .large {
         width: 100%;
     }
     .circle {
