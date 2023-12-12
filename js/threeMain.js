@@ -120,7 +120,7 @@ function init() {
     blurbDiv.append(blurbButtonDiv);
     blurb = new CSS2DObject(blurbDiv);
     if (checkMobile()) {
-        blurb.position.set(0, -15, 0);
+        blurb.position.set(0, -10, 0);
     } else {
         blurb.position.set(20, 0, 0);
     }
