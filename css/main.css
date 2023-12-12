@@ -414,7 +414,7 @@ footer > p {
 		margin: 0;
 	}
     h2 {
-        margin-top: 10px;
+        margin-top: 0px;
         font-size: 36px;
     }
 	p {
@@ -466,11 +466,8 @@ footer > p {
     .stage-item {
         height: initial;
     }
-    .stage-item, #amazon, .large {
+    .stage-item, .large {
         width: 100%;
-    }
-    #amazon {
-        height: 660px;
     }
     .circle {
         margin-top: 0px;
