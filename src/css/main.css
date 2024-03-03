@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'couturebold';
-    src: url('../fonts/couture-bold-webfont.eot');
-    src: url('../fonts/couture-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/couture-bold-webfont.woff2') format('woff2'),
-         url('../fonts/couture-bold-webfont.woff') format('woff'),
-         url('../fonts/couture-bold-webfont.ttf') format('truetype'),
-         url('../fonts/couture-bold-webfont.svg#couturebold') format('svg');
+    src: url('../assets/fonts/couture-bold-webfont.eot');
+    src: url('../assets/fonts/couture-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/couture-bold-webfont.woff2') format('woff2'),
+         url('../assets/fonts/couture-bold-webfont.woff') format('woff'),
+         url('../assets/fonts/couture-bold-webfont.ttf') format('truetype'),
+         url('../assets/fonts/couture-bold-webfont.svg#couturebold') format('svg');
     font-weight: normal;
     font-style: normal;
 
@@ -13,11 +13,11 @@
 
 @font-face {
     font-family: 'pkmn';
-    src: url('../fonts/pokemon_pixel_font.eot');
-    src: url('../fonts/pokemon_pixel_font.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/pokemon_pixel_font.woff') format('woff'),
-         url('../fonts/pokemon_pixel_font.ttf') format('truetype'),
-         url('../fonts/pokemon_pixel_font.svg#couturebold') format('svg');
+    src: url('../assets/fonts/pokemon_pixel_font.eot');
+    src: url('../assets/fonts/pokemon_pixel_font.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/pokemon_pixel_font.woff') format('woff'),
+         url('../assets/fonts/pokemon_pixel_font.ttf') format('truetype'),
+         url('../assets/fonts/pokemon_pixel_font.svg#couturebold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -29,6 +29,7 @@ html {
 }
 
 body {
+    height: 100%;
     width: 100%;
 	font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
     color: #FFF;
@@ -111,10 +112,16 @@ button#old-experience.old {
     border: 1px solid #000;
 }
 
+#root {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
 #main {
     height: 100%;
     width: 100%;
-    display: none;
+    display: inline-block;
     color: #000;
 }
 
@@ -134,7 +141,7 @@ button#old-experience.old {
     font-size: 24px;
     padding: 15px;
     max-width: 150px;
-    background: url("../images/border.png") center no-repeat;
+    background: url("../assets/images/border.png") center no-repeat;
     background-color: rgba(0, 0, 0, 0.6);
     background-size: 100% 100%;
     border-radius: 5px;
@@ -204,7 +211,6 @@ button#old-experience.old {
 footer {
     bottom: 0;
     height: 100px;
-    padding-top: 20px;
     position: fixed;
     z-index: 3;
 }
@@ -216,18 +222,12 @@ footer > p {
 }
 
 /* Container  */
-.section-container {
-    margin-left: 40px;
-    margin-right: 40px;
-	padding: 0;
-    display: block;
-}
-
 .stage {
     width: auto;
     height: auto;
     display: block;
-    margin-top: 40px;
+    padding: 0;
+    margin-left: 40px;
     margin-right: 20px;
 }
 
@@ -286,37 +286,37 @@ footer > p {
 }
 
 #ample-bg {
-    background: url("../images/gallery/screen_ample_portal.jpg") center no-repeat;
+    background: url("../assets/images/gallery/screen_ample_portal.jpg") center no-repeat;
     background-size: cover;
 }
 
 #fiist-bg {
-    background: url("../images/gallery/screen_fiist_portal.jpg") center no-repeat;
+    background: url("../assets/images/gallery/screen_fiist_portal.jpg") center no-repeat;
     background-size: cover;
 }
 
 #gamespot-bg {
-    background: url("../images/gallery/screen_gamespot_portal.jpg") center no-repeat;
+    background: url("../assets/images/gallery/screen_gamespot_portal.jpg") center no-repeat;
     background-size: cover;
 }
 
 #hhhp-bg {
-    background: url("../images/gallery/screen_hhhp_portal.jpg") center no-repeat;
+    background: url("../assets/images/gallery/screen_hhhp_portal.jpg") center no-repeat;
     background-size: cover;
 }
 
 #hll-bg {
-    background: url("../images/gallery/screen_hll_portal.jpg") center no-repeat;
+    background: url("../assets/images/gallery/screen_hll_portal.jpg") center no-repeat;
     background-size: cover;
 }
 
 #poki-bg {
-    background: url("../images/gallery/poki.png") right no-repeat;
+    background: url("../assets/images/gallery/poki.png") right no-repeat;
     background-size: cover;
 }
 
 #amazon-bg {
-    background: url("../images/gallery/lotr.jpg") left no-repeat;
+    background: url("../assets/images/gallery/lotr.jpg") left no-repeat;
     background-size: cover;
 }
 
@@ -335,44 +335,44 @@ footer > p {
     width: 50px;
     height: 50px;
     display: block;
-    margin-right: 2px;
+    margin-right: 10px;
     border-radius: 50%;
 }
 
 .circle.lgd {
-    background-image: url("../images/LGD.png");
+    background-image: url("../assets/images/LGD.png");
     background-size: contain;
     background-color: #252525;
 }
 
 .circle.uw {
-    background-image: url("../images/UW.png");
+    background-image: url("../assets/images/UW.png");
     background-size: contain;
     background-color: #252525;
 }
 
 .circle.ample {
-    background-image: url("../images/Ample.jpg");
+    background-image: url("../assets/images/Ample.jpg");
     background-size: contain;
 }
 
 .circle.ateyo {
-    background-image: url("../images/ateyo_icon.jpg");
+    background-image: url("../assets/images/ateyo_icon.jpg");
     background-size: contain;
 }
 
 .circle.pokimane {
-    background-image: url("../images/pokimane_icon.jpg");
+    background-image: url("../assets/images/pokimane_icon.jpg");
     background-size: contain;
 }
 
 .skill {
 	width: auto;
-	background: url("../images/TileDF.png") left no-repeat;
+	background: url("../assets/images/TileDF.png") left no-repeat;
 	font-size: 21px;
 	text-align: center;
 	margin-top: 5px;
-	margin-right: 5px;
+	margin-right: 10px;
 	display: inline-block;
     font-weight: 700;
     color: #111;
@@ -384,22 +384,22 @@ footer > p {
 }
 
 #PS {
-    background: url("../images/PS.png") center no-repeat;
+    background: url("../assets/images/PS.png") center no-repeat;
     background-size: contain;
 }
 
 #AE {
-    background: url("../images/AE.png") center no-repeat;
+    background: url("../assets/images/AE.png") center no-repeat;
     background-size: contain;
 }
 
 #AI {
-    background: url("../images/AI.png") center no-repeat;
+    background: url("../assets/images/AI.png") center no-repeat;
     background-size: contain;
 }
 
 #FL {
-    background: url("../images/FL.png") center no-repeat;
+    background: url("../assets/images/FL.png") center no-repeat;
     background-size: contain;
 }
 
@@ -435,7 +435,6 @@ footer > p {
         width: 200px;
         display: inline-block;
         position: initial;
-        float: initial;
     }
     #main {
         height: auto;

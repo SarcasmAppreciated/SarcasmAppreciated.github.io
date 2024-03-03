@@ -14,24 +14,27 @@ import {
 import { CSS2DRenderer, CSS2DObject } from 'three/addons/renderers/CSS2DRenderer.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { checkMobile } from './portfolio';
 
 const gridElements = [
     {title: "Travis Gafford Industries", subtitle: "- Circa. 2018 to Present -", text: "Graphic design, brand and web development for League of Legends' predominant media company; check out Hotline League!", clickThrough: "https://www.behance.net/gallery/56894655/Overlays-and-Branding", clickText: "Behance Page"},
     {title: "Amazon: Software Engineer", subtitle: "- June 2017 to June 2023 -", text: "Amazon Display Ad Products: architected and developed products generating millions of revenue.", clickThrough: "https://amazonfiretv.blog/immerse-yourself-in-middle-earth-with-the-lord-of-the-rings-the-rings-of-power-bb76cc29a9ff", clickText: "Case Study"},
     {title: "Pokimane Podcast", subtitle: "- Completed March 2018 -", text: "Dynamic start and intermission screens", clickThrough: "https://archive.org/details/twitch-vod-v282019111", clickText: "Podcast"},
     {title: "Ample Food Icons", subtitle: "- Completed January 2017 -", text: "Web icons and infographic", clickThrough: "https://www.behance.net/gallery/49921415/AmpleMealcom", clickText: "Behance Page"},
-    {title: "HipHopHeads Polls", subtitle: "- Circa March 2016 -", text: "Polled music player", clickThrough: "", clickText: "Case Study"},
+    {title: "HipHopHeads Polls", subtitle: "- Circa March 2016 -", text: "Polled music player", clickThrough: "https://benson.li/HipHopHeadsDesignStudy/", clickText: "Case Study"},
     {title: "Gamespot", subtitle: "- March 2014 - February 2016 -", text: "Graphic design for onGamers and G | League", clickThrough: "https://www.behance.net/SarcasmAppreciated", clickText: "Behance Page"}
 ];
 
-let perspectiveCamera, controls, scene, renderer, labelRenderer;
+let id, perspectiveCamera, controls, scene, renderer, labelRenderer;
 let mouse, raycaster, pokeballs, labelDiv, label, currentHover, blurbDiv, blurb;
 
-init();
-animate();
+function checkMobile() {
+    if( /Mobile|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        return true;
+    }
+    return false;
+}
 
-function init() {
+export function init() {
     const sky = document.getElementById('sky');
     perspectiveCamera = new PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.03, 10000);
     perspectiveCamera.position.z = 500;
@@ -166,6 +169,7 @@ function init() {
     sky.addEventListener('resize', onWindowResize);
     sky.addEventListener('mousemove', onMouseMove);
     sky.addEventListener('click', onClick);
+    document.getElementById( 'old-experience' ).addEventListener( 'click', stopAnimation );
 
     const loader = new GLTFLoader();
     loader.load('pkmn_centre.glb', function (gltf) {
@@ -263,8 +267,12 @@ function onMouseMove(e) {
     }
 }
 
-function animate() {
-    requestAnimationFrame(animate);
+function stopAnimation() {
+    cancelAnimationFrame(id);
+}
+
+export function animate() {
+    id = requestAnimationFrame(animate);
     controls.update();
     render();
 }

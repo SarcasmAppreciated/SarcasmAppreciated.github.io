@@ -21,7 +21,7 @@
         <meta property="og:title" content="Benson Li's Portfolio" />
         <meta property="og:description" content="I like making cool things - beautiful and immersive experiences." />
         <meta property="og:image" content="https://benson.li/images/Portfolio_Image.jpg" />
-       
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="apple-mobile-web-app-capable" content="yes">
 
@@ -42,64 +42,13 @@
 		<meta name="msapplication-TileColor" content="#ffffff">
 		<meta name="msapplication-TileImage" content="/images/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
-	
+
         <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
-        
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="module" src="js/portfolio.js"></script>
-        
+
         <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
-        <header>
-            <h1>Benson Li</h1>
-            <ul id="social_media">
-                <a href="https://github.com/SarcasmAppreciated" target="_blank"><li>Github</li></a>
-                <a href="https://www.linkedin.com/in/bli08/" target="_blank"><li>LinkedIn</li></a>
-                <a href="https://www.behance.net/SarcasmAppreciated" target="_blank"><li>Behance</li></a>
-            </ul>
-            <button id="old-experience">Legacy View</button>
-        </header>
-        <div id="sky">
-            <div class="blurb static">
-                <p class="blurb-paragraph">Hi, I'm Benson - I'm a software engineer and graphics designer; I like making cool things - beautiful and immersive experiences.</p>
-                <p class="blurb-paragraph">I'm from Vancouver, BC based in Seattle, WA. My past work includes everything from brand creation, AAA software development, and World of Warcraft addons.</p>
-                <p class="blurb-paragraph">I've had the pleasure working with and for: Amazon, Travis Gafford, ATEYO, Pokimane, GameSpot (formerly onGamers), LGD Gaming, and the University of Waterloo - creating art and design for their respective needs.</p>
-            </div>
-        </div>
-        <div id="main">
-            <div class="section-container" id="intro">
-                <div class="stage" id="first">
-                    <div id="about" class="stage-item large about">
-                        <div class="stage-item-text">
-                            <h2 style="margin-bottom: 15px">About</h2>
-                            <p>Hi, I'm Benson - I'm a software engineer and graphics designer; I like making cool things - beautiful and immersive experiences.</p>
-                            <br>
-                            <p>I'm from Vancouver, BC based in Seattle, WA. My past work includes everything from brand creation, AAA software development, and World of Warcraft addons.</p>
-                            <h2 style="margin-bottom: 15px">Clients</h2>
-                            <p>Here are some of the lovely people I've had the pleasure working with. I've worked as a graphics artist or dev for: Travis Gafford, ATEYO, Pokimane, GameSpot (formerly onGamers), LGD Gaming, and the University of Waterloo - creating art and design for their respective needs.</p>
-                            <div class="circle-container" id="clients"></div>
-                        </div>
-                    </div>
-                    <div class="stage-item about">
-                        <div class="stage-item-text">
-                            <h2 style="margin-bottom: 15px">Skills</h2>
-                            <p>I work best with Object Oriented Languages but am fluent in Typescript/Javascript and React.</p>
-                            <div id="skills" style="width: 80%; display: inline-block; margin-top: 10px"></div>
-                            <br>
-                            <div class="skill icon" id="PS"></div>
-                            <div class="skill icon" id="AI"></div>
-                            <div class="skill icon" id="FL"></div>
-                            <div class="skill icon" id="AE"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer>
-            <p>"Pokemon RSE - Pokemon Center" (https://skfb.ly/6uUzL) by Wesai is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).</p>
-            <p id="copyright"></p>
-        </footer>
-        <script type="module" src="js/threeMain.js"></script>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
     </body>
 </html>
