@@ -31,10 +31,10 @@ html {
 body {
     height: 100%;
     width: 100%;
-	font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
     color: #FFF;
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
     text-align: left;
     overflow-x: hidden;
     background-color: #000;
@@ -48,7 +48,7 @@ header {
 
 h1 {
     font-size: 60px;
-	font-family: "Helvetica Neue", Arial, sans-serif;
+    font-family: "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;
     margin-left: 50px;
     margin-top: 2%;
@@ -71,7 +71,7 @@ h3 {
 }
 
 p {
-	font-size: 18px;
+    font-size: 18px;
     margin: 0;
 }
 
@@ -367,13 +367,13 @@ footer > p {
 }
 
 .skill {
-	width: auto;
-	background: url("../assets/images/TileDF.png") left no-repeat;
-	font-size: 21px;
-	text-align: center;
-	margin-top: 5px;
-	margin-right: 10px;
-	display: inline-block;
+    width: auto;
+    background: url("../assets/images/TileDF.png") left no-repeat;
+    font-size: 21px;
+    text-align: center;
+    margin-top: 5px;
+    margin-right: 10px;
+    display: inline-block;
     font-weight: 700;
     color: #111;
 }
@@ -406,20 +406,20 @@ footer > p {
 
 /* mobile */
 @media (max-width: 800px) and (max-height: 940px) {
-	body {
-		overflow-x: hidden;
-		width: 100%;
+    body {
+        overflow-x: hidden;
+        width: 100%;
         height: 100%;
-		padding: 0;
-		margin: 0;
-	}
+        padding: 0;
+        margin: 0;
+    }
     h2 {
         margin-top: 0px;
         font-size: 36px;
     }
-	p {
-		font-size: 14px;
-	}
+    p {
+        font-size: 14px;
+    }
     header {
         width: 100%;
         text-align: center;
