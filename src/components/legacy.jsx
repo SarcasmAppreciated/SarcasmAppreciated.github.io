@@ -17,12 +17,12 @@ export default function Legacy() {
     ];
     const gridElements = [
         {background: "hll", title: "Hotline League and Travis Gafford", text: "- Circa. 2018 to Present -", clickThrough: "https://www.behance.net/gallery/56894655/Overlays-and-Branding", clickText: "Behance Page"},
-        {background: "amazon", title: "Amazon: Software Engineer", text: "- June 2017 to June 2023 -<br>Amazon Display Ad Products<br>Architected and developed products<br>generating millions of revenue", clickThrough: "https://amazonfiretv.blog/immerse-yourself-in-middle-earth-with-the-lord-of-the-rings-the-rings-of-power-bb76cc29a9ff", clickText: "Case Study"},
-        {background: "poki", title: "Pokimane Podcast", text: "- Completed March 2018 -<br>Dynamic start and intermission screens", clickThrough: "https://archive.org/details/twitch-vod-v282019111", clickText: "Podcast"},
-        {background: "ample", title: "Ample Food Icons", text: "- Completed January 2017 -<br>Icons and Infographic", clickThrough: "https://www.behance.net/gallery/49921415/AmpleMealcom", clickText: "Behance Page"},
-        {background: "hhhp", title: "HipHopHeads Polls", text: "- Circa March 2016 -<br>Polled Music Player", clickThrough: "https://benson.li/HipHopHeadsDesignStudy/", clickText: "Case Study"},
-        {background: "gamespot", title: "Gamespot", text: "- March 2014 - February 2016 -<br>Graphic design for onGamers and G | League", clickThrough: "https://www.behance.net/SarcasmAppreciated", clickText: "Behance Page"},
-        {background: "fiist", title: "Fiist: Waitlist Management", text: "- Circa. 2012 -<br>Project page for Fiist (startup); designed by Brian Leung", clickThrough: "https://benson.li/Fiist-Site/", clickText: "Github Page"}
+        {background: "amazon", title: "Amazon: Software Engineer", text: "- June 2017 to June 2023 -\nAmazon Display Ad Products\nArchitected and developed products\ngenerating millions of revenue", clickThrough: "https://amazonfiretv.blog/immerse-yourself-in-middle-earth-with-the-lord-of-the-rings-the-rings-of-power-bb76cc29a9ff", clickText: "Case Study"},
+        {background: "poki", title: "Pokimane Podcast", text: "- Completed March 2018 -\nDynamic start and intermission screens", clickThrough: "https://archive.org/details/twitch-vod-v282019111", clickText: "Podcast"},
+        {background: "ample", title: "Ample Food Icons", text: "- Completed January 2017 -\nIcons and Infographic", clickThrough: "https://www.behance.net/gallery/49921415/AmpleMealcom", clickText: "Behance Page"},
+        {background: "hhhp", title: "HipHopHeads Polls", text: "- Circa March 2016 -\nPolled Music Player", clickThrough: "https://benson.li/HipHopHeadsDesignStudy/", clickText: "Case Study"},
+        {background: "gamespot", title: "Gamespot", text: "- March 2014 - February 2016 -\nGraphic design for onGamers and G | League", clickThrough: "https://www.behance.net/SarcasmAppreciated", clickText: "Behance Page"},
+        {background: "fiist", title: "Fiist: Waitlist Management", text: "- Circa. 2012 -\nProject page for Fiist (startup); designed by Brian Leung", clickThrough: "https://benson.li/Fiist-Site/", clickText: "Github Page"}
     ];
     const people = [
         {clickThrough: "https://twitter.com/pokimanelol", name: "pokimane"},

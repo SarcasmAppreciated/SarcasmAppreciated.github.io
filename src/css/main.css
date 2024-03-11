@@ -254,6 +254,7 @@ footer > p {
 .stage-item-text {
     text-align: center;
     margin: 20px;
+    white-space: pre-wrap;
 }
 
 .stage-item-text > h2 {
