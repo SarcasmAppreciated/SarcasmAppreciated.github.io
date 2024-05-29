@@ -16,7 +16,7 @@ export default function Legacy() {
         {size: "60", text: "UI/UX"}
     ];
     const gridElements = [
-        {background: "meta", title: "Meta: Senior Software Engineer", text: "- Circa. 2024 to Present -\nAR Glasses", clickThrough: "", clickText: "Coming Soon"},
+        {background: "meta", title: "Meta: Senior Software Engineer", text: "- Circa. 2024 to Present -\nAR Glasses", clickThrough: "https://www.meta.com/smart-glasses/", clickText: "Product Page"},
         {background: "wvw", title: "WebView Wrappers", text: "- Circa. 2024 to Present -\nBetter mobile experiences for hobbies", clickThrough: "https://github.com/SarcasmAppreciated/webview-wrapper", clickText: "Github Page"},
         {background: "rr", title: "Restorankings", text: "- Circa. 2024 to Present -\nPersonal restaurant rankings for Vancouver and Seattle", clickThrough: "https://benson.li/restorankings", clickText: "Web Page"},
         {background: "hll", title: "Hotline League and Travis Gafford", text: "- Circa. 2018 to Present -", clickThrough: "https://www.behance.net/gallery/56894655/Overlays-and-Branding", clickText: "Behance Page"},
