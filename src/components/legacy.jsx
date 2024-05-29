@@ -16,6 +16,9 @@ export default function Legacy() {
         {size: "60", text: "UI/UX"}
     ];
     const gridElements = [
+        {background: "meta", title: "Meta: Senior Software Engineer", text: "- Circa. 2024 to Present -\nAR Glasses", clickThrough: "", clickText: "Coming Soon"},
+        {background: "wvw", title: "WebView Wrappers", text: "- Circa. 2024 to Present -\nBetter mobile experiences for hobbies", clickThrough: "https://github.com/SarcasmAppreciated/webview-wrapper", clickText: "Github Page"},
+        {background: "rr", title: "Restorankings", text: "- Circa. 2024 to Present -\nPersonal restaurant rankings for Vancouver and Seattle", clickThrough: "https://benson.li/restorankings", clickText: "Web Page"},
         {background: "hll", title: "Hotline League and Travis Gafford", text: "- Circa. 2018 to Present -", clickThrough: "https://www.behance.net/gallery/56894655/Overlays-and-Branding", clickText: "Behance Page"},
         {background: "amazon", title: "Amazon: Software Engineer", text: "- June 2017 to June 2023 -\nAmazon Display Ad Products\nArchitected and developed products\ngenerating millions of revenue", clickThrough: "https://amazonfiretv.blog/immerse-yourself-in-middle-earth-with-the-lord-of-the-rings-the-rings-of-power-bb76cc29a9ff", clickText: "Case Study"},
         {background: "poki", title: "Pokimane Podcast", text: "- Completed March 2018 -\nDynamic start and intermission screens", clickThrough: "https://archive.org/details/twitch-vod-v282019111", clickText: "Podcast"},

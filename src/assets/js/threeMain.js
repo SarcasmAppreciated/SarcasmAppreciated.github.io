@@ -19,9 +19,9 @@ const gridElements = [
     {title: "Travis Gafford Industries", subtitle: "- Circa. 2018 to Present -", text: "Graphic design, brand and web development for League of Legends' predominant media company; check out Hotline League!", clickThrough: "https://www.behance.net/gallery/56894655/Overlays-and-Branding", clickText: "Behance Page"},
     {title: "Amazon: Software Engineer", subtitle: "- June 2017 to June 2023 -", text: "Amazon Display Ad Products: architected and developed products generating millions of revenue.", clickThrough: "https://amazonfiretv.blog/immerse-yourself-in-middle-earth-with-the-lord-of-the-rings-the-rings-of-power-bb76cc29a9ff", clickText: "Case Study"},
     {title: "Pokimane Podcast", subtitle: "- Completed March 2018 -", text: "Dynamic start and intermission screens", clickThrough: "https://archive.org/details/twitch-vod-v282019111", clickText: "Podcast"},
-    {title: "Ample Food Icons", subtitle: "- Completed January 2017 -", text: "Web icons and infographic", clickThrough: "https://www.behance.net/gallery/49921415/AmpleMealcom", clickText: "Behance Page"},
-    {title: "HipHopHeads Polls", subtitle: "- Circa March 2016 -", text: "Polled music player", clickThrough: "https://benson.li/HipHopHeadsDesignStudy/", clickText: "Case Study"},
-    {title: "Gamespot", subtitle: "- March 2014 - February 2016 -", text: "Graphic design for onGamers and G | League", clickThrough: "https://www.behance.net/SarcasmAppreciated", clickText: "Behance Page"}
+    {title: "Meta: Senior Software Engineer", subtitle: "- Circa. 2024 to Present -", text: "AR Glasses", clickThrough: "https://www.meta.com/smart-glasses/", clickText: "Product Page"},
+    {title: "Webview Wrappers", subtitle: "- Circa. 2024 to Present -", text: "Better mobile experiences for hobbies", clickThrough: "https://github.com/SarcasmAppreciated/webview-wrapper", clickText: "Github Page"},
+    {title: "Restorankings", subtitle: "- Circa. 2024 to Present -", text: "Personal restaurant rankings for Vancouver and Seattle", clickThrough: "https://benson.li/restorankings", clickText: "Web Page"}
 ];
 
 let id, perspectiveCamera, controls, scene, renderer, labelRenderer;

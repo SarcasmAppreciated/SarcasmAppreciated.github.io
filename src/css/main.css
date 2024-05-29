@@ -276,7 +276,7 @@ footer > p {
     font-family: 'couturebold';
 }
 
-#amazon, .large {
+#amazon, #meta, #hll, .large {
     width: 620px;
 }
 
@@ -318,6 +318,21 @@ footer > p {
 
 #amazon-bg {
     background: url("../assets/images/gallery/lotr.jpg") left no-repeat;
+    background-size: cover;
+}
+
+#rr-bg {
+    background: url("../assets/images/gallery/rr.png") left no-repeat;
+    background-size: cover;
+}
+
+#wvw-bg {
+    background: url("../assets/images/gallery/wvw.png") left no-repeat;
+    background-size: cover;
+}
+
+#meta-bg {
+    background: url("../assets/images/gallery/meta.png") left no-repeat;
     background-size: cover;
 }
 
