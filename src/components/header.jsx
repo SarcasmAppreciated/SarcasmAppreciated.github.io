@@ -1,4 +1,8 @@
 export default function Header({legacy, callback}) {
+    let buttonText = "Legacy View";
+    if (legacy) {
+        buttonText = "Modern View";
+    }
     return (
         <header style={{position: legacy ? "inherit" : "fixed"}}>
             <h1>Benson Li</h1>
@@ -7,7 +11,7 @@ export default function Header({legacy, callback}) {
                 <a href="https://www.linkedin.com/in/bli08/" target="_blank"><li>LinkedIn</li></a>
                 <a href="https://www.behance.net/SarcasmAppreciated" target="_blank"><li>Behance</li></a>
             </ul>
-            <button id="old-experience" onClick={() => callback()}>Legacy View</button>
+            <button id="old-experience" onClick={() => callback()}>{buttonText}</button>
         </header>
     );
 }

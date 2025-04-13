@@ -421,7 +421,7 @@ footer > p {
 
 
 /* mobile */
-@media (max-width: 800px) and (max-height: 940px) {
+@media (max-width: 800px) {
     body {
         overflow-x: hidden;
         width: 100%;
@@ -451,6 +451,7 @@ footer > p {
         width: 200px;
         display: inline-block;
         position: initial;
+        float: none;
     }
     #main {
         height: auto;
@@ -464,6 +465,11 @@ footer > p {
     }
     .blurb.static {
         display: none;
+    }
+    .stage {
+        margin-left: 0;
+        margin-right: 0;
+        width: calc(100% - 20px);
     }
     .stage_exit {
         width: 80%;
@@ -479,8 +485,9 @@ footer > p {
     }
     .stage-item {
         height: initial;
+        box-shadow: none;
     }
-    .stage-item, #amazon, .large {
+    .stage-item, #amazon, .large, #meta, #hll {
         width: 100%;
     }
     .circle {
